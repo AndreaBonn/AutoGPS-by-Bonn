@@ -1,4 +1,4 @@
-# AutoGPS
+# AutoGPS by Bonn
 
 **Versione attuale: 1.0.0** 
 
@@ -10,7 +10,7 @@ L'app rileva quando il telefono si connette al Bluetooth dell'auto (o quando par
 
 Scarica l'APK dalla cartella di questo repository:
 
-**[AutoGPS-v1.0.0.apk](AutoGPS-v1.0.0.apk)** (7 MB)
+**[AutoGPS-by-Bonn-v1.0.0.apk](AutoGPS-by-Bonn-v1.0.0.apk)** (6 MB)
 
 Compatibile con Android 8.0 e superiori (fino ad Android 16). Testata su Pixel 8 Pro.
 
@@ -31,7 +31,7 @@ L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha u
 ### Opzione 1 — Da computer con ADB
 
 ```bash
-adb install AutoGPS-v1.0.0.apk
+adb install AutoGPS-by-Bonn-v1.0.0.apk
 ```
 
 ### Opzione 2 — Direttamente dal telefono
@@ -86,7 +86,7 @@ Spegni il GPS, connetti il Bluetooth dell'auto e controlla che il GPS si riaccen
 Quando esce una nuova versione, scarica il nuovo APK e installalo sopra quello esistente:
 
 ```bash
-adb install -r AutoGPS-vX.Y.Z.apk
+adb install -r AutoGPS-by-Bonn-vX.Y.Z.apk
 ```
 
 Oppure passati l'APK sul telefono e installalo normalmente. Le impostazioni vengono mantenute e non serve riconcedere il permesso ADB.
