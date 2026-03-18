@@ -31,7 +31,7 @@ L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha u
 ### Opzione 1 — Da computer con ADB
 
 ```bash
-adb install AutoGPS-v1.0.0-debug.apk
+adb install AutoGPS-v1.0.0.apk
 ```
 
 ### Opzione 2 — Direttamente dal telefono
@@ -79,14 +79,14 @@ Se vedi un banner arancione nella schermata principale, toccalo per disabilitare
 
 ### 6. Verifica
 
-Spegni il GPS, connetti il Bluetooth dell'auto e controlla che il GPS si riaccenda da solo. Disconnetti e verifica che si spenga.
+Spegni il GPS, connetti il Bluetooth dell'auto e controlla che il GPS si riaccenda da solo. Disconnetti e verifica che si spenga (Potrebbe impiegare fino a 5 minuti per lo spegnimento).
 
 ## Aggiornamento
 
 Quando esce una nuova versione, scarica il nuovo APK e installalo sopra quello esistente:
 
 ```bash
-adb install -r AutoGPS-vX.Y.Z-debug.apk
+adb install -r AutoGPS-vX.Y.Z.apk
 ```
 
 Oppure passati l'APK sul telefono e installalo normalmente. Le impostazioni vengono mantenute e non serve riconcedere il permesso ADB.
@@ -119,6 +119,12 @@ L'app non comunica con nessun server, non raccoglie dati, non contiene analytics
 - Sopravvivenza al riavvio
 - Compatibilità Android 8.0 — 16 (API 26-36)
 
-## Licenza
+## Ti è utile?
 
-MIT — usala, modificala, distribuiscila come vuoi.
+Se AutoGPS ti è piaciuto o ti semplifica la vita, lascia una ⭐ al repository — è il modo più semplice per supportare il progetto.
+
+## Autore e licenza
+
+Sviluppato da [Andrea Bonacci](https://github.com/AndreaBonn).
+
+Il codice sorgente è privato. L'uso dell'applicazione è libero e gratuito.
