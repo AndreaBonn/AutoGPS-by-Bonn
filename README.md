@@ -1,6 +1,6 @@
 # AutoGPS
 
-**Versione attuale: 1.0.0** | Ultimo aggiornamento: 18 marzo 2026
+**Versione attuale: 1.0.0** 
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
@@ -10,7 +10,7 @@ L'app rileva quando il telefono si connette al Bluetooth dell'auto (o quando par
 
 Scarica l'APK dalla cartella di questo repository:
 
-**[AutoGPS-v1.0.0-debug.apk](AutoGPS-v1.0.0-debug.apk)** (7 MB)
+**[AutoGPS-v1.0.0.apk](AutoGPS-v1.0.0.apk)** (7 MB)
 
 Compatibile con Android 8.0 e superiori (fino ad Android 16). Testata su Pixel 8 Pro.
 
@@ -59,6 +59,7 @@ Nessun output = tutto ok.
 ### 2. Permessi runtime
 
 All'apertura l'app chiede diversi permessi. Concedili tutti:
+
 - **Bluetooth** — per rilevare le connessioni
 - **Posizione** — richiesta dal sistema per il Bluetooth
 - **Posizione in background** — seleziona "Consenti sempre", non "Solo durante l'uso"
@@ -110,6 +111,7 @@ L'app non comunica con nessun server, non raccoglie dati, non contiene analytics
 ## Changelog
 
 ### v1.0.0 — 18 marzo 2026
+
 - Prima release
 - Trigger Bluetooth multi-dispositivo
 - Trigger Android Auto via AccessibilityService
