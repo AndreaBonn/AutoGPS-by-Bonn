@@ -1,6 +1,6 @@
 # AutoGPS by Bonn
 
-**Versione attuale: 1.0.0** 
+**Versione attuale: 1.1.0**
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
@@ -10,7 +10,7 @@ L'app rileva quando il telefono si connette al Bluetooth dell'auto (o quando par
 
 Scarica l'APK dalla cartella di questo repository:
 
-**[AutoGPS-by-Bonn-v1.0.0.apk](AutoGPS-by-Bonn-v1.0.0.apk)** (6 MB)
+**[AutoGPS-by-Bonn-v1.1.0.apk](AutoGPS-by-Bonn-v1.1.0.apk)** (6 MB)
 
 Compatibile con Android 8.0 e superiori (fino ad Android 16). Testata su Pixel 8 Pro.
 
@@ -24,6 +24,8 @@ AutoGPS resta in ascolto in background e reagisce a due tipi di eventi:
 
 I due trigger lavorano in OR: basta che uno dei due sia attivo perché il GPS resti acceso. Si spegne solo quando nessuno dei due è attivo.
 
+**Ultimo parcheggio** — Ogni volta che lasci l'auto, l'app salva la posizione e te la mostra sulla mappa con l'indirizzo e da quanto tempo sei parcheggiato. Toccando la mappa si apre Google Maps; il pulsante "Naviga qui" avvia la navigazione a piedi verso la macchina. Tutto rimane sul tuo dispositivo, nessun dato viene inviato a server.
+
 L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha un consumo di batteria trascurabile.
 
 ## Installazione
@@ -31,7 +33,7 @@ L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha u
 ### Opzione 1 — Da computer con ADB
 
 ```bash
-adb install AutoGPS-by-Bonn-v1.0.0.apk
+adb install AutoGPS-by-Bonn-v1.1.0.apk
 ```
 
 ### Opzione 2 — Direttamente dal telefono
@@ -109,6 +111,15 @@ Dall'app puoi scegliere cosa succede quando tutti i trigger si disattivano:
 L'app non comunica con nessun server, non raccoglie dati, non contiene analytics o tracker. Tutto rimane sul tuo dispositivo.
 
 ## Changelog
+
+### v1.1.0 — 21 marzo 2026
+
+- Feature "Ultimo parcheggio": quando il GPS si spegne l'app salva la posizione attuale
+- Mappa OSMDroid nella schermata principale con pin sull'ultimo parcheggio
+- Indirizzo testuale via geocoding inverso e indicazione "parcheggiato N minuti fa"
+- Tocco sulla mappa per aprire Google Maps; pulsante "Naviga qui" per la navigazione a piedi
+- Nuova dipendenza: OSMDroid 6.1.20 (mappe OpenStreetMap gratuite, senza API key)
+- Nuovi permessi: INTERNET e ACCESS_NETWORK_STATE (per i tile della mappa)
 
 ### v1.0.0 — 18 marzo 2026
 
