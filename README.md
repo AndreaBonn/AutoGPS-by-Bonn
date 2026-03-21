@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="AutoGPS-icon.png" alt="AutoGPS icon" width="150">
+</p>
+
 # AutoGPS by Bonn
 
 **Versione attuale: 1.1.0**
