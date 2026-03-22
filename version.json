@@ -1,0 +1,6 @@
+{
+  "version_code": 2,
+  "version_name": "1.1.0",
+  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v1.1.0/AutoGPS-by-Bonn-v1.1.0.apk",
+  "changelog": "- Toggle GPS con etichette dinamiche\n- Colori stato GPS migliorati\n- Copia indirizzo parcheggio\n- Navigazione verso il parcheggio"
+}
