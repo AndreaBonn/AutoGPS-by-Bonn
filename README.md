@@ -80,22 +80,26 @@ Vai su questa pagina ufficiale di Google:
 Scorri verso il basso fino alla sezione "Downloads" e scarica la versione per il tuo sistema operativo:
 
 **Windows:**
+
 1. **Clicca su "Download SDK Platform-Tools for Windows"**
 2. Accetta i termini e clicca su "Download"
 3. Verrà scaricato uno zip — aprilo e trascina la cartella `platform-tools` nella tua cartella **Download** (o dove preferisci, ma ricorda dove la metti)
 
 **Mac:**
+
 1. **Clicca su "Download SDK Platform-Tools for Mac"**
 2. Accetta i termini e clicca su "Download"
 3. Verrà scaricato uno zip — aprilo e trascina la cartella `platform-tools` nella tua cartella **Download**
 4. In alternativa, se hai Homebrew installato, puoi aprire il Terminale e scrivere: `brew install android-platform-tools`
 
 **Linux (Ubuntu/Debian):**
+
 1. **Clicca su "Download SDK Platform-Tools for Linux"**, scarica e decomprimi, oppure
 2. Apri il terminale e scrivi:
-```
-sudo apt install adb
-```
+   
+   ```
+   sudo apt install adb
+   ```
 
 ---
 
@@ -112,6 +116,7 @@ Il telefono nasconde alcune funzioni avanzate per evitare che gli utenti le tocc
 3. **Entra in "Info telefono"** e cerca la voce **"Numero build"**. Su alcuni telefoni è nascosta dentro "Informazioni software" o "Informazioni sulla versione". Guardati attorno — c'è.
 
 4. **Tocca "Numero build" 7 volte di fila, velocemente.** Non è uno scherzo — è davvero così che funziona.
+   
    - Dopo il terzo o quarto tocco comparirà un messaggio tipo: *"Sei a 3 passi dall'essere uno sviluppatore"*
    - Continua a toccare
    - Al settimo tocco comparirà: *"Ora sei uno sviluppatore!"* (o un messaggio simile)
@@ -144,10 +149,12 @@ Il Debug USB è la funzione che permette ad ADB di comunicare con il telefono.
 2. **Sul telefono potrebbe comparire una notifica** tipo "Seleziona modalità USB" o "Opzioni USB". Se compare, **seleziona "Trasferimento file"** (o "MTP"). NON scegliere "Solo ricarica" — con quella opzione il computer non riesce a comunicare con il telefono.
 
 3. **Comparirà una finestra sul telefono** con scritto qualcosa tipo: **"Consenti debug USB?"** e un codice chiamato "impronta RSA". Questo è normale — il sistema vuole confermare che sei tu ad aver autorizzato il computer.
+   
    - **Tocca "Consenti"**
    - Puoi anche spuntare la casella "Consenti sempre da questo computer" così non te lo chiede di nuovo
 
 **Se la finestra non compare:**
+
 - Stacca il cavo USB e riattaccalo
 - Oppure torna in Opzioni sviluppatore, disattiva Debug USB, riattivalo, poi riattacca il cavo
 - Assicurati di aver scelto "Trasferimento file" e non "Solo ricarica"
@@ -159,17 +166,20 @@ Il Debug USB è la funzione che permette ad ADB di comunicare con il telefono.
 Il terminale (detto anche "prompt dei comandi" su Windows) è una finestra dove scrivi comandi testuali. Sembra complicato ma userai solo 3 comandi copiati da questa guida.
 
 **Windows:**
+
 1. Premi il **tasto Windows + R** sulla tastiera (tasto con il logo di Windows, tenuto premuto, poi R)
 2. Nella piccola finestra che compare, scrivi **`cmd`** e premi Invio
 3. Si apre una finestra nera — è il Prompt dei comandi
 4. In alternativa: cerca **"cmd"** o **"Prompt dei comandi"** nella barra di ricerca di Windows
 
 **Mac:**
+
 1. Premi **Cmd + Spazio** per aprire Spotlight
 2. Scrivi **"Terminale"** e premi Invio
 3. In alternativa: vai in Applicazioni > Utility > Terminale
 
 **Linux:**
+
 1. Cerca **"Terminale"** nel menu delle applicazioni
 2. Oppure premi **Ctrl + Alt + T** (funziona su molte distribuzioni)
 
@@ -184,11 +194,13 @@ Ora che hai il terminale aperto e il telefono collegato, puoi fare tutto in poch
 Prima devi dire al terminale di "entrare" nella cartella `platform-tools` che hai scaricato nella Fase 2.
 
 **Windows** (se hai messo platform-tools nella cartella Download):
+
 ```
 cd %USERPROFILE%\Downloads\platform-tools
 ```
 
 **Mac/Linux** (se hai messo platform-tools nella cartella Download):
+
 ```
 cd ~/Downloads/platform-tools
 ```
@@ -198,11 +210,13 @@ Se hai messo la cartella altrove, adatta il percorso di conseguenza.
 ### Verificare che il telefono sia riconosciuto
 
 **Copia e incolla questo comando, poi premi Invio:**
+
 ```
 adb devices
 ```
 
 Dovresti vedere un output simile a questo:
+
 ```
 List of devices attached
 XXXXXXXX    device
@@ -215,11 +229,13 @@ Se non vedi nessun dispositivo, controlla che il cavo sia ben inserito e che tu 
 ### Installare l'APK
 
 **Windows** — se l'APK è nella cartella Download:
+
 ```
 adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.0.apk"
 ```
 
 **Mac/Linux** — se l'APK è nella cartella Download:
+
 ```
 adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.0.apk
 ```
@@ -233,6 +249,7 @@ Se l'APK si trova in un'altra cartella, sostituisci il percorso con quello corre
 Questo è il passaggio fondamentale. Senza di esso l'app non può controllare il GPS.
 
 **Copia e incolla esattamente questo comando, poi premi Invio:**
+
 ```
 adb shell pm grant com.autogps.app android.permission.WRITE_SECURE_SETTINGS
 ```
@@ -298,26 +315,31 @@ Se GPS si accende ma non si spegne, attendi qualche minuto — il servizio ha un
 ## Risoluzione problemi
 
 **"Il telefono non viene riconosciuto dal computer" (adb devices non mostra niente)**
+
 - Controlla che il cavo USB sia ben inserito da entrambe le parti
 - Prova una porta USB diversa del computer
 - Assicurati di aver scelto "Trasferimento file" sul telefono (non "Solo ricarica")
 - Su Windows: potrebbe servire installare i driver USB del produttore del telefono. Cerca su Google "driver USB [nome del tuo telefono]"
 
 **"adb devices mostra 'unauthorized'"**
+
 - Guarda il telefono: dovrebbe essere comparsa una notifica "Consenti debug USB?" — toccala e scegli "Consenti"
 - Se la notifica non appare: stacca il cavo, disattiva e riattiva Debug USB nelle Opzioni sviluppatore, poi riattacca il cavo
 
 **"Il comando adb non viene trovato" (errore tipo "adb is not recognized")**
+
 - Sei sicuro di essere entrato nella cartella `platform-tools` con il comando `cd`? Prova a rifarlo.
 - Su Windows: assicurati di aver estratto il file zip e di essere dentro la cartella `platform-tools`, non fuori
 - Puoi anche provare a trascinare la finestra del terminale dentro la cartella `platform-tools` in Explorer — su alcune versioni di Windows questo apre il terminale già posizionato nella cartella giusta
 
 **"L'app non accende il GPS dopo la configurazione"**
+
 - Verifica che il permesso speciale sia stato concesso correttamente: riapri il terminale, rientra nella cartella platform-tools, e riesegui il comando `adb shell pm grant com.autogps.app android.permission.WRITE_SECURE_SETTINGS`
 - Controlla che il GPS sul telefono sia completamente spento prima del test (non in modalità "risparmio")
 - Se hai un telefono Xiaomi, Samsung, Huawei o Oppo, leggi la sezione "Limitazioni note" qui sotto
 
 **"L'app smette di funzionare dopo qualche giorno"**
+
 - Alcuni produttori (soprattutto Xiaomi, Huawei, Oppo) hanno sistemi aggressivi di risparmio batteria che "uccidono" le app in background. Vai su [dontkillmyapp.com](https://dontkillmyapp.com), cerca il tuo telefono e segui le istruzioni specifiche per il tuo modello.
 - Assicurati di aver tolto AutoGPS dall'ottimizzazione batteria (Fase 8, ultimo punto)
 
@@ -375,7 +397,7 @@ In caso di incidente confermato dall'utente, l'app invia un SMS con la posizione
 - Soglia GPS dinamica basata sulla velocità: a 30 km/h bastano 18 metri per considerare l'auto ferma, a 130 km/h servono 333 metri
 - Consiglio in-app per preferire il trigger Bluetooth rispetto ad Android Auto
 
-### v2.0.0 — 24 marzo 2026
+### v2.0.0 — 22 marzo 2026
 
 - Rilevamento incidente automatico durante la guida (accelerometro + verifica GPS fermo)
 - Schermata di emergenza rossa fullscreen visibile anche a schermo bloccato
