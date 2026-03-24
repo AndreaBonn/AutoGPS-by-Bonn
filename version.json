@@ -1,6 +1,6 @@
 {
-  "version_code": 3,
-  "version_name": "2.0.0",
-  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/raw/main/AutoGPS-by-Bonn-v2.0.0.apk",
-  "changelog": "- Rilevamento incidente automatico durante la guida\n- Schermata emergenza rossa su lockscreen\n- Allarme sonoro a volume crescente\n- SMS emergenza con posizione Google Maps\n- Gestione contatti di emergenza\n- Soglia sensibilità impatto configurabile\n- Banner guida permesso overlay"
+  "version_code": 4,
+  "version_name": "2.1.0",
+  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/raw/main/AutoGPS-by-Bonn-v2.1.0.apk",
+  "changelog": "- Widget parcheggio per home screen (indirizzo, tempo, navigazione rapida)\n- Rilevamento turbolenza post-impatto (rolling/tumbling) prima del check GPS\n- Soglia GPS stillness dinamica basata sulla velocità al momento dell'impatto\n- Consiglio in-app per preferire il trigger Bluetooth"
 }

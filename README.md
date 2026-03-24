@@ -4,7 +4,7 @@
 
 # AutoGPS by Bonn
 
-**Versione attuale: 2.0.0**
+**Versione attuale: 2.1.0**
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
@@ -25,6 +25,8 @@ I due trigger lavorano in OR: basta che uno dei due sia attivo perché il GPS re
 **Ultimo parcheggio** — Ogni volta che lasci l'auto, l'app salva la posizione e te la mostra sulla mappa con l'indirizzo e da quanto tempo sei parcheggiato. Toccando la mappa si apre Google Maps; il pulsante "Naviga qui" avvia la navigazione a piedi verso la macchina. Tutto rimane sul tuo dispositivo, nessun dato viene inviato a server.
 
 **Rilevamento incidente** — Se durante il viaggio il telefono rileva un colpo forte (tramite l'accelerometro del telefono), aspetta qualche secondo e poi controlla se l'auto si è fermata. Se resta ferma per 3 minuti, mostra una schermata rossa di emergenza — visibile anche a schermo bloccato — con due pulsanti grandi: "SÌ, avvisa contatti di emergenza" e "NO, è un falso allarme". Se premi SÌ, l'app invia un SMS con la tua posizione esatta (link Google Maps) ai contatti di emergenza che hai configurato. Se non tocchi nessun pulsante entro un minuto, l'app suona un allarme a volume crescente per attirare l'attenzione. Il rilevamento funziona solo durante la guida (Bluetooth connesso o Android Auto attivo) e non interferisce con il funzionamento normale dell'app. Puoi regolare la sensibilità e scegliere i contatti dalla schermata principale.
+
+**Widget parcheggio** — Puoi aggiungere un widget alla schermata home del telefono che mostra sempre l'indirizzo dell'ultimo parcheggio e da quanto tempo sei parcheggiato. Toccando il widget si apre direttamente la navigazione verso l'auto, senza passare dall'app. Un pallino verde o grigio indica se il GPS è attivo. Il widget si aggiorna automaticamente ogni volta che parcheggi.
 
 L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha un consumo di batteria trascurabile.
 
@@ -49,7 +51,7 @@ Un APK è il file di installazione delle app Android, lo stesso che usa il Play 
 
 **Clicca su questo link:**
 
-**[AutoGPS-by-Bonn-v2.0.0.apk](AutoGPS-by-Bonn-v2.0.0.apk)** (6 MB)
+**[AutoGPS-by-Bonn-v2.1.0.apk](AutoGPS-by-Bonn-v2.1.0.apk)** (6 MB)
 
 Cliccando sul link verrai portato a una pagina di GitHub che mostra il file. Non vedrai niente di scaricato — quella è solo la pagina di "anteprima" del file su GitHub. Per scaricare effettivamente il file devi:
 
@@ -214,12 +216,12 @@ Se non vedi nessun dispositivo, controlla che il cavo sia ben inserito e che tu 
 
 **Windows** — se l'APK è nella cartella Download:
 ```
-adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.0.0.apk"
+adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.0.apk"
 ```
 
 **Mac/Linux** — se l'APK è nella cartella Download:
 ```
-adb install ~/Downloads/AutoGPS-by-Bonn-v2.0.0.apk
+adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.0.apk
 ```
 
 Se l'APK si trova in un'altra cartella, sostituisci il percorso con quello corretto. Al termine dovresti vedere `Success`.
@@ -363,6 +365,15 @@ In caso di incidente confermato dall'utente, l'app invia un SMS con la posizione
 ---
 
 ## Changelog
+
+### v2.1.0 — 24 marzo 2026
+
+- Widget parcheggio per home screen: indirizzo, tempo relativo, tap per navigare direttamente all'auto
+- Indicatore stato GPS nel widget (pallino verde/grigio)
+- Supporto dark mode per il widget
+- Rilevamento turbolenza post-impatto: l'app riconosce se l'auto sta rotolando dopo un colpo e aspetta che si fermi prima di valutare se è un incidente
+- Soglia GPS dinamica basata sulla velocità: a 30 km/h bastano 18 metri per considerare l'auto ferma, a 130 km/h servono 333 metri
+- Consiglio in-app per preferire il trigger Bluetooth rispetto ad Android Auto
 
 ### v2.0.0 — 24 marzo 2026
 
