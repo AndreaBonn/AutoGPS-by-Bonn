@@ -51,7 +51,9 @@ Un APK è il file di installazione delle app Android, lo stesso che usa il Play 
 
 **Clicca su questo link:**
 
-**[AutoGPS-by-Bonn-v2.1.0.apk](AutoGPS-by-Bonn-v2.1.0.apk)** (6 MB)
+**[AutoGPS-by-Bonn-v2.1.0.apk](AutoGPS-by-Bonn-v2.1.0.apk)** (9 MB)
+
+> **Hai dubbi sulla sicurezza?** Leggi il documento [Sicurezza e Privacy](SECURITY.md) per sapere nel dettaglio come l'app protegge i tuoi dati: crittografia AES-256, zero tracciamento, zero server, SMS verificati.
 
 Cliccando sul link verrai portato a una pagina di GitHub che mostra il file. Non vedrai niente di scaricato — quella è solo la pagina di "anteprima" del file su GitHub. Per scaricare effettivamente il file devi:
 
@@ -378,11 +380,13 @@ Dall'app puoi scegliere cosa succede quando tutti i trigger si disattivano:
 
 ---
 
-## Privacy
+## Privacy e Sicurezza
 
-L'app non comunica con nessun server, non raccoglie dati, non contiene analytics o tracker di nessun tipo. La posizione dell'ultimo parcheggio viene salvata solo sul tuo dispositivo. Tutto rimane sul tuo telefono.
+L'app non comunica con nessun server, non raccoglie dati, non contiene analytics o tracker di nessun tipo. La posizione dell'ultimo parcheggio viene salvata solo sul tuo dispositivo, cifrata con crittografia AES-256. Tutto rimane sul tuo telefono.
 
 In caso di incidente confermato dall'utente, l'app invia un SMS con la posizione ai soli contatti di emergenza configurati manualmente dall'utente. Nessun dato viene condiviso automaticamente e nessun server è coinvolto — l'SMS parte direttamente dal telefono.
+
+Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il documento **[Sicurezza e Privacy](SECURITY.md)**.
 
 ---
 
