@@ -4,11 +4,11 @@
 
 # AutoGPS by Bonn
 
-**Versione attuale: 1.1.0**
+**Versione attuale: 2.0.0**
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
-L'app rileva quando il telefono si connette al Bluetooth dell'auto (o quando parte Android Auto) e accende il GPS automaticamente. Quando ti disconnetti, lo spegne. Semplice.
+L'app rileva quando il telefono si connette al Bluetooth dell'auto (o quando parte Android Auto) e accende il GPS automaticamente. Quando ti disconnetti, lo spegne. Ricorda anche dove hai parcheggiato, così puoi ritrovare la macchina senza pensarci. E se dovesse succedere qualcosa di brutto durante il viaggio, rileva l'incidente e avvisa i tuoi contatti di emergenza con la tua posizione.
 
 ---
 
@@ -23,6 +23,8 @@ AutoGPS resta in ascolto in background e reagisce a due tipi di eventi:
 I due trigger lavorano in OR: basta che uno dei due sia attivo perché il GPS resti acceso. Si spegne solo quando nessuno dei due è attivo.
 
 **Ultimo parcheggio** — Ogni volta che lasci l'auto, l'app salva la posizione e te la mostra sulla mappa con l'indirizzo e da quanto tempo sei parcheggiato. Toccando la mappa si apre Google Maps; il pulsante "Naviga qui" avvia la navigazione a piedi verso la macchina. Tutto rimane sul tuo dispositivo, nessun dato viene inviato a server.
+
+**Rilevamento incidente** — Se durante il viaggio il telefono rileva un colpo forte (tramite l'accelerometro del telefono), aspetta qualche secondo e poi controlla se l'auto si è fermata. Se resta ferma per 3 minuti, mostra una schermata rossa di emergenza — visibile anche a schermo bloccato — con due pulsanti grandi: "SÌ, avvisa contatti di emergenza" e "NO, è un falso allarme". Se premi SÌ, l'app invia un SMS con la tua posizione esatta (link Google Maps) ai contatti di emergenza che hai configurato. Se non tocchi nessun pulsante entro un minuto, l'app suona un allarme a volume crescente per attirare l'attenzione. Il rilevamento funziona solo durante la guida (Bluetooth connesso o Android Auto attivo) e non interferisce con il funzionamento normale dell'app. Puoi regolare la sensibilità e scegliere i contatti dalla schermata principale.
 
 L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha un consumo di batteria trascurabile.
 
@@ -47,7 +49,7 @@ Un APK è il file di installazione delle app Android, lo stesso che usa il Play 
 
 **Clicca su questo link:**
 
-**[AutoGPS-by-Bonn-v1.1.0.apk](AutoGPS-by-Bonn-v1.1.0.apk)** (6 MB)
+**[AutoGPS-by-Bonn-v2.0.0.apk](AutoGPS-by-Bonn-v2.0.0.apk)** (6 MB)
 
 Cliccando sul link verrai portato a una pagina di GitHub che mostra il file. Non vedrai niente di scaricato — quella è solo la pagina di "anteprima" del file su GitHub. Per scaricare effettivamente il file devi:
 
@@ -212,12 +214,12 @@ Se non vedi nessun dispositivo, controlla che il cavo sia ben inserito e che tu 
 
 **Windows** — se l'APK è nella cartella Download:
 ```
-adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v1.1.0.apk"
+adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.0.0.apk"
 ```
 
 **Mac/Linux** — se l'APK è nella cartella Download:
 ```
-adb install ~/Downloads/AutoGPS-by-Bonn-v1.1.0.apk
+adb install ~/Downloads/AutoGPS-by-Bonn-v2.0.0.apk
 ```
 
 Se l'APK si trova in un'altra cartella, sostituisci il percorso con quello corretto. Al termine dovresti vedere `Success`.
@@ -249,6 +251,8 @@ Quando l'app te li chiede, **concedili tutti:**
 - **Posizione** — richiesta dal sistema Android per qualsiasi app che usa il Bluetooth
 - **Posizione in background** — quando ti viene chiesto, seleziona **"Consenti sempre"** e non "Solo durante l'uso". Senza questa opzione l'app non funziona con lo schermo spento.
 - **Notifiche** — necessaria per la notifica che conferma che il servizio è attivo in background
+- **SMS** — necessario se vuoi che l'app possa inviare messaggi di emergenza in caso di incidente
+- **Overlay (visualizzazione sopra altre app)** — se l'app mostra un banner arancione con scritto "Permesso overlay mancante", toccalo per aprire le impostazioni e concedere il permesso. Serve per mostrare la schermata di emergenza anche quando il telefono è bloccato.
 
 ### Aggiungere i dispositivi Bluetooth
 
@@ -261,6 +265,17 @@ Se vuoi che l'app funzioni anche con Android Auto, nella sezione dedicata tocca 
 ### Ottimizzazione batteria
 
 Se nella schermata principale vedi un **banner arancione**, toccalo e segui le istruzioni per escludere AutoGPS dall'ottimizzazione batteria. Questa ottimizzazione è una funzione di Android che "sospende" le app in background per risparmiare energia — ma per AutoGPS è un problema perché deve sempre restare in ascolto.
+
+### Contatti di emergenza (opzionale)
+
+Se vuoi usare la funzione di rilevamento incidente, nella sezione "Rilevamento Incidente" della schermata principale tocca "Contatti di emergenza". Da qui puoi:
+
+- **Importare un contatto dalla rubrica** del telefono
+- **Inserire un contatto manualmente** con nome e numero di telefono
+
+Aggiungi almeno un contatto — in caso di incidente, l'app invierà un SMS a tutti i contatti in lista con un link alla tua posizione su Google Maps. Puoi aggiungere, modificare o eliminare i contatti in qualsiasi momento.
+
+Con lo **slider "Soglia rilevamento impatto"** puoi regolare quanto l'app deve essere sensibile: un valore basso rileva anche urti lievi (ma può dare falsi allarmi), un valore alto rileva solo urti molto forti. Il valore predefinito (2.8G) è un buon compromesso per la maggior parte delle situazioni.
 
 ---
 
@@ -334,6 +349,8 @@ Dall'app puoi scegliere cosa succede quando tutti i trigger si disattivano:
 - Il controllo del GPS funziona perfettamente su Pixel e dispositivi con Android "puro" (stock). Su telefoni con interfacce molto personalizzate (Xiaomi MIUI/HyperOS, Samsung One UI) il comportamento potrebbe variare a seconda della versione del sistema.
 - Alcuni produttori (Xiaomi, Huawei, Oppo) hanno ottimizzazioni batteria aggressive che possono sospendere il servizio. Su questi dispositivi potrebbe servire una configurazione aggiuntiva — vedi [dontkillmyapp.com](https://dontkillmyapp.com) per istruzioni specifiche per il tuo modello.
 - Il servizio di accessibilità per Android Auto può essere disabilitato automaticamente dal sistema dopo gli aggiornamenti del telefono. Se smette di funzionare, verifica che sia ancora attivo in Impostazioni > Accessibilità.
+- Il rilevamento incidente usa l'accelerometro del telefono. La soglia di default (2.8G) è calibrata per distinguere un incidente da una frenata brusca, ma su strade molto dissestate potrebbe generare falsi allarmi. La soglia è configurabile dall'app.
+- L'invio SMS di emergenza richiede una SIM attiva con credito sufficiente. Su telefoni senza SIM l'SMS non verrà inviato.
 
 ---
 
@@ -341,9 +358,21 @@ Dall'app puoi scegliere cosa succede quando tutti i trigger si disattivano:
 
 L'app non comunica con nessun server, non raccoglie dati, non contiene analytics o tracker di nessun tipo. La posizione dell'ultimo parcheggio viene salvata solo sul tuo dispositivo. Tutto rimane sul tuo telefono.
 
+In caso di incidente confermato dall'utente, l'app invia un SMS con la posizione ai soli contatti di emergenza configurati manualmente dall'utente. Nessun dato viene condiviso automaticamente e nessun server è coinvolto — l'SMS parte direttamente dal telefono.
+
 ---
 
 ## Changelog
+
+### v2.0.0 — 24 marzo 2026
+
+- Rilevamento incidente automatico durante la guida (accelerometro + verifica GPS fermo)
+- Schermata di emergenza rossa fullscreen visibile anche a schermo bloccato
+- Allarme sonoro a volume crescente se non si risponde entro 60 secondi
+- Invio SMS di emergenza con posizione Google Maps ai contatti configurati
+- Gestione contatti di emergenza (importazione da rubrica o inserimento manuale)
+- Soglia sensibilità impatto configurabile (1.5G — 5.0G)
+- Banner guida per permesso overlay
 
 ### v1.1.0 — 21 marzo 2026
 
