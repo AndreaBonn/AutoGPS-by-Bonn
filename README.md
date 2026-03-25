@@ -6,7 +6,7 @@
 
 > English | **[Italiano](README.it.md)**
 
-**Current version: 2.1.1**
+**Current version: 2.1.2**
 
 Every time you get in the car you have to remember to turn on GPS. Every time you get out you have to remember to turn it off to save battery. AutoGPS does it for you.
 
@@ -26,7 +26,7 @@ The two triggers work in OR logic: as long as one is active, GPS stays on. It on
 
 **Last parking** — Every time you leave the car, the app saves the location and shows it on the map with the address and how long ago you parked. Tapping the map opens Google Maps; the "Navigate here" button starts walking navigation to the car. Everything stays on your device, no data is sent to any server.
 
-**Accident detection** — If during the trip the phone detects a strong impact (via the phone's accelerometer), it waits a few seconds and then checks if the car has stopped. If it remains still for 3 minutes, it shows a red emergency screen — visible even on the lock screen — with two large buttons: "YES, alert emergency contacts" and "NO, it's a false alarm". If you press YES, the app sends an SMS with your exact location (Google Maps link) to the emergency contacts you configured. If you don't press any button within a minute, the app plays an alarm at increasing volume to attract attention. Detection only works while driving (Bluetooth connected or Android Auto active) and doesn't interfere with the app's normal operation. You can adjust the sensitivity and choose contacts from the main screen.
+**Accident detection** — If during the trip the phone detects a strong impact (via the phone's accelerometer), it waits a few seconds and then checks if the car has stopped. If it remains still for 3 minutes, it shows a red emergency screen — visible even on the lock screen — with two large buttons: "YES, alert emergency contacts" and "NO, it's a false alarm". If you press YES, the app sends an SMS with your exact location (Google Maps link) to the emergency contacts you configured. If you don't press any button within a minute, the app plays an alarm at increasing volume to attract attention. If you still don't respond after another minute, the SMS is sent automatically — so even if you're unconscious, your contacts will be alerted. The alarm always plays through the phone's built-in speaker (not Bluetooth) and pauses any music playing so it can be clearly heard. Detection only works while driving (Bluetooth connected or Android Auto active) and doesn't interfere with the app's normal operation. You can adjust the sensitivity and choose contacts from the main screen.
 
 **Parking widget** — You can add a widget to your phone's home screen that always shows the address of the last parking and how long ago you parked. Tapping the widget opens navigation to the car directly, without opening the app. A green or gray dot indicates whether GPS is active. The widget updates automatically every time you park.
 
@@ -55,7 +55,7 @@ An APK is the installation file for Android apps, the same format the Play Store
 
 **Click this link:**
 
-**[AutoGPS-by-Bonn-v2.1.1.apk](AutoGPS-by-Bonn-v2.1.1.apk)** (9 MB)
+**[AutoGPS-by-Bonn-v2.1.2.apk](AutoGPS-by-Bonn-v2.1.2.apk)** (9 MB)
 
 > **Concerned about security?** Read the [Security and Privacy](SECURITY.md) document for full details on how the app protects your data: AES-256 encryption, zero tracking, zero servers, verified SMS.
 
@@ -237,13 +237,13 @@ If you don't see any device, check that the cable is properly connected and that
 **Windows** — if the APK is in the Downloads folder:
 
 ```
-adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.1.apk"
+adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.2.apk"
 ```
 
 **Mac/Linux** — if the APK is in the Downloads folder:
 
 ```
-adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.1.apk
+adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.2.apk
 ```
 
 If the APK is in a different folder, replace the path with the correct one. When finished you should see `Success`.
@@ -395,6 +395,13 @@ For full technical details on the security measures implemented, see the **[Secu
 ---
 
 ## Changelog
+
+### v2.1.2 — March 25, 2026
+
+- Emergency SMS auto-sent after 60 seconds of unanswered alarm (protects unconscious users)
+- Alarm sound forced to phone's built-in speaker, never Bluetooth
+- Music automatically pauses during emergency alarm
+- All accident detection timing constants centralized in one config file
 
 ### v2.1.1 — March 25, 2026
 

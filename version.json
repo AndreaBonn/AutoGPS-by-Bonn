@@ -1,6 +1,6 @@
 {
-  "version_code": 5,
-  "version_name": "2.1.1",
-  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/raw/main/AutoGPS-by-Bonn-v2.1.1.apk",
-  "changelog": "- English language support with in-app toggle (IT/EN)\n- Language preference persists across app restarts"
+  "version_code": 6,
+  "version_name": "2.1.2",
+  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/raw/main/AutoGPS-by-Bonn-v2.1.2.apk",
+  "changelog": "- Auto-send emergency SMS after 60s if user doesn't respond to alarm\n- Alarm sound forced to phone speaker (not Bluetooth)\n- Music pauses during emergency alarm via audio focus\n- Centralized all accident detection timing constants"
 }

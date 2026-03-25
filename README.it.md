@@ -6,7 +6,7 @@
 
 > **[English](README.md)** | Italiano
 
-**Versione attuale: 2.1.1**
+**Versione attuale: 2.1.2**
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
@@ -26,7 +26,7 @@ I due trigger lavorano in OR: basta che uno dei due sia attivo perché il GPS re
 
 **Ultimo parcheggio** — Ogni volta che lasci l'auto, l'app salva la posizione e te la mostra sulla mappa con l'indirizzo e da quanto tempo sei parcheggiato. Toccando la mappa si apre Google Maps; il pulsante "Naviga qui" avvia la navigazione a piedi verso la macchina. Tutto rimane sul tuo dispositivo, nessun dato viene inviato a server.
 
-**Rilevamento incidente** — Se durante il viaggio il telefono rileva un colpo forte (tramite l'accelerometro del telefono), aspetta qualche secondo e poi controlla se l'auto si è fermata. Se resta ferma per 3 minuti, mostra una schermata rossa di emergenza — visibile anche a schermo bloccato — con due pulsanti grandi: "SÌ, avvisa contatti di emergenza" e "NO, è un falso allarme". Se premi SÌ, l'app invia un SMS con la tua posizione esatta (link Google Maps) ai contatti di emergenza che hai configurato. Se non tocchi nessun pulsante entro un minuto, l'app suona un allarme a volume crescente per attirare l'attenzione. Il rilevamento funziona solo durante la guida (Bluetooth connesso o Android Auto attivo) e non interferisce con il funzionamento normale dell'app. Puoi regolare la sensibilità e scegliere i contatti dalla schermata principale.
+**Rilevamento incidente** — Se durante il viaggio il telefono rileva un colpo forte (tramite l'accelerometro del telefono), aspetta qualche secondo e poi controlla se l'auto si è fermata. Se resta ferma per 3 minuti, mostra una schermata rossa di emergenza — visibile anche a schermo bloccato — con due pulsanti grandi: "SÌ, avvisa contatti di emergenza" e "NO, è un falso allarme". Se premi SÌ, l'app invia un SMS con la tua posizione esatta (link Google Maps) ai contatti di emergenza che hai configurato. Se non tocchi nessun pulsante entro un minuto, l'app suona un allarme a volume crescente per attirare l'attenzione. Se ancora non rispondi dopo un altro minuto, l'SMS viene inviato automaticamente — così anche se sei privo di sensi, i tuoi contatti verranno avvisati. L'allarme esce sempre dallo speaker del telefono (mai dal Bluetooth) e mette in pausa la musica in riproduzione per farsi sentire chiaramente. Il rilevamento funziona solo durante la guida (Bluetooth connesso o Android Auto attivo) e non interferisce con il funzionamento normale dell'app. Puoi regolare la sensibilità e scegliere i contatti dalla schermata principale.
 
 **Widget parcheggio** — Puoi aggiungere un widget alla schermata home del telefono che mostra sempre l'indirizzo dell'ultimo parcheggio e da quanto tempo sei parcheggiato. Toccando il widget si apre direttamente la navigazione verso l'auto, senza passare dall'app. Un pallino verde o grigio indica se il GPS è attivo. Il widget si aggiorna automaticamente ogni volta che parcheggi.
 
@@ -55,7 +55,7 @@ Un APK è il file di installazione delle app Android, lo stesso che usa il Play 
 
 **Clicca su questo link:**
 
-**[AutoGPS-by-Bonn-v2.1.1.apk](AutoGPS-by-Bonn-v2.1.1.apk)** (9 MB)
+**[AutoGPS-by-Bonn-v2.1.2.apk](AutoGPS-by-Bonn-v2.1.2.apk)** (9 MB)
 
 > **Hai dubbi sulla sicurezza?** Leggi il documento [Sicurezza e Privacy](SECURITY.md) per sapere nel dettaglio come l'app protegge i tuoi dati: crittografia AES-256, zero tracciamento, zero server, SMS verificati.
 
@@ -64,7 +64,7 @@ Cliccando sul link verrai portato a una pagina di GitHub che mostra il file. Non
 - Cliccare sull'**icona con i tre puntini** (⋮) in alto a destra della pagina, oppure
 - Cliccare sul pulsante con la **freccia verso il basso** ("Download raw file")
 
-Il file da circa 6 MB verrà salvato nella cartella **Download** del tuo computer.
+Il file verrà salvato nella cartella **Download**.
 
 Dopo il download, **torna su questa pagina** per seguire i passi successivi.
 
@@ -101,8 +101,9 @@ Scorri verso il basso fino alla sezione "Downloads" e scarica la versione per il
 **Linux (Ubuntu/Debian):**
 
 1. **Clicca su "Download SDK Platform-Tools for Linux"**, scarica e decomprimi, oppure
-2. Apri il terminale e scrivi:
 
+2. Apri il terminale e scrivi:
+   
    ```
    sudo apt install adb
    ```
@@ -122,7 +123,7 @@ Il telefono nasconde alcune funzioni avanzate per evitare che gli utenti le tocc
 3. **Entra in "Info telefono"** e cerca la voce **"Numero build"**. Su alcuni telefoni è nascosta dentro "Informazioni software" o "Informazioni sulla versione". Guardati attorno — c'è.
 
 4. **Tocca "Numero build" 7 volte di fila, velocemente.** Non è uno scherzo — è davvero così che funziona.
-
+   
    - Dopo il terzo o quarto tocco comparirà un messaggio tipo: *"Sei a 3 passi dall'essere uno sviluppatore"*
    - Continua a toccare
    - Al settimo tocco comparirà: *"Ora sei uno sviluppatore!"* (o un messaggio simile)
@@ -155,7 +156,7 @@ Il Debug USB è la funzione che permette ad ADB di comunicare con il telefono.
 2. **Sul telefono potrebbe comparire una notifica** tipo "Seleziona modalità USB" o "Opzioni USB". Se compare, **seleziona "Trasferimento file"** (o "MTP"). NON scegliere "Solo ricarica" — con quella opzione il computer non riesce a comunicare con il telefono.
 
 3. **Comparirà una finestra sul telefono** con scritto qualcosa tipo: **"Consenti debug USB?"** e un codice chiamato "impronta RSA". Questo è normale — il sistema vuole confermare che sei tu ad aver autorizzato il computer.
-
+   
    - **Tocca "Consenti"**
    - Puoi anche spuntare la casella "Consenti sempre da questo computer" così non te lo chiede di nuovo
 
@@ -237,13 +238,13 @@ Se non vedi nessun dispositivo, controlla che il cavo sia ben inserito e che tu 
 **Windows** — se l'APK è nella cartella Download:
 
 ```
-adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.1.apk"
+adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.2.apk"
 ```
 
 **Mac/Linux** — se l'APK è nella cartella Download:
 
 ```
-adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.1.apk
+adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.2.apk
 ```
 
 Se l'APK si trova in un'altra cartella, sostituisci il percorso con quello corretto. Al termine dovresti vedere `Success`.
@@ -396,12 +397,19 @@ Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il
 
 ## Changelog
 
-### v2.1.1 — 25 marzo 2026
+### v2.1.2 — 25 marzo 2026
+
+- SMS di emergenza inviati automaticamente dopo 60 secondi di allarme senza risposta (protegge l'utente incosciente)
+- Allarme sonoro forzato sullo speaker del telefono, mai dal Bluetooth
+- La musica si mette in pausa automaticamente durante l'allarme di emergenza
+- Tutte le costanti di timing del rilevamento incidente centralizzate in un unico file di configurazione
+
+### v2.1.1 — 24 marzo 2026
 
 - Supporto lingua inglese con toggle in-app (IT/EN)
 - La preferenza lingua resta attiva anche dopo il riavvio dell'app
 
-### v2.1.0 — 24 marzo 2026
+### v2.1.0 — 23 marzo 2026
 
 - Widget parcheggio per home screen: indirizzo, tempo relativo, tap per navigare direttamente all'auto
 - Indicatore stato GPS nel widget (pallino verde/grigio)
