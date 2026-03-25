@@ -101,8 +101,9 @@ Scroll down to the "Downloads" section and download the version for your operati
 **Linux (Ubuntu/Debian):**
 
 1. **Click "Download SDK Platform-Tools for Linux"**, download and extract, or
-2. Open the terminal and type:
 
+2. Open the terminal and type:
+   
    ```
    sudo apt install adb
    ```
@@ -122,7 +123,7 @@ The phone hides some advanced features to prevent users from accidentally changi
 3. **Enter "About phone"** and look for **"Build number"**. On some phones it's hidden inside "Software information" or "Version information". Look around — it's there.
 
 4. **Tap "Build number" 7 times in a row, quickly.** This is not a joke — this is really how it works.
-
+   
    - After the third or fourth tap a message will appear like: *"You are 3 steps away from being a developer"*
    - Keep tapping
    - On the seventh tap: *"You are now a developer!"* (or a similar message)
@@ -155,7 +156,7 @@ USB Debugging is the feature that allows ADB to communicate with the phone.
 2. **A notification may appear on the phone** like "Select USB mode" or "USB options". If it appears, **select "File transfer"** (or "MTP"). Do NOT choose "Charging only" — with that option the computer can't communicate with the phone.
 
 3. **A dialog will appear on the phone** saying something like: **"Allow USB debugging?"** with a code called "RSA fingerprint". This is normal — the system wants to confirm that you authorized the computer.
-
+   
    - **Tap "Allow"**
    - You can also check the box "Always allow from this computer" so it doesn't ask again
 
@@ -403,12 +404,12 @@ For full technical details on the security measures implemented, see the **[Secu
 - Music automatically pauses during emergency alarm
 - All accident detection timing constants centralized in one config file
 
-### v2.1.1 — March 25, 2026
+### v2.1.1 — March 24, 2026
 
 - English language support with in-app toggle (IT/EN)
 - Language preference persists across app restarts
 
-### v2.1.0 — March 24, 2026
+### v2.1.0 — March 23, 2026
 
 - Parking widget for home screen: address, relative time, tap to navigate directly to the car
 - GPS status indicator in widget (green/gray dot)
