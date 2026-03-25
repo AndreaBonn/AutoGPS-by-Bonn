@@ -43,15 +43,16 @@ Entrambe avvengono su **HTTPS** (connessione cifrata). Nessun dato personale vie
 
 ## 3. Aggiornamenti sicuri
 
-Quando l'app verifica se esiste una versione piu' recente, applica tre livelli di protezione:
+Quando l'app verifica se esiste una versione piu' recente, applica quattro livelli di protezione:
 
 1. **HTTPS obbligatorio** — La connessione e' cifrata. Rifiuta qualsiasi risposta non cifrata.
 2. **Whitelist dei domini** — L'URL di download viene accettato solo se punta a `github.com` o `raw.githubusercontent.com`. Un URL che punta a qualsiasi altro sito viene rifiutato silenziosamente, anche se il formato e' corretto.
-3. **Timeout di rete** — Se il server non risponde entro 5 secondi, la richiesta viene annullata automaticamente per evitare blocchi.
+3. **Verifica integrita' SHA-256** — Se il file di versione contiene un hash SHA-256, l'app lo valida (deve essere esattamente 64 caratteri esadecimali) e lo mostra nel dialogo di aggiornamento. L'utente puo' confrontare l'hash con quello pubblicato su GitHub per verificare che il file scaricato non sia stato manomesso.
+4. **Timeout di rete** — Se il server non risponde entro 5 secondi, la richiesta viene annullata automaticamente per evitare blocchi.
 
 Il dialogo di aggiornamento e' **dismissibile**: puoi sempre ignorare l'aggiornamento premendo "Non ora" o il tasto indietro.
 
-> **Per l'utente:** Quando l'app ti dice che c'e' un aggiornamento, verifica che il file provenga davvero da GitHub (dove il codice e' pubblicato). Se qualcuno provasse a manomettere il controllo aggiornamenti, l'app si rifiuterebbe di scaricare da un sito sconosciuto. E se non vuoi aggiornare, puoi semplicemente chiudere l'avviso.
+> **Per l'utente:** Quando l'app ti dice che c'e' un aggiornamento, verifica che il file provenga davvero da GitHub (dove il codice e' pubblicato). Se qualcuno provasse a manomettere il controllo aggiornamenti, l'app si rifiuterebbe di scaricare da un sito sconosciuto. In piu', se disponibile, l'app mostra una "impronta digitale" del file (SHA-256) che puoi confrontare con quella pubblicata su GitHub per assicurarti che il file sia autentico. E se non vuoi aggiornare, puoi semplicemente chiudere l'avviso.
 
 ---
 
@@ -65,6 +66,8 @@ Quando premi "SI', avvisa contatti di emergenza" dopo un incidente rilevato, l'a
 4. **Mostra il risultato reale**: "SMS inviati a 3 contatti" oppure "SMS inviati a 2/3 contatti" se qualcuno fallisce
 
 Se un SMS non riesce (mancanza di segnale, credito esaurito), l'app lo segnala esplicitamente invece di far credere che sia andato tutto bene.
+
+La lista dei contatti di emergenza e' protetta anche da **corruzione parziale dei dati**: se un singolo contatto risulta illeggibile (per esempio dopo un crash del sistema), gli altri contatti validi vengono comunque caricati e utilizzati per l'invio. L'app non perde mai l'intera rubrica di emergenza per un singolo dato corrotto.
 
 Le coordinate inviate nell'SMS sono quelle reali rilevate dal GPS. Se il GPS non e' disponibile (tunnel, parcheggio sotterraneo), l'SMS indica chiaramente "POSIZIONE NON DISPONIBILE" invece di inviare una posizione sbagliata.
 
@@ -111,7 +114,7 @@ In pratica, anche se un bug nell'app tentasse di usare il permesso per qualcos'a
 | `dataExtractionRules` | Le SharedPreferences sono escluse sia dal backup cloud che dal trasferimento tra dispositivi |
 | `FLAG_IMMUTABLE` | Tutti i PendingIntent usano il flag immutabile per prevenire manipolazioni da altre app |
 | `VISIBILITY_PRIVATE` | Le notifiche dell'app non mostrano contenuto sensibile sulla schermata di blocco |
-| Log solo in debug | In produzione l'app non scrive nessun log — nessun dato finisce nei file di sistema |
+| Log solo in debug | In produzione l'app non scrive nessun log contenente dati personali — nessun numero di telefono, nome o coordinata finisce nei file di sistema |
 
 > **Per l'utente:** Se qualcuno collega il tuo telefono a un computer e prova a fare un backup dei dati delle app, i dati di AutoGPS non verranno copiati. Le notifiche dell'app non mostrano informazioni private sulla schermata di blocco. E l'app non lascia tracce nei log di sistema.
 
@@ -139,8 +142,8 @@ I test vengono eseguiti automaticamente ad ogni modifica del codice per garantir
 |------|-----------|
 | Dati a riposo | Crittografia AES-256 con chiave hardware |
 | Dati in transito | HTTPS per tutte le connessioni |
-| Aggiornamenti | HTTPS + whitelist domini + timeout |
-| SMS emergenza | Verifica invio + coordinate reali o "non disponibile" + blocco doppio invio |
+| Aggiornamenti | HTTPS + whitelist domini + SHA-256 + timeout |
+| SMS emergenza | Verifica invio + coordinate reali o "non disponibile" + blocco doppio invio + resilienza dati corrotti |
 | Schermata emergenza | Non chiudibile accidentalmente — scelta esplicita obbligatoria |
 | Concorrenza | Operazioni atomiche — nessun doppio allarme |
 | Permesso GPS | Whitelist valori — nessun uso improprio |
@@ -150,4 +153,4 @@ I test vengono eseguiti automaticamente ad ogni modifica del codice per garantir
 
 ---
 
-*Ultimo aggiornamento: marzo 2026 — versione 2.1.0*
+*Ultimo aggiornamento: marzo 2026 — versione 2.1.1*
