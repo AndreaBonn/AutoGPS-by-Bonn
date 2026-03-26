@@ -1,156 +1,156 @@
-# Sicurezza — AutoGPS by Bonn
+# Security — AutoGPS by Bonn
 
-Questo documento descrive le misure di sicurezza implementate nell'app. Ogni sezione tecnica include una spiegazione in linguaggio naturale per chi non ha un background informatico.
-
----
-
-## 1. Crittografia dei dati sul dispositivo
-
-**Tecnologia:** AES-256-GCM + AES-256-SIV tramite `EncryptedSharedPreferences` (AndroidX Security)
-
-Tutti i dati sensibili salvati dall'app sono cifrati con crittografia AES a 256 bit, lo stesso standard usato da banche e governi. I dati protetti includono:
-
-| Dato | Perche' e' sensibile |
-|------|---------------------|
-| Nomi e numeri dei contatti di emergenza | Informazioni personali (PII) |
-| Indirizzi MAC dei dispositivi Bluetooth | Identificatori univoci del dispositivo |
-| Coordinate dell'ultimo parcheggio | Posizione fisica dell'utente |
-
-La chiave di crittografia e' custodita nel **Android Keystore**, un'area hardware protetta del telefono a cui nemmeno altre app con permessi di root possono accedere direttamente.
-
-Se il dispositivo non supporta la crittografia hardware (raro, su alcuni modelli molto vecchi o con firmware personalizzati), l'app funziona comunque con le protezioni standard di Android (`MODE_PRIVATE`).
-
-> **Per l'utente:** Immagina che i tuoi dati siano chiusi in una cassaforte digitale all'interno del telefono. Anche se qualcuno riuscisse a copiare i file dell'app, vedrebbe solo dati incomprensibili. Senza la chiave (che e' legata fisicamente al tuo telefono) non possono leggere nulla.
+This document describes the security measures implemented in the app. Each technical section includes a plain-language explanation for readers without an IT background.
 
 ---
 
-## 2. Nessun server, nessun tracciamento
+## 1. On-device data encryption
 
-L'app **non comunica con nessun server** per le sue funzionalita' principali. Non ci sono analytics, tracker, telemetria, o raccolta dati di alcun tipo.
+**Technology:** AES-256-GCM + AES-256-SIV via `EncryptedSharedPreferences` (AndroidX Security)
 
-Le uniche due connessioni di rete sono:
+All sensitive data saved by the app is encrypted with 256-bit AES encryption, the same standard used by banks and governments. Protected data includes:
 
-| Connessione | Destinazione | Scopo | Frequenza |
-|-------------|-------------|-------|-----------|
-| Controllo aggiornamenti | `raw.githubusercontent.com` (GitHub) | Verificare se esiste una versione piu' recente | Max 1 volta ogni 24 ore |
-| Mappa parcheggio | `tile.openstreetmap.org` | Scaricare il tassello di mappa per il widget | Solo quando parcheggi |
+| Data | Why it's sensitive |
+|------|-------------------|
+| Emergency contact names and numbers | Personal information (PII) |
+| Bluetooth device MAC addresses | Unique device identifiers |
+| Last parking coordinates | User's physical location |
 
-Entrambe avvengono su **HTTPS** (connessione cifrata). Nessun dato personale viene inviato — l'app scarica solo informazioni pubbliche (la versione disponibile e un'immagine della mappa).
+The encryption key is stored in the **Android Keystore**, a hardware-protected area of the phone that even other apps with root permissions cannot directly access.
 
-> **Per l'utente:** L'app funziona interamente sul tuo telefono. Non esiste un "nostro server" che riceve i tuoi dati. Dove parcheggi, chi sono i tuoi contatti di emergenza, quali dispositivi Bluetooth usi — tutto resta esclusivamente nel tuo telefono.
+If the device does not support hardware encryption (rare, on some very old models or with custom firmware), the app still works with standard Android protections (`MODE_PRIVATE`).
 
----
-
-## 3. Aggiornamenti sicuri
-
-Quando l'app verifica se esiste una versione piu' recente, applica quattro livelli di protezione:
-
-1. **HTTPS obbligatorio** — La connessione e' cifrata. Rifiuta qualsiasi risposta non cifrata.
-2. **Whitelist dei domini** — L'URL di download viene accettato solo se punta a `github.com` o `raw.githubusercontent.com`. Un URL che punta a qualsiasi altro sito viene rifiutato silenziosamente, anche se il formato e' corretto.
-3. **Verifica integrita' SHA-256** — Se il file di versione contiene un hash SHA-256, l'app lo valida (deve essere esattamente 64 caratteri esadecimali) e lo mostra nel dialogo di aggiornamento. L'utente puo' confrontare l'hash con quello pubblicato su GitHub per verificare che il file scaricato non sia stato manomesso.
-4. **Timeout di rete** — Se il server non risponde entro 5 secondi, la richiesta viene annullata automaticamente per evitare blocchi.
-
-Il dialogo di aggiornamento e' **dismissibile**: puoi sempre ignorare l'aggiornamento premendo "Non ora" o il tasto indietro.
-
-> **Per l'utente:** Quando l'app ti dice che c'e' un aggiornamento, verifica che il file provenga davvero da GitHub (dove il codice e' pubblicato). Se qualcuno provasse a manomettere il controllo aggiornamenti, l'app si rifiuterebbe di scaricare da un sito sconosciuto. In piu', se disponibile, l'app mostra una "impronta digitale" del file (SHA-256) che puoi confrontare con quella pubblicata su GitHub per assicurarti che il file sia autentico. E se non vuoi aggiornare, puoi semplicemente chiudere l'avviso.
+> **For the user:** Think of your data as locked inside a digital safe within the phone. Even if someone managed to copy the app's files, they would only see incomprehensible data. Without the key (which is physically tied to your phone) they cannot read anything.
 
 ---
 
-## 4. SMS di emergenza verificati
+## 2. No servers, no tracking
 
-Quando premi "SI', avvisa contatti di emergenza" dopo un incidente rilevato, l'app:
+The app **does not communicate with any server** for its core features. There are no analytics, trackers, telemetry, or data collection of any kind.
 
-1. **Invia gli SMS in background** senza bloccare lo schermo
-2. **Verifica l'invio di ogni singola parte** del messaggio (gli SMS lunghi vengono divisi automaticamente)
-3. **Attende conferma dalla rete** che ogni parte sia stata consegnata al centro messaggi
-4. **Mostra il risultato reale**: "SMS inviati a 3 contatti" oppure "SMS inviati a 2/3 contatti" se qualcuno fallisce
+The only two network connections are:
 
-Se un SMS non riesce (mancanza di segnale, credito esaurito), l'app lo segnala esplicitamente invece di far credere che sia andato tutto bene.
+| Connection | Destination | Purpose | Frequency |
+|------------|-------------|---------|-----------|
+| Update check | `raw.githubusercontent.com` (GitHub) | Check if a newer version exists | Max once every 24 hours |
+| Parking map | `tile.openstreetmap.org` | Download the map tile for the widget | Only when you park |
 
-La lista dei contatti di emergenza e' protetta anche da **corruzione parziale dei dati**: se un singolo contatto risulta illeggibile (per esempio dopo un crash del sistema), gli altri contatti validi vengono comunque caricati e utilizzati per l'invio. L'app non perde mai l'intera rubrica di emergenza per un singolo dato corrotto.
+Both use **HTTPS** (encrypted connection). No personal data is sent — the app only downloads public information (the available version and a map image).
 
-Le coordinate inviate nell'SMS sono quelle reali rilevate dal GPS. Se il GPS non e' disponibile (tunnel, parcheggio sotterraneo), l'SMS indica chiaramente "POSIZIONE NON DISPONIBILE" invece di inviare una posizione sbagliata.
-
-Dopo aver premuto "SI'", i pulsanti vengono **immediatamente disabilitati** per evitare che un secondo tocco accidentale (dovuto a stress o al veicolo in movimento) invii gli SMS due volte.
-
-> **Per l'utente:** In una situazione di emergenza, e' fondamentale sapere se i tuoi contatti sono stati realmente avvisati. L'app non ti dice "fatto!" se in realta' qualcosa e' andato storto. E se il telefono non riesce a determinare dove ti trovi, lo dice chiaramente ai tuoi contatti, invece di mandarli nel posto sbagliato.
+> **For the user:** The app works entirely on your phone. There is no "our server" receiving your data. Where you park, who your emergency contacts are, which Bluetooth devices you use — everything stays exclusively on your phone.
 
 ---
 
-## 5. Protezione da errori di concorrenza
+## 3. Secure updates
 
-Il sistema di rilevamento incidenti gestisce eventi da piu' fonti contemporaneamente (sensore di movimento, timer, GPS). Le operazioni critiche usano **primitive atomiche** (`AtomicBoolean`, `AtomicInteger`) che garantiscono che:
+When the app checks for a newer version, it applies four layers of protection:
 
-- Un singolo impatto genera **un solo allarme**, mai due sovrapposti
-- La verifica dei dispositivi Bluetooth all'avvio non perde dati anche se due dispositivi rispondono nello stesso istante
-- L'invio SMS non puo' essere attivato due volte per lo stesso incidente
-- La **schermata di emergenza non puo' essere chiusa accidentalmente**: il tasto indietro e' bloccato — l'utente deve premere esplicitamente "SI'" o "NO"
+1. **Mandatory HTTPS** — The connection is encrypted. Any unencrypted response is rejected.
+2. **Domain whitelist** — The download URL is accepted only if it points to `github.com` or `raw.githubusercontent.com`. A URL pointing to any other site is silently rejected, even if the format is correct.
+3. **SHA-256 integrity verification** — If the version file contains a SHA-256 hash, the app validates it (it must be exactly 64 hexadecimal characters) and displays it in the update dialog. The user can compare the hash with the one published on GitHub to verify the downloaded file has not been tampered with.
+4. **Network timeout** — If the server does not respond within 5 seconds, the request is automatically cancelled to prevent hangs.
 
-> **Per l'utente:** Se hai un incidente, l'app ti mostra una sola schermata di emergenza (non due sovrapposte) e invia gli SMS una sola volta (non duplicati). La schermata non si chiude per sbaglio se premi il tasto indietro — devi fare una scelta esplicita. Tutto funziona in modo prevedibile anche in situazioni caotiche.
+The update dialog is **dismissible**: you can always ignore the update by pressing "Not now" or the back button.
 
----
-
-## 6. Permesso GPS limitato
-
-L'app utilizza il permesso `WRITE_SECURE_SETTINGS` (concesso via ADB durante l'installazione) per controllare il GPS. Questo permesso e' potente — in teoria permetterebbe di modificare molte impostazioni di sistema.
-
-Per limitare il rischio, l'app usa un **helper con whitelist** che:
-
-- Accetta **solo** il comando per cambiare la modalita' GPS
-- Ammette **solo** tre valori: spento (0), risparmio batteria (2), alta precisione (3)
-- **Rifiuta** qualsiasi altro valore o impostazione con un errore esplicito
-
-In pratica, anche se un bug nell'app tentasse di usare il permesso per qualcos'altro, il helper lo bloccherebbe.
-
-> **Per l'utente:** L'app ha il "potere" di accendere e spegnere il GPS — e' la sua funzione principale. Ma abbiamo messo un lucchetto interno che le impedisce di fare qualsiasi altra cosa con quel potere. Puo' solo toccare il GPS, nient'altro.
+> **For the user:** When the app tells you there's an update, it verifies the file actually comes from GitHub (where the code is published). If someone tried to tamper with the update check, the app would refuse to download from an unknown site. Additionally, if available, the app shows a "fingerprint" of the file (SHA-256) that you can compare with the one published on GitHub to make sure the file is authentic. And if you don't want to update, you can simply dismiss the notice.
 
 ---
 
-## 7. Protezione contro il backup non autorizzato
+## 4. Verified emergency SMS
 
-| Misura | Dettaglio |
-|--------|-----------|
-| `allowBackup=false` | I backup automatici di Android (Google One, backup locale) **non includono** i dati dell'app |
-| `dataExtractionRules` | Le SharedPreferences sono escluse sia dal backup cloud che dal trasferimento tra dispositivi |
-| `FLAG_IMMUTABLE` | Tutti i PendingIntent usano il flag immutabile per prevenire manipolazioni da altre app |
-| `VISIBILITY_PRIVATE` | Le notifiche dell'app non mostrano contenuto sensibile sulla schermata di blocco |
-| Log solo in debug | In produzione l'app non scrive nessun log contenente dati personali — nessun numero di telefono, nome o coordinata finisce nei file di sistema |
+When you press "YES, alert emergency contacts" after a detected accident, the app:
 
-> **Per l'utente:** Se qualcuno collega il tuo telefono a un computer e prova a fare un backup dei dati delle app, i dati di AutoGPS non verranno copiati. Le notifiche dell'app non mostrano informazioni private sulla schermata di blocco. E l'app non lascia tracce nei log di sistema.
+1. **Sends SMS in the background** without blocking the screen
+2. **Verifies the delivery of each individual part** of the message (long SMS are automatically split)
+3. **Waits for network confirmation** that each part was delivered to the message center
+4. **Shows the actual result**: "SMS sent to 3 contacts" or "SMS sent to 2/3 contacts" if some fail
 
----
+If an SMS fails (no signal, insufficient credit), the app reports it explicitly instead of pretending everything went fine.
 
-## 8. Test automatici
+The emergency contact list is also protected against **partial data corruption**: if a single contact is unreadable (for example after a system crash), the other valid contacts are still loaded and used for sending. The app never loses the entire emergency contact list because of a single corrupted entry.
 
-L'app include **78 test automatici** che verificano il corretto funzionamento dei componenti critici:
+The coordinates sent in the SMS are the actual ones detected by GPS. If GPS is unavailable (tunnel, underground parking), the SMS clearly states "LOCATION NOT AVAILABLE" instead of sending a wrong position.
 
-- Calcolo della soglia di movimento post-impatto (formula fisica)
-- Contenuto degli SMS di emergenza (testo, coordinate, casi limite)
-- Gestione contatti di emergenza (aggiunta, rimozione, resilienza a dati corrotti)
-- Whitelist delle impostazioni GPS (valori ammessi e rifiutati)
-- Stato dei dispositivi Bluetooth (connessione, disconnessione, concorrenza)
+After pressing "YES", the buttons are **immediately disabled** to prevent an accidental second tap (due to stress or the vehicle moving) from sending the SMS twice.
 
-I test vengono eseguiti automaticamente ad ogni modifica del codice per garantire che nessun aggiornamento introduca regressioni.
-
-> **Per l'utente:** Ogni volta che aggiorniamo l'app, 78 controlli automatici verificano che tutto funzioni correttamente — specialmente le parti che riguardano la tua sicurezza in caso di incidente. E' come un collaudo di fabbrica che viene ripetuto ad ogni aggiornamento.
+> **For the user:** In an emergency situation, it's crucial to know whether your contacts were actually alerted. The app doesn't tell you "done!" if something actually went wrong. And if the phone can't determine where you are, it tells your contacts clearly, instead of sending them to the wrong place.
 
 ---
 
-## Riepilogo
+## 5. Concurrency error protection
 
-| Area | Protezione |
+The accident detection system handles events from multiple sources simultaneously (motion sensor, timers, GPS). Critical operations use **atomic primitives** (`AtomicBoolean`, `AtomicInteger`) that guarantee:
+
+- A single impact generates **one alarm only**, never two overlapping ones
+- Bluetooth device checks at startup don't lose data even if two devices respond at the same instant
+- SMS sending cannot be triggered twice for the same accident
+- The **emergency screen cannot be accidentally dismissed**: the back button is blocked — the user must explicitly press "YES" or "NO"
+
+> **For the user:** If you have an accident, the app shows you a single emergency screen (not two overlapping ones) and sends SMS only once (no duplicates). The screen won't close by accident if you press the back button — you must make an explicit choice. Everything works predictably even in chaotic situations.
+
+---
+
+## 6. Limited GPS permission
+
+The app uses the `WRITE_SECURE_SETTINGS` permission (granted via ADB during installation) to control GPS. This permission is powerful — in theory it could modify many system settings.
+
+To limit risk, the app uses a **whitelisted helper** that:
+
+- Accepts **only** the command to change GPS mode
+- Allows **only** three values: off (0), battery saving (2), high accuracy (3)
+- **Rejects** any other value or setting with an explicit error
+
+In practice, even if a bug in the app tried to use the permission for something else, the helper would block it.
+
+> **For the user:** The app has the "power" to turn GPS on and off — that's its main function. But we've put an internal lock that prevents it from doing anything else with that power. It can only touch GPS, nothing else.
+
+---
+
+## 7. Protection against unauthorized backup
+
+| Measure | Detail |
+|---------|--------|
+| `allowBackup=false` | Android's automatic backups (Google One, local backup) **do not include** the app's data |
+| `dataExtractionRules` | SharedPreferences are excluded from both cloud backup and device-to-device transfer |
+| `FLAG_IMMUTABLE` | All PendingIntents use the immutable flag to prevent manipulation by other apps |
+| `VISIBILITY_PRIVATE` | App notifications do not show sensitive content on the lock screen |
+| Debug-only logging | In production the app does not write any log containing personal data — no phone number, name, or coordinate ends up in system files |
+
+> **For the user:** If someone connects your phone to a computer and tries to back up app data, AutoGPS data will not be copied. App notifications don't show private information on the lock screen. And the app leaves no traces in system logs.
+
+---
+
+## 8. Automated tests
+
+The app includes **78 automated tests** that verify the correct behavior of critical components:
+
+- Post-impact movement threshold calculation (physics formula)
+- Emergency SMS content (text, coordinates, edge cases)
+- Emergency contact management (add, remove, resilience to corrupted data)
+- GPS settings whitelist (allowed and rejected values)
+- Bluetooth device state (connection, disconnection, concurrency)
+
+Tests are run automatically with every code change to ensure no update introduces regressions.
+
+> **For the user:** Every time we update the app, 78 automated checks verify that everything works correctly — especially the parts that concern your safety in case of an accident. It's like a factory test that's repeated with every update.
+
+---
+
+## Summary
+
+| Area | Protection |
 |------|-----------|
-| Dati a riposo | Crittografia AES-256 con chiave hardware |
-| Dati in transito | HTTPS per tutte le connessioni |
-| Aggiornamenti | HTTPS + whitelist domini + SHA-256 + timeout |
-| SMS emergenza | Verifica invio + coordinate reali o "non disponibile" + blocco doppio invio + resilienza dati corrotti |
-| Schermata emergenza | Non chiudibile accidentalmente — scelta esplicita obbligatoria |
-| Concorrenza | Operazioni atomiche — nessun doppio allarme |
-| Permesso GPS | Whitelist valori — nessun uso improprio |
-| Backup | Disabilitato — dati non estraibili |
-| Privacy | Zero server, zero tracciamento, zero analytics |
-| Qualita' | 78 test automatici sui componenti critici |
+| Data at rest | AES-256 encryption with hardware key |
+| Data in transit | HTTPS for all connections |
+| Updates | HTTPS + domain whitelist + SHA-256 + timeout |
+| Emergency SMS | Delivery verification + real coordinates or "not available" + double-send block + corrupted data resilience |
+| Emergency screen | Cannot be accidentally dismissed — explicit choice required |
+| Concurrency | Atomic operations — no double alarms |
+| GPS permission | Value whitelist — no misuse possible |
+| Backup | Disabled — data not extractable |
+| Privacy | Zero servers, zero tracking, zero analytics |
+| Quality | 78 automated tests on critical components |
 
 ---
 
-*Ultimo aggiornamento: marzo 2026 — versione 2.1.1*
+*Last updated: March 2026 — version 2.1.2*
