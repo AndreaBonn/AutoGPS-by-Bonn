@@ -1,0 +1,90 @@
+Proprietary Software License
+
+Copyright (c) 2025-2026 Andrea Bonnici (AndreaBonn). All rights reserved.
+
+DEFINITIONS
+
+"Software" refers to AutoGPS by Bonn, including the compiled APK file,
+associated assets, documentation, and any updates or patches provided
+by the author.
+
+"Author" refers to Andrea Bonnici (AndreaBonn).
+
+"User" refers to any individual who downloads or uses the Software.
+
+GRANT OF LICENSE
+
+The Author grants the User a limited, non-exclusive, non-transferable,
+revocable license to:
+
+  1. Download the compiled APK file from the official repository.
+  2. Install and use the Software on personal Android devices.
+
+RESTRICTIONS
+
+The User may NOT:
+
+  1. Redistribute, sublicense, sell, rent, lease, or otherwise transfer
+     the Software or any copy thereof to any third party.
+  2. Modify, adapt, translate, reverse engineer, decompile, disassemble,
+     or create derivative works based on the Software.
+  3. Remove, alter, or obscure any copyright notices, trademarks, or
+     other proprietary notices contained in the Software.
+  4. Use the Software for any commercial purpose without prior written
+     consent from the Author.
+  5. Host, mirror, or republish the APK file on any platform, website,
+     or distribution channel other than the official repository.
+
+SOURCE CODE
+
+The source code of the Software is proprietary and confidential.
+Any source code, snippets, or technical documentation made available
+in this repository are provided for informational purposes only and
+do not grant any rights to use, copy, modify, or distribute the
+source code.
+
+INTELLECTUAL PROPERTY
+
+The Software, including its design, architecture, algorithms, user
+interface, and all associated intellectual property, remains the
+exclusive property of the Author.
+
+DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+THE AUTHOR MAKES NO WARRANTY THAT THE SOFTWARE WILL BE ERROR-FREE,
+UNINTERRUPTED, OR FREE OF HARMFUL COMPONENTS.
+
+LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING
+BUT NOT LIMITED TO LOSS OF DATA, DEVICE DAMAGE, PERSONAL INJURY, OR
+LOSS OF PROFITS) ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+INABILITY TO USE THE SOFTWARE, EVEN IF THE AUTHOR HAS BEEN ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGES.
+
+THE USER ACKNOWLEDGES THAT THE SOFTWARE INTERACTS WITH DEVICE SETTINGS
+(INCLUDING GPS AND BLUETOOTH) AND ASSUMES ALL RISKS ASSOCIATED WITH
+SUCH INTERACTIONS.
+
+TERMINATION
+
+This license is effective until terminated. The Author may terminate
+this license at any time without notice if the User breaches any term
+of this agreement. Upon termination, the User must immediately cease
+all use of the Software and destroy all copies in their possession.
+
+GOVERNING LAW
+
+This license shall be governed by and construed in accordance with
+the laws of the Italian Republic, without regard to its conflict of
+law provisions.
+
+CONTACT
+
+For permissions, questions, or commercial licensing inquiries:
+  GitHub: https://github.com/AndreaBonn
