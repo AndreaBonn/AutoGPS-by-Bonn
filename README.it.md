@@ -445,6 +445,14 @@ Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il
 
 ---
 
+## Feedback e Supporto
+
+Hai trovato un bug? Hai una richiesta di funzionalità? Vuoi condividere la tua esperienza?
+
+Vedi **[FEEDBACK.it.md](FEEDBACK.it.md)** per sapere come contattarmi.
+
+---
+
 ## Ti è utile?
 
 Se AutoGPS ti semplifica la vita, lascia una ⭐ al repository — è il modo più semplice per supportare il progetto.

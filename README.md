@@ -445,6 +445,14 @@ For full technical details on the security measures implemented, see the **[Secu
 
 ---
 
+## Feedback and Support
+
+Found a bug? Have a feature request? Want to share your experience?
+
+See **[FEEDBACK.md](FEEDBACK.md)** for how to reach me.
+
+---
+
 ## Is it useful to you?
 
 If AutoGPS makes your life easier, leave a ⭐ on the repository — it's the simplest way to support the project.
