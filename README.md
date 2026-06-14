@@ -457,6 +457,18 @@ See **[FEEDBACK.md](FEEDBACK.md)** for how to reach me.
 
 If AutoGPS makes your life easier, leave a ⭐ on the repository — it's the simplest way to support the project.
 
+---
+
+## Support the project
+
+AutoGPS is free to use. If it helps you and you want to give something back, you can leave a tip via PayPal. The amount is up to you and it is entirely optional.
+
+<p align="center">
+  <a href="https://paypal.me/AndreaBonacci19"><img src="https://img.shields.io/badge/Donate-PayPal-00457C?logo=paypal&logoColor=white&style=for-the-badge" alt="Donate with PayPal"></a>
+</p>
+
+---
+
 ## Author and license
 
 Developed by [Andrea Bonacci](https://github.com/AndreaBonn).
