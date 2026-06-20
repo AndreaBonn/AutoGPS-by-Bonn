@@ -6,7 +6,7 @@
 
 > **[English](README.md)** | Italiano
 
-**Versione attuale: 2.2.0**
+**Ultima versione: [controlla la pagina delle release](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest)**
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
