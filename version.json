@@ -1,7 +1,7 @@
 {
-  "version_code": 7,
-  "version_name": "2.2.0",
-  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v2.2.0/AutoGPS-by-Bonn-v2.2.0.apk",
-  "sha256": "45e1f24be3c834d7ba969b069f66786d7fc9786e7cf2b3039d274ef9042b8fe1",
-  "changelog": "- ZTL alerts: full-screen warning before you enter an active limited traffic zone (Italy)\n- Works offline with a bundled ZTL dataset, refreshed automatically from the repo\n- Exclude specific ZTLs you are authorized for so they never alert you"
+  "version_code": 8,
+  "version_name": "2.3.0",
+  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v2.3.0/AutoGPS-by-Bonn-v2.3.0.apk",
+  "sha256": "b2ee2f143e4b3d364e8f98c4048d5141fdd824ed018baf24007ca99c1efa6d6c",
+  "changelog": "- Parking timer: set a custom duration with a live countdown and an audible alert before it expires\n- ZTL zone picker: quickly filter the zone list with a search field\n- Expanded ZTL dataset to 302 zones across Italy with gate-based alerts"
 }
