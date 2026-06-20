@@ -1,0 +1,21 @@
+{
+  "zones": [
+    {
+      "id": "firenze-settore-a",
+      "city": "Firenze",
+      "name": "ZTL Settore A (Centro)",
+      "polygon": [
+        [43.7805, 11.2480],
+        [43.7805, 11.2640],
+        [43.7660, 11.2640],
+        [43.7660, 11.2480]
+      ],
+      "schedule": [
+        { "days": [1, 2, 3, 4, 5], "from": "07:30", "to": "20:00" },
+        { "days": [6], "from": "07:30", "to": "16:00" }
+      ],
+      "always_active": false,
+      "source": "comune_firenze"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "zones": [
+    {
+      "id": "roma-ztl-centro-storico",
+      "city": "Roma",
+      "name": "ZTL Centro Storico",
+      "polygon": [
+        [41.9080, 12.4640],
+        [41.9080, 12.4900],
+        [41.8900, 12.4900],
+        [41.8900, 12.4640]
+      ],
+      "schedule": [
+        { "days": [1, 2, 3, 4, 5], "from": "06:30", "to": "18:00" },
+        { "days": [6], "from": "14:00", "to": "18:00" }
+      ],
+      "always_active": false,
+      "source": "comune_roma"
+    }
+  ]
+}

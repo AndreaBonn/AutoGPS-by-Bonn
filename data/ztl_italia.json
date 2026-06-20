@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "updated": "2026-06-20",
+  "zones": [
+    {
+      "id": "bologna-ztl-centro",
+      "city": "Bologna",
+      "name": "ZTL Centro Storico",
+      "polygon": [
+        [
+          44.501,
+          11.33
+        ],
+        [
+          44.501,
+          11.356
+        ],
+        [
+          44.488,
+          11.356
+        ],
+        [
+          44.488,
+          11.33
+        ]
+      ],
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "07:00",
+          "to": "20:00"
+        }
+      ],
+      "always_active": false,
+      "source": "comune_bologna",
+      "bbox": [
+        44.488,
+        11.33,
+        44.501,
+        11.356
+      ]
+    },
+    {
+      "id": "firenze-settore-a",
+      "city": "Firenze",
+      "name": "ZTL Settore A (Centro)",
+      "polygon": [
+        [
+          43.7805,
+          11.248
+        ],
+        [
+          43.7805,
+          11.264
+        ],
+        [
+          43.766,
+          11.264
+        ],
+        [
+          43.766,
+          11.248
+        ]
+      ],
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "07:30",
+          "to": "20:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "07:30",
+          "to": "16:00"
+        }
+      ],
+      "always_active": false,
+      "source": "comune_firenze",
+      "bbox": [
+        43.766,
+        11.248,
+        43.7805,
+        11.264
+      ]
+    },
+    {
+      "id": "milano-area-c",
+      "city": "Milano",
+      "name": "Area C (Cerchia dei Bastioni)",
+      "polygon": [
+        [
+          45.479,
+          9.173
+        ],
+        [
+          45.479,
+          9.207
+        ],
+        [
+          45.451,
+          9.207
+        ],
+        [
+          45.451,
+          9.173
+        ]
+      ],
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "from": "07:30",
+          "to": "19:30"
+        },
+        {
+          "days": [
+            4
+          ],
+          "from": "07:30",
+          "to": "18:00"
+        }
+      ],
+      "always_active": false,
+      "source": "comune_milano",
+      "bbox": [
+        45.451,
+        9.173,
+        45.479,
+        9.207
+      ]
+    },
+    {
+      "id": "roma-ztl-centro-storico",
+      "city": "Roma",
+      "name": "ZTL Centro Storico",
+      "polygon": [
+        [
+          41.908,
+          12.464
+        ],
+        [
+          41.908,
+          12.49
+        ],
+        [
+          41.89,
+          12.49
+        ],
+        [
+          41.89,
+          12.464
+        ]
+      ],
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "06:30",
+          "to": "18:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "14:00",
+          "to": "18:00"
+        }
+      ],
+      "always_active": false,
+      "source": "comune_roma",
+      "bbox": [
+        41.89,
+        12.464,
+        41.908,
+        12.49
+      ]
+    },
+    {
+      "id": "torino-ztl-centrale",
+      "city": "Torino",
+      "name": "ZTL Centrale",
+      "polygon": [
+        [
+          45.078,
+          7.677
+        ],
+        [
+          45.078,
+          7.697
+        ],
+        [
+          45.063,
+          7.697
+        ],
+        [
+          45.063,
+          7.677
+        ]
+      ],
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "07:30",
+          "to": "10:30"
+        }
+      ],
+      "always_active": false,
+      "source": "comune_torino",
+      "bbox": [
+        45.063,
+        7.677,
+        45.078,
+        7.697
+      ]
+    }
+  ]
+}

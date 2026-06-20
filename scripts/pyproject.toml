@@ -1,0 +1,20 @@
+[project]
+name = "ztl-pipeline"
+version = "0.1.0"
+description = "Genera il dataset ZTL italiano per AutoGPS da OpenStreetMap/Overpass"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
