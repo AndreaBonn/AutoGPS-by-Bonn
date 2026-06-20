@@ -6,7 +6,7 @@
 
 > English | **[Italiano](README.it.md)**
 
-**Current version: 2.2.0**
+**Latest version: [check the releases page](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest)**
 
 Every time you get in the car you have to remember to turn on GPS. Every time you get out you have to remember to turn it off to save battery. AutoGPS does it for you.
 
