@@ -1,1 +1,4 @@
 .DS_Store
+
+# APK binaries are distributed as GitHub release assets, not committed
+*.apk
