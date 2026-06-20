@@ -53,15 +53,11 @@ The guide is divided into 9 steps. Steps 2-7 are done only once. It takes about 
 
 An APK is the installation file for Android apps, the same format the Play Store uses internally. AutoGPS is not on the Play Store, so you download it directly from here.
 
-**Click this link to download:**
-
-**[Download AutoGPS-by-Bonn-v2.2.0.apk](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v2.2.0/AutoGPS-by-Bonn-v2.2.0.apk)** (about 8 MB)
+**Go to the [releases page](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest) and download the latest `AutoGPS-by-Bonn-vX.X.X.apk` file** from the "Assets" section (about 8 MB).
 
 > **Concerned about security?** Read the [Security and Privacy](SECURITY.md) document for full details on how the app protects your data: AES-256 encryption, zero tracking, zero servers, verified SMS.
 
-The download starts as soon as you click the link, and the file is saved to your computer's **Downloads** folder.
-
-You can always find the newest version on the [releases page](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest).
+The file is saved to your computer's **Downloads** folder.
 
 After downloading, **come back to this page** to follow the next steps.
 
@@ -231,6 +227,8 @@ The word `device` (or a series of numbers/letters) indicates the phone is recogn
 If you don't see any device, check that the cable is properly connected and that you selected "File transfer" in Step 5.
 
 ### Install the APK
+
+Use the exact name of the file you downloaded (the version number may differ from the example below).
 
 **Windows** — if the APK is in the Downloads folder:
 
