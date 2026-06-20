@@ -6,7 +6,7 @@
 
 > **[English](README.md)** | Italiano
 
-**Versione attuale: 2.1.2**
+**Versione attuale: 2.2.0**
 
 Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
 
@@ -53,18 +53,15 @@ La guida è divisa in 9 fasi. Le fasi 2-7 si fanno una sola volta. Ci vogliono c
 
 Un APK è il file di installazione delle app Android, lo stesso che usa il Play Store internamente. AutoGPS non è sul Play Store, quindi lo scarichi direttamente da qui.
 
-**Clicca su questo link:**
+**Clicca su questo link per scaricare:**
 
-**[AutoGPS-by-Bonn-v2.1.2.apk](AutoGPS-by-Bonn-v2.1.2.apk)** (9 MB)
+**[Scarica AutoGPS-by-Bonn-v2.2.0.apk](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v2.2.0/AutoGPS-by-Bonn-v2.2.0.apk)** (circa 8 MB)
 
 > **Hai dubbi sulla sicurezza?** Leggi il documento [Sicurezza e Privacy](SECURITY.it.md) per sapere nel dettaglio come l'app protegge i tuoi dati: crittografia AES-256, zero tracciamento, zero server, SMS verificati.
 
-Cliccando sul link verrai portato a una pagina di GitHub che mostra il file. Non vedrai niente di scaricato — quella è solo la pagina di "anteprima" del file su GitHub. Per scaricare effettivamente il file devi:
+Il download parte appena clicchi sul link e il file viene salvato nella cartella **Download**.
 
-- Cliccare sull'**icona con i tre puntini** (⋮) in alto a destra della pagina, oppure
-- Cliccare sul pulsante con la **freccia verso il basso** ("Download raw file")
-
-Il file verrà salvato nella cartella **Download**.
+Trovi sempre la versione più recente nella [pagina delle release](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest).
 
 Dopo il download, **torna su questa pagina** per seguire i passi successivi.
 
@@ -238,13 +235,13 @@ Se non vedi nessun dispositivo, controlla che il cavo sia ben inserito e che tu 
 **Windows** — se l'APK è nella cartella Download:
 
 ```
-adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.1.2.apk"
+adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.2.0.apk"
 ```
 
 **Mac/Linux** — se l'APK è nella cartella Download:
 
 ```
-adb install ~/Downloads/AutoGPS-by-Bonn-v2.1.2.apk
+adb install ~/Downloads/AutoGPS-by-Bonn-v2.2.0.apk
 ```
 
 Se l'APK si trova in un'altra cartella, sostituisci il percorso con quello corretto. Al termine dovresti vedere `Success`.
@@ -396,6 +393,12 @@ Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il
 ---
 
 ## Changelog
+
+### v2.2.0 — 20 giugno 2026
+
+- Avvisi ZTL: schermata a tutto schermo prima di entrare in una zona a traffico limitato attiva (Italia)
+- Dataset ZTL italiano incluso, aggiornato automaticamente; funziona offline
+- Escludi le ZTL per cui sei autorizzato così non ti avvisano
 
 ### v2.1.2 — 25 marzo 2026
 
