@@ -1,21 +1,137 @@
 {
+  "_comment": "Patch orari su poligoni OpenStreetMap (merge per id). Fonte geometrie: OSM, ODbL.",
   "zones": [
     {
-      "id": "roma-ztl-centro-storico",
-      "city": "Roma",
-      "name": "ZTL Centro Storico",
-      "polygon": [
-        [41.9080, 12.4640],
-        [41.9080, 12.4900],
-        [41.8900, 12.4900],
-        [41.8900, 12.4640]
-      ],
+      "id": "roma-diurna-centro-storico",
       "schedule": [
-        { "days": [1, 2, 3, 4, 5], "from": "06:30", "to": "18:00" },
-        { "days": [6], "from": "14:00", "to": "18:00" }
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "06:30",
+          "to": "18:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "14:00",
+          "to": "18:00"
+        }
       ],
-      "always_active": false,
-      "source": "comune_roma"
+      "always_active": false
+    },
+    {
+      "id": "roma-notturna-centro-storico",
+      "schedule": [
+        {
+          "days": [
+            5,
+            6
+          ],
+          "from": "23:00",
+          "to": "23:59"
+        },
+        {
+          "days": [
+            6,
+            7
+          ],
+          "from": "00:00",
+          "to": "03:00"
+        }
+      ],
+      "always_active": false
+    },
+    {
+      "id": "roma-tridente",
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "06:30",
+          "to": "19:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "from": "10:00",
+          "to": "19:00"
+        }
+      ],
+      "always_active": false
+    },
+    {
+      "id": "roma-diurna-trastevere",
+      "schedule": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "06:30",
+          "to": "10:00"
+        }
+      ],
+      "always_active": false
+    },
+    {
+      "id": "roma-notturna-trastevere",
+      "schedule": [
+        {
+          "days": [
+            5,
+            6
+          ],
+          "from": "21:30",
+          "to": "23:59"
+        },
+        {
+          "days": [
+            6,
+            7
+          ],
+          "from": "00:00",
+          "to": "03:00"
+        }
+      ],
+      "always_active": false
+    },
+    {
+      "id": "roma-notturna-testaccio",
+      "schedule": [
+        {
+          "days": [
+            5,
+            6
+          ],
+          "from": "23:00",
+          "to": "23:59"
+        },
+        {
+          "days": [
+            6,
+            7
+          ],
+          "from": "00:00",
+          "to": "03:00"
+        }
+      ],
+      "always_active": false
     }
   ]
 }

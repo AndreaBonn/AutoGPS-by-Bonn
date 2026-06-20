@@ -1,20 +1,22 @@
 {
+  "_comment": "Patch orari su poligoni OpenStreetMap (merge per id). Fonte geometrie: OSM, ODbL.",
   "zones": [
     {
-      "id": "torino-ztl-centrale",
-      "city": "Torino",
-      "name": "ZTL Centrale",
-      "polygon": [
-        [45.0780, 7.6770],
-        [45.0780, 7.6970],
-        [45.0630, 7.6970],
-        [45.0630, 7.6770]
-      ],
+      "id": "torino-centrale",
       "schedule": [
-        { "days": [1, 2, 3, 4, 5], "from": "07:30", "to": "10:30" }
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "from": "07:30",
+          "to": "10:30"
+        }
       ],
-      "always_active": false,
-      "source": "comune_torino"
+      "always_active": false
     }
   ]
 }

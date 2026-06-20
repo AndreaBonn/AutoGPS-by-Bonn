@@ -3,6 +3,46 @@
 from build_ztl import finalize_zones, merge_zones, validate_all
 
 
+def _gate_zone() -> dict:
+    return {
+        "id": "siena-varchi",
+        "city": "Siena",
+        "name": "Varchi ZTL Siena",
+        "polygon": [],
+        "access_points": [[43.318, 11.331], [43.319, 11.333]],
+        "bbox": [0, 0, 0, 0],
+        "schedule": [],
+        "always_active": True,
+        "source": "openstreetmap:enforcement",
+    }
+
+
+def test_finalize_computes_bbox_from_access_points():
+    zone = _gate_zone()
+    finalize_zones([zone])
+    assert zone["bbox"] == [43.318, 11.331, 43.319, 11.333]
+
+
+def test_override_patches_schedule_keeping_osm_polygon():
+    osm = [
+        {
+            "id": "roma-centro",
+            "city": "Roma",
+            "name": "ZTL",
+            "polygon": [[41.9, 12.4], [41.9, 12.5], [41.8, 12.5]],
+            "schedule": [],
+            "always_active": True,
+            "source": "openstreetmap:relation/1",
+        }
+    ]
+    override = [{"id": "roma-centro", "schedule": [{"days": [1], "from": "07:00", "to": "19:00"}], "always_active": False}]
+    merged = merge_zones(osm_zones=osm, override_zones=override)
+    assert len(merged) == 1
+    assert merged[0]["polygon"] == osm[0]["polygon"]
+    assert merged[0]["always_active"] is False
+    assert merged[0]["schedule"][0]["from"] == "07:00"
+
+
 def _zone(zone_id: str, source: str) -> dict:
     return {
         "id": zone_id,
