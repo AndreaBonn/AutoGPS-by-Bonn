@@ -475,3 +475,7 @@ AutoGPS è gratuita. Se ti è utile e vuoi contribuire, puoi lasciare un'offerta
 Sviluppato da [Andrea Bonacci](https://github.com/AndreaBonn).
 
 Il codice sorgente è privato. L'uso dell'applicazione è libero e gratuito.
+
+### Fonti dei dati
+
+I confini delle zone a traffico limitato (ZTL) provengono da OpenStreetMap, © OpenStreetMap contributors, distribuiti sotto [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Vedi [openstreetmap.org/copyright](https://www.openstreetmap.org/copyright).

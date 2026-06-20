@@ -475,3 +475,7 @@ AutoGPS is free to use. If it helps you and you want to give something back, you
 Developed by [Andrea Bonacci](https://github.com/AndreaBonn).
 
 The source code is private. The application is free to use.
+
+### Data sources
+
+The limited traffic zone (ZTL) boundaries come from OpenStreetMap, © OpenStreetMap contributors, distributed under the [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). See [openstreetmap.org/copyright](https://www.openstreetmap.org/copyright).
