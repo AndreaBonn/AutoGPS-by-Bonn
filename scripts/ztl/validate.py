@@ -14,11 +14,15 @@ ITALY_LAT_MAX = 47.5
 ITALY_LON_MIN = 6.0
 ITALY_LON_MAX = 19.0
 
-REQUIRED_FIELDS = ("id", "city", "name", "polygon", "bbox")
+REQUIRED_FIELDS = ("id", "city", "name", "bbox")
 
 
 def validate_zone(zone: dict) -> list[str]:
     """Ritorna la lista degli errori della zona (vuota se valida).
+
+    Una zona e' valida se ha un'area (`polygon` con >=3 vertici) oppure dei
+    varchi puntuali (`access_points` non vuoto). Le coordinate di entrambi
+    devono cadere entro i confini italiani.
 
     Parameters
     ----------
@@ -37,7 +41,7 @@ def validate_zone(zone: dict) -> list[str]:
     if errors:
         return errors
 
-    errors.extend(_check_polygon(polygon=zone["polygon"], zone_id=zone_id))
+    errors.extend(_check_geometry(zone=zone, zone_id=zone_id))
     errors.extend(_check_schedule(zone=zone, zone_id=zone_id))
     return errors
 
@@ -52,14 +56,30 @@ def _check_required_fields(zone: dict, zone_id: str) -> list[str]:
     return errors
 
 
-def _check_polygon(polygon: list[list[float]], zone_id: str) -> list[str]:
-    """Verifica numero di vertici e coordinate entro i confini italiani."""
+def _check_geometry(zone: dict, zone_id: str) -> list[str]:
+    """Verifica che la zona abbia un'area valida o dei varchi, con coordinate IT."""
+    polygon = zone.get("polygon", [])
+    access_points = zone.get("access_points", [])
+    if len(polygon) < MIN_POLYGON_VERTICES and not access_points:
+        return [
+            f"[{zone_id}] geometria assente: serve polygon (>={MIN_POLYGON_VERTICES} "
+            f"vertici) o access_points"
+        ]
+
     errors: list[str] = []
-    if len(polygon) < MIN_POLYGON_VERTICES:
+    if polygon and len(polygon) < MIN_POLYGON_VERTICES:
         errors.append(f"[{zone_id}] poligono con meno di {MIN_POLYGON_VERTICES} vertici")
-    for point in polygon:
+    errors.extend(_check_coords(coords=polygon, zone_id=zone_id, label="vertice"))
+    errors.extend(_check_coords(coords=access_points, zone_id=zone_id, label="varco"))
+    return errors
+
+
+def _check_coords(coords: list[list[float]], zone_id: str, label: str) -> list[str]:
+    """Verifica che ogni coordinata sia [lat, lon] entro i confini italiani."""
+    errors: list[str] = []
+    for point in coords:
         if len(point) != 2:
-            errors.append(f"[{zone_id}] vertice malformato: {point}")
+            errors.append(f"[{zone_id}] {label} malformato: {point}")
             continue
         lat, lon = point[0], point[1]
         if not (ITALY_LAT_MIN <= lat <= ITALY_LAT_MAX and ITALY_LON_MIN <= lon <= ITALY_LON_MAX):

@@ -2,7 +2,7 @@
   "_comment": "Patch orari su poligoni OpenStreetMap (merge per id). Fonte geometrie: OSM, ODbL.",
   "zones": [
     {
-      "id": "firenze-settore-a",
+      "id": "verona-ztl",
       "schedule": [
         {
           "days": [
@@ -12,39 +12,33 @@
             4,
             5
           ],
-          "from": "07:30",
-          "to": "20:00"
+          "from": "10:00",
+          "to": "18:00"
         },
         {
           "days": [
-            6
-          ],
-          "from": "07:30",
-          "to": "16:00"
-        },
-        {
-          "days": [
+            1,
+            2,
+            3,
             4,
-            5,
-            6
+            5
           ],
-          "from": "23:00",
-          "to": "23:59"
+          "from": "20:00",
+          "to": "23:00"
         },
         {
           "days": [
-            5,
             6,
             7
           ],
-          "from": "00:00",
-          "to": "03:00"
+          "from": "10:00",
+          "to": "13:30"
         }
       ],
       "always_active": false
     },
     {
-      "id": "firenze-settore-b",
+      "id": "verona-ztl-2",
       "schedule": [
         {
           "days": [
@@ -54,39 +48,33 @@
             4,
             5
           ],
-          "from": "07:30",
-          "to": "20:00"
+          "from": "10:00",
+          "to": "18:00"
         },
         {
           "days": [
-            6
-          ],
-          "from": "07:30",
-          "to": "16:00"
-        },
-        {
-          "days": [
+            1,
+            2,
+            3,
             4,
-            5,
-            6
+            5
           ],
-          "from": "23:00",
-          "to": "23:59"
+          "from": "20:00",
+          "to": "23:00"
         },
         {
           "days": [
-            5,
             6,
             7
           ],
-          "from": "00:00",
-          "to": "03:00"
+          "from": "10:00",
+          "to": "13:30"
         }
       ],
       "always_active": false
     },
     {
-      "id": "firenze-settore-o",
+      "id": "verona-ztl-3",
       "schedule": [
         {
           "days": [
@@ -96,33 +84,27 @@
             4,
             5
           ],
-          "from": "07:30",
-          "to": "20:00"
+          "from": "10:00",
+          "to": "18:00"
         },
         {
           "days": [
-            6
-          ],
-          "from": "07:30",
-          "to": "16:00"
-        },
-        {
-          "days": [
+            1,
+            2,
+            3,
             4,
-            5,
-            6
+            5
           ],
-          "from": "23:00",
-          "to": "23:59"
+          "from": "20:00",
+          "to": "23:00"
         },
         {
           "days": [
-            5,
             6,
             7
           ],
-          "from": "00:00",
-          "to": "03:00"
+          "from": "10:00",
+          "to": "13:30"
         }
       ],
       "always_active": false

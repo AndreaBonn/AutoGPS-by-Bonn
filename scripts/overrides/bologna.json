@@ -1,20 +1,24 @@
 {
+  "_comment": "Patch orari su poligoni OpenStreetMap (merge per id). Fonte geometrie: OSM, ODbL.",
   "zones": [
     {
-      "id": "bologna-ztl-centro",
-      "city": "Bologna",
-      "name": "ZTL Centro Storico",
-      "polygon": [
-        [44.5010, 11.3300],
-        [44.5010, 11.3560],
-        [44.4880, 11.3560],
-        [44.4880, 11.3300]
-      ],
+      "id": "bologna-centro-storico",
       "schedule": [
-        { "days": [1, 2, 3, 4, 5, 6], "from": "07:00", "to": "20:00" }
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "from": "07:00",
+          "to": "20:00"
+        }
       ],
-      "always_active": false,
-      "source": "comune_bologna"
+      "always_active": false
     }
   ]
 }

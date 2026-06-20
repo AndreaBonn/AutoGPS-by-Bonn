@@ -55,3 +55,32 @@ def test_malformed_schedule_entry_is_error():
     zone = _valid_zone()
     zone["schedule"] = [{"days": [9], "from": "07:00", "to": "20:00"}]
     assert any("malformata" in e for e in validate_zone(zone))
+
+
+def _gate_zone() -> dict:
+    return {
+        "id": "siena-varchi",
+        "city": "Siena",
+        "name": "Varchi ZTL Siena",
+        "polygon": [],
+        "access_points": [[43.318, 11.331], [43.319, 11.333]],
+        "bbox": [43.318, 11.331, 43.319, 11.333],
+        "schedule": [],
+        "always_active": True,
+    }
+
+
+def test_gate_zone_without_polygon_is_valid():
+    assert validate_zone(_gate_zone()) == []
+
+
+def test_zone_without_polygon_and_without_gates_is_error():
+    zone = _gate_zone()
+    zone["access_points"] = []
+    assert any("geometria assente" in e for e in validate_zone(zone))
+
+
+def test_gate_outside_italy_is_error():
+    zone = _gate_zone()
+    zone["access_points"] = [[48.85, 2.35]]
+    assert any("fuori dall'Italia" in e for e in validate_zone(zone))

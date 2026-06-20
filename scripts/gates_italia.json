@@ -1,0 +1,3337 @@
+{
+  "_comment": "ZTL a soli varchi (gate OSM, ODbL). Generato da build_gates.py. Merge in build_ztl.py.",
+  "zones": [
+    {
+      "id": "agropoli-varchi",
+      "city": "Agropoli",
+      "name": "Varchi ZTL Agropoli",
+      "polygon": [],
+      "access_points": [
+        [
+          40.349864,
+          14.98753
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.349864,
+        14.98753,
+        40.349864,
+        14.98753
+      ]
+    },
+    {
+      "id": "appiano-sulla-strada-del-vino-varchi",
+      "city": "Appiano sulla Strada del Vino",
+      "name": "Varchi ZTL Appiano sulla Strada del Vino",
+      "polygon": [],
+      "access_points": [
+        [
+          46.441359,
+          11.259865
+        ],
+        [
+          46.441359,
+          11.259873
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.441359,
+        11.259865,
+        46.441359,
+        11.259873
+      ]
+    },
+    {
+      "id": "avellino-varchi",
+      "city": "Avellino",
+      "name": "Varchi ZTL Avellino",
+      "polygon": [],
+      "access_points": [
+        [
+          40.91321,
+          14.783391
+        ],
+        [
+          40.914942,
+          14.782876
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.91321,
+        14.782876,
+        40.914942,
+        14.783391
+      ]
+    },
+    {
+      "id": "avio-varchi",
+      "city": "Avio",
+      "name": "Varchi ZTL Avio",
+      "polygon": [],
+      "access_points": [
+        [
+          45.704664,
+          10.921693
+        ],
+        [
+          45.704668,
+          10.921684
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.704664,
+        10.921684,
+        45.704668,
+        10.921693
+      ]
+    },
+    {
+      "id": "bacoli-varchi",
+      "city": "Bacoli",
+      "name": "Varchi ZTL Bacoli",
+      "polygon": [],
+      "access_points": [
+        [
+          40.796393,
+          14.078369
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.796393,
+        14.078369,
+        40.796393,
+        14.078369
+      ]
+    },
+    {
+      "id": "bardolino-varchi",
+      "city": "Bardolino",
+      "name": "Varchi ZTL Bardolino",
+      "polygon": [],
+      "access_points": [
+        [
+          45.551906,
+          10.718379
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.551906,
+        10.718379,
+        45.551906,
+        10.718379
+      ]
+    },
+    {
+      "id": "benevento-varchi",
+      "city": "Benevento",
+      "name": "Varchi ZTL Benevento",
+      "polygon": [],
+      "access_points": [
+        [
+          41.131875,
+          14.775126
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.131875,
+        14.775126,
+        41.131875,
+        14.775126
+      ]
+    },
+    {
+      "id": "bologna-varchi",
+      "city": "Bologna",
+      "name": "Varchi ZTL Bologna",
+      "polygon": [],
+      "access_points": [
+        [
+          44.490303,
+          11.330734
+        ],
+        [
+          44.494369,
+          11.330794
+        ],
+        [
+          44.49454,
+          11.32917
+        ],
+        [
+          44.495037,
+          11.328792
+        ],
+        [
+          44.495151,
+          11.336523
+        ],
+        [
+          44.495529,
+          11.329791
+        ],
+        [
+          44.495675,
+          11.334624
+        ],
+        [
+          44.495676,
+          11.336783
+        ],
+        [
+          44.496837,
+          11.333592
+        ],
+        [
+          44.498825,
+          11.337936
+        ],
+        [
+          44.499514,
+          11.338678
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.490303,
+        11.328792,
+        44.499514,
+        11.338678
+      ]
+    },
+    {
+      "id": "bologna-varchi-2",
+      "city": "Bologna",
+      "name": "Varchi ZTL Bologna",
+      "polygon": [],
+      "access_points": [
+        [
+          44.48547,
+          11.349036
+        ],
+        [
+          44.486169,
+          11.346425
+        ],
+        [
+          44.487168,
+          11.353199
+        ],
+        [
+          44.487644,
+          11.344447
+        ],
+        [
+          44.488812,
+          11.340138
+        ],
+        [
+          44.488858,
+          11.337937
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.48547,
+        11.337937,
+        44.488858,
+        11.353199
+      ]
+    },
+    {
+      "id": "bologna-varchi-3",
+      "city": "Bologna",
+      "name": "Varchi ZTL Bologna",
+      "polygon": [],
+      "access_points": [
+        [
+          44.494024,
+          11.356102
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.494024,
+        11.356102,
+        44.494024,
+        11.356102
+      ]
+    },
+    {
+      "id": "bologna-varchi-4",
+      "city": "Bologna",
+      "name": "Varchi ZTL Bologna",
+      "polygon": [],
+      "access_points": [
+        [
+          44.498618,
+          11.346464
+        ],
+        [
+          44.49925,
+          11.34664
+        ],
+        [
+          44.500214,
+          11.34919
+        ],
+        [
+          44.500517,
+          11.347923
+        ],
+        [
+          44.501672,
+          11.352178
+        ],
+        [
+          44.50173,
+          11.350137
+        ],
+        [
+          44.502294,
+          11.348741
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.498618,
+        11.346464,
+        44.502294,
+        11.352178
+      ]
+    },
+    {
+      "id": "bolzano-varchi",
+      "city": "Bolzano",
+      "name": "Varchi ZTL Bolzano",
+      "polygon": [],
+      "access_points": [
+        [
+          46.492869,
+          11.359642
+        ],
+        [
+          46.492871,
+          11.359662
+        ],
+        [
+          46.492877,
+          11.359628
+        ],
+        [
+          46.495334,
+          11.355302
+        ],
+        [
+          46.495408,
+          11.355107
+        ],
+        [
+          46.497575,
+          11.350389
+        ],
+        [
+          46.497576,
+          11.350395
+        ],
+        [
+          46.498746,
+          11.356931
+        ],
+        [
+          46.49875,
+          11.356928
+        ],
+        [
+          46.499011,
+          11.350063
+        ],
+        [
+          46.499656,
+          11.35697
+        ],
+        [
+          46.499662,
+          11.356969
+        ],
+        [
+          46.500052,
+          11.349565
+        ],
+        [
+          46.500053,
+          11.349557
+        ],
+        [
+          46.500914,
+          11.35133
+        ],
+        [
+          46.500915,
+          11.351339
+        ],
+        [
+          46.50092,
+          11.351328
+        ],
+        [
+          46.501158,
+          11.356878
+        ],
+        [
+          46.501162,
+          11.356875
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.492869,
+        11.349557,
+        46.501162,
+        11.359662
+      ]
+    },
+    {
+      "id": "bolzano-varchi-2",
+      "city": "Bolzano",
+      "name": "Varchi ZTL Bolzano",
+      "polygon": [],
+      "access_points": [
+        [
+          46.492261,
+          11.341362
+        ],
+        [
+          46.494746,
+          11.34031
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.492261,
+        11.34031,
+        46.494746,
+        11.341362
+      ]
+    },
+    {
+      "id": "brescia-varchi",
+      "city": "Brescia",
+      "name": "Varchi ZTL Brescia",
+      "polygon": [],
+      "access_points": [
+        [
+          45.534524,
+          10.216867
+        ],
+        [
+          45.535394,
+          10.22159
+        ],
+        [
+          45.53651,
+          10.221807
+        ],
+        [
+          45.536904,
+          10.220042
+        ],
+        [
+          45.537365,
+          10.222231
+        ],
+        [
+          45.537477,
+          10.210814
+        ],
+        [
+          45.537729,
+          10.21916
+        ],
+        [
+          45.53884,
+          10.222527
+        ],
+        [
+          45.539435,
+          10.220427
+        ],
+        [
+          45.539522,
+          10.215567
+        ],
+        [
+          45.540499,
+          10.219012
+        ],
+        [
+          45.541178,
+          10.213088
+        ],
+        [
+          45.54146,
+          10.219387
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.534524,
+        10.210814,
+        45.54146,
+        10.222527
+      ]
+    },
+    {
+      "id": "budrio-varchi",
+      "city": "Budrio",
+      "name": "Varchi ZTL Budrio",
+      "polygon": [],
+      "access_points": [
+        [
+          44.522563,
+          11.523288
+        ],
+        [
+          44.522602,
+          11.52321
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.522563,
+        11.52321,
+        44.522602,
+        11.523288
+      ]
+    },
+    {
+      "id": "budrio-varchi-2",
+      "city": "Budrio",
+      "name": "Varchi ZTL Budrio",
+      "polygon": [],
+      "access_points": [
+        [
+          44.4994,
+          11.515368
+        ],
+        [
+          44.499438,
+          11.515931
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.4994,
+        11.515368,
+        44.499438,
+        11.515931
+      ]
+    },
+    {
+      "id": "calderara-di-reno-varchi",
+      "city": "Calderara di Reno",
+      "name": "Varchi ZTL Calderara di Reno",
+      "polygon": [],
+      "access_points": [
+        [
+          44.569337,
+          11.300281
+        ],
+        [
+          44.572544,
+          11.302375
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.569337,
+        11.300281,
+        44.572544,
+        11.302375
+      ]
+    },
+    {
+      "id": "calderara-di-reno-varchi-2",
+      "city": "Calderara di Reno",
+      "name": "Varchi ZTL Calderara di Reno",
+      "polygon": [],
+      "access_points": [
+        [
+          44.533749,
+          11.268827
+        ],
+        [
+          44.533756,
+          11.268821
+        ],
+        [
+          44.536789,
+          11.265925
+        ],
+        [
+          44.536805,
+          11.265911
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.533749,
+        11.265911,
+        44.536805,
+        11.268827
+      ]
+    },
+    {
+      "id": "campi-bisenzio-varchi",
+      "city": "Campi Bisenzio",
+      "name": "Varchi ZTL Campi Bisenzio",
+      "polygon": [],
+      "access_points": [
+        [
+          43.8378,
+          11.132041
+        ],
+        [
+          43.840099,
+          11.133002
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.8378,
+        11.132041,
+        43.840099,
+        11.133002
+      ]
+    },
+    {
+      "id": "caorle-varchi",
+      "city": "Caorle",
+      "name": "Varchi ZTL Caorle",
+      "polygon": [],
+      "access_points": [
+        [
+          45.597997,
+          12.886405
+        ],
+        [
+          45.598606,
+          12.889644
+        ],
+        [
+          45.598891,
+          12.890152
+        ],
+        [
+          45.599265,
+          12.886387
+        ],
+        [
+          45.599408,
+          12.886498
+        ],
+        [
+          45.599926,
+          12.887403
+        ],
+        [
+          45.600231,
+          12.88799
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.597997,
+        12.886387,
+        45.600231,
+        12.890152
+      ]
+    },
+    {
+      "id": "caserta-varchi",
+      "city": "Caserta",
+      "name": "Varchi ZTL Caserta",
+      "polygon": [],
+      "access_points": [
+        [
+          41.071864,
+          14.336202
+        ],
+        [
+          41.072,
+          14.332995
+        ],
+        [
+          41.072565,
+          14.329716
+        ],
+        [
+          41.07381,
+          14.336336
+        ],
+        [
+          41.074899,
+          14.33141
+        ],
+        [
+          41.074997,
+          14.333134
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.071864,
+        14.329716,
+        41.074997,
+        14.336336
+      ]
+    },
+    {
+      "id": "castello-molina-di-fiemme-varchi",
+      "city": "Castello-Molina di Fiemme",
+      "name": "Varchi ZTL Castello-Molina di Fiemme",
+      "polygon": [],
+      "access_points": [
+        [
+          46.289069,
+          11.41927
+        ],
+        [
+          46.289076,
+          11.419299
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.289069,
+        11.41927,
+        46.289076,
+        11.419299
+      ]
+    },
+    {
+      "id": "cecina-varchi",
+      "city": "Cecina",
+      "name": "Varchi ZTL Cecina",
+      "polygon": [],
+      "access_points": [
+        [
+          43.29694,
+          10.496942
+        ],
+        [
+          43.298271,
+          10.495214
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.29694,
+        10.495214,
+        43.298271,
+        10.496942
+      ]
+    },
+    {
+      "id": "chieri-varchi",
+      "city": "Chieri",
+      "name": "Varchi ZTL Chieri",
+      "polygon": [],
+      "access_points": [
+        [
+          45.015882,
+          7.827403
+        ],
+        [
+          45.015977,
+          7.828614
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.015882,
+        7.827403,
+        45.015977,
+        7.828614
+      ]
+    },
+    {
+      "id": "clivio-varchi",
+      "city": "Clivio",
+      "name": "Varchi ZTL Clivio",
+      "polygon": [],
+      "access_points": [
+        [
+          45.849613,
+          8.90974
+        ],
+        [
+          45.849623,
+          8.909757
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.849613,
+        8.90974,
+        45.849623,
+        8.909757
+      ]
+    },
+    {
+      "id": "crotone-varchi",
+      "city": "Crotone",
+      "name": "Varchi ZTL Crotone",
+      "polygon": [],
+      "access_points": [
+        [
+          39.076379,
+          17.130263
+        ],
+        [
+          39.076945,
+          17.130785
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        39.076379,
+        17.130263,
+        39.076945,
+        17.130785
+      ]
+    },
+    {
+      "id": "curtatone-varchi",
+      "city": "Curtatone",
+      "name": "Varchi ZTL Curtatone",
+      "polygon": [],
+      "access_points": [
+        [
+          45.154761,
+          10.694964
+        ],
+        [
+          45.155861,
+          10.693063
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.154761,
+        10.693063,
+        45.155861,
+        10.694964
+      ]
+    },
+    {
+      "id": "faedis-varchi",
+      "city": "Faedis",
+      "name": "Varchi ZTL Faedis",
+      "polygon": [],
+      "access_points": [
+        [
+          46.152351,
+          13.345903
+        ],
+        [
+          46.152352,
+          13.345899
+        ],
+        [
+          46.152355,
+          13.345902
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.152351,
+        13.345899,
+        46.152355,
+        13.345903
+      ]
+    },
+    {
+      "id": "frascati-varchi",
+      "city": "Frascati",
+      "name": "Varchi ZTL Frascati",
+      "polygon": [],
+      "access_points": [
+        [
+          41.806674,
+          12.67999
+        ],
+        [
+          41.807156,
+          12.681423
+        ],
+        [
+          41.80771,
+          12.678832
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.806674,
+        12.678832,
+        41.80771,
+        12.681423
+      ]
+    },
+    {
+      "id": "frattamaggiore-varchi",
+      "city": "Frattamaggiore",
+      "name": "Varchi ZTL Frattamaggiore",
+      "polygon": [],
+      "access_points": [
+        [
+          40.940848,
+          14.270073
+        ],
+        [
+          40.941933,
+          14.270343
+        ],
+        [
+          40.942231,
+          14.273751
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.940848,
+        14.270073,
+        40.942231,
+        14.273751
+      ]
+    },
+    {
+      "id": "genova-varchi",
+      "city": "Genova",
+      "name": "Varchi ZTL Genova",
+      "polygon": [],
+      "access_points": [
+        [
+          44.412911,
+          8.927247
+        ],
+        [
+          44.413189,
+          8.930018
+        ],
+        [
+          44.413326,
+          8.929479
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.412911,
+        8.927247,
+        44.413326,
+        8.930018
+      ]
+    },
+    {
+      "id": "genova-varchi-2",
+      "city": "Genova",
+      "name": "Varchi ZTL Genova",
+      "polygon": [],
+      "access_points": [
+        [
+          44.405099,
+          8.928565
+        ],
+        [
+          44.406596,
+          8.92783
+        ],
+        [
+          44.407449,
+          8.928532
+        ],
+        [
+          44.408334,
+          8.928915
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.405099,
+        8.92783,
+        44.408334,
+        8.928915
+      ]
+    },
+    {
+      "id": "laives-varchi",
+      "city": "Laives",
+      "name": "Varchi ZTL Laives",
+      "polygon": [],
+      "access_points": [
+        [
+          46.435751,
+          11.346768
+        ],
+        [
+          46.439451,
+          11.344294
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.435751,
+        11.344294,
+        46.439451,
+        11.346768
+      ]
+    },
+    {
+      "id": "livorno-varchi",
+      "city": "Livorno",
+      "name": "Varchi ZTL Livorno",
+      "polygon": [],
+      "access_points": [
+        [
+          43.553217,
+          10.307448
+        ],
+        [
+          43.553221,
+          10.30744
+        ],
+        [
+          43.554455,
+          10.308396
+        ],
+        [
+          43.554457,
+          10.30838
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.553217,
+        10.30744,
+        43.554457,
+        10.308396
+      ]
+    },
+    {
+      "id": "mantova-varchi",
+      "city": "Mantova",
+      "name": "Varchi ZTL Mantova",
+      "polygon": [],
+      "access_points": [
+        [
+          45.156566,
+          10.791198
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.156566,
+        10.791198,
+        45.156566,
+        10.791198
+      ]
+    },
+    {
+      "id": "matera-varchi",
+      "city": "Matera",
+      "name": "Varchi ZTL Matera",
+      "polygon": [],
+      "access_points": [
+        [
+          40.668153,
+          16.606142
+        ],
+        [
+          40.668662,
+          16.608319
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.668153,
+        16.606142,
+        40.668662,
+        16.608319
+      ]
+    },
+    {
+      "id": "matera-varchi-2",
+      "city": "Matera",
+      "name": "Varchi ZTL Matera",
+      "polygon": [],
+      "access_points": [
+        [
+          40.662543,
+          16.609085
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.662543,
+        16.609085,
+        40.662543,
+        16.609085
+      ]
+    },
+    {
+      "id": "mazzarra-sant-andrea-varchi",
+      "city": "Mazzarrà Sant'Andrea",
+      "name": "Varchi ZTL Mazzarrà Sant'Andrea",
+      "polygon": [],
+      "access_points": [
+        [
+          38.091329,
+          15.141639
+        ],
+        [
+          38.091601,
+          15.139032
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        38.091329,
+        15.139032,
+        38.091601,
+        15.141639
+      ]
+    },
+    {
+      "id": "milano-varchi",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.447417,
+          9.175275
+        ],
+        [
+          45.447677,
+          9.175203
+        ],
+        [
+          45.449388,
+          9.173353
+        ],
+        [
+          45.449735,
+          9.166136
+        ],
+        [
+          45.450081,
+          9.172239
+        ],
+        [
+          45.450247,
+          9.168222
+        ],
+        [
+          45.452192,
+          9.191103
+        ],
+        [
+          45.452213,
+          9.196553
+        ],
+        [
+          45.452256,
+          9.177893
+        ],
+        [
+          45.452295,
+          9.188672
+        ],
+        [
+          45.452576,
+          9.201649
+        ],
+        [
+          45.452633,
+          9.186886
+        ],
+        [
+          45.452761,
+          9.18448
+        ],
+        [
+          45.453102,
+          9.178403
+        ],
+        [
+          45.453152,
+          9.180363
+        ],
+        [
+          45.454001,
+          9.180482
+        ],
+        [
+          45.454235,
+          9.176144
+        ],
+        [
+          45.455096,
+          9.202854
+        ],
+        [
+          45.456082,
+          9.173963
+        ],
+        [
+          45.457206,
+          9.180873
+        ],
+        [
+          45.457276,
+          9.169277
+        ],
+        [
+          45.457308,
+          9.180898
+        ],
+        [
+          45.457445,
+          9.204129
+        ],
+        [
+          45.457462,
+          9.168836
+        ],
+        [
+          45.457515,
+          9.171253
+        ],
+        [
+          45.45755,
+          9.180646
+        ],
+        [
+          45.458458,
+          9.169806
+        ],
+        [
+          45.459246,
+          9.168439
+        ],
+        [
+          45.460139,
+          9.206292
+        ],
+        [
+          45.460247,
+          9.166884
+        ],
+        [
+          45.462374,
+          9.206255
+        ],
+        [
+          45.462778,
+          9.165185
+        ],
+        [
+          45.464684,
+          9.165755
+        ],
+        [
+          45.465977,
+          9.166182
+        ],
+        [
+          45.466537,
+          9.205724
+        ],
+        [
+          45.467429,
+          9.166879
+        ],
+        [
+          45.467768,
+          9.166766
+        ],
+        [
+          45.467809,
+          9.205476
+        ],
+        [
+          45.467866,
+          9.166427
+        ],
+        [
+          45.469383,
+          9.166097
+        ],
+        [
+          45.469485,
+          9.205321
+        ],
+        [
+          45.470691,
+          9.205308
+        ],
+        [
+          45.47092,
+          9.169095
+        ],
+        [
+          45.471522,
+          9.205205
+        ],
+        [
+          45.473857,
+          9.169942
+        ],
+        [
+          45.474079,
+          9.204513
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.447417,
+        9.165185,
+        45.474079,
+        9.206292
+      ]
+    },
+    {
+      "id": "milano-varchi-2",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.471527,
+          9.187663
+        ],
+        [
+          45.472479,
+          9.183876
+        ],
+        [
+          45.473114,
+          9.180282
+        ],
+        [
+          45.475803,
+          9.183839
+        ],
+        [
+          45.477107,
+          9.181
+        ],
+        [
+          45.477195,
+          9.195736
+        ],
+        [
+          45.477626,
+          9.181464
+        ],
+        [
+          45.478218,
+          9.181659
+        ],
+        [
+          45.479433,
+          9.186067
+        ],
+        [
+          45.479566,
+          9.19169
+        ],
+        [
+          45.479987,
+          9.187944
+        ],
+        [
+          45.480221,
+          9.186626
+        ],
+        [
+          45.48074,
+          9.182736
+        ],
+        [
+          45.48094,
+          9.1876
+        ],
+        [
+          45.48108,
+          9.186164
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.471527,
+        9.180282,
+        45.48108,
+        9.195736
+      ]
+    },
+    {
+      "id": "milano-varchi-3",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.427431,
+          9.139275
+        ],
+        [
+          45.42804,
+          9.140083
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.427431,
+        9.139275,
+        45.42804,
+        9.140083
+      ]
+    },
+    {
+      "id": "milano-varchi-4",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.484174,
+          9.236529
+        ],
+        [
+          45.484239,
+          9.236466
+        ],
+        [
+          45.484276,
+          9.237096
+        ],
+        [
+          45.484619,
+          9.235772
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.484174,
+        9.235772,
+        45.484619,
+        9.237096
+      ]
+    },
+    {
+      "id": "milano-varchi-5",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.485402,
+          9.210271
+        ],
+        [
+          45.485823,
+          9.20269
+        ],
+        [
+          45.486254,
+          9.206811
+        ],
+        [
+          45.487715,
+          9.204252
+        ],
+        [
+          45.489462,
+          9.201447
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.485402,
+        9.201447,
+        45.489462,
+        9.210271
+      ]
+    },
+    {
+      "id": "milano-varchi-6",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.462331,
+          9.187149
+        ],
+        [
+          45.462905,
+          9.188555
+        ],
+        [
+          45.463483,
+          9.188455
+        ],
+        [
+          45.465762,
+          9.186469
+        ],
+        [
+          45.466034,
+          9.186253
+        ],
+        [
+          45.466078,
+          9.186148
+        ],
+        [
+          45.466973,
+          9.192211
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.462331,
+        9.186148,
+        45.466973,
+        9.192211
+      ]
+    },
+    {
+      "id": "milano-varchi-7",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.462097,
+          9.23279
+        ],
+        [
+          45.462103,
+          9.235036
+        ],
+        [
+          45.462265,
+          9.227685
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.462097,
+        9.227685,
+        45.462265,
+        9.235036
+      ]
+    },
+    {
+      "id": "milano-varchi-8",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.461439,
+          9.217348
+        ],
+        [
+          45.462157,
+          9.2196
+        ],
+        [
+          45.462241,
+          9.217045
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.461439,
+        9.217045,
+        45.462241,
+        9.2196
+      ]
+    },
+    {
+      "id": "milano-varchi-9",
+      "city": "Milano",
+      "name": "Varchi ZTL Milano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.446478,
+          9.198497
+        ],
+        [
+          45.446509,
+          9.19743
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.446478,
+        9.19743,
+        45.446509,
+        9.198497
+      ]
+    },
+    {
+      "id": "mirano-varchi",
+      "city": "Mirano",
+      "name": "Varchi ZTL Mirano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.475998,
+          12.047377
+        ],
+        [
+          45.476005,
+          12.047344
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.475998,
+        12.047344,
+        45.476005,
+        12.047377
+      ]
+    },
+    {
+      "id": "moncalieri-varchi",
+      "city": "Moncalieri",
+      "name": "Varchi ZTL Moncalieri",
+      "polygon": [],
+      "access_points": [
+        [
+          44.997084,
+          7.71097
+        ],
+        [
+          44.997406,
+          7.709911
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.997084,
+        7.709911,
+        44.997406,
+        7.71097
+      ]
+    },
+    {
+      "id": "moncalieri-varchi-2",
+      "city": "Moncalieri",
+      "name": "Varchi ZTL Moncalieri",
+      "polygon": [],
+      "access_points": [
+        [
+          45.009553,
+          7.686031
+        ],
+        [
+          45.009822,
+          7.685936
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.009553,
+        7.685936,
+        45.009822,
+        7.686031
+      ]
+    },
+    {
+      "id": "monte-argentario-varchi",
+      "city": "Monte Argentario",
+      "name": "Varchi ZTL Monte Argentario",
+      "polygon": [],
+      "access_points": [
+        [
+          42.393503,
+          11.204181
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        42.393503,
+        11.204181,
+        42.393503,
+        11.204181
+      ]
+    },
+    {
+      "id": "monza-varchi",
+      "city": "Monza",
+      "name": "Varchi ZTL Monza",
+      "polygon": [],
+      "access_points": [
+        [
+          45.581918,
+          9.273141
+        ],
+        [
+          45.582443,
+          9.273748
+        ],
+        [
+          45.582801,
+          9.277261
+        ],
+        [
+          45.584139,
+          9.277374
+        ],
+        [
+          45.584457,
+          9.274668
+        ],
+        [
+          45.584633,
+          9.277132
+        ],
+        [
+          45.585875,
+          9.273655
+        ],
+        [
+          45.586229,
+          9.277517
+        ],
+        [
+          45.587082,
+          9.276089
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.581918,
+        9.273141,
+        45.587082,
+        9.277517
+      ]
+    },
+    {
+      "id": "ozzano-dell-emilia-varchi",
+      "city": "Ozzano dell'Emilia",
+      "name": "Varchi ZTL Ozzano dell'Emilia",
+      "polygon": [],
+      "access_points": [
+        [
+          44.390345,
+          11.431191
+        ],
+        [
+          44.39204,
+          11.42884
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.390345,
+        11.42884,
+        44.39204,
+        11.431191
+      ]
+    },
+    {
+      "id": "padova-varchi",
+      "city": "Padova",
+      "name": "Varchi ZTL Padova",
+      "polygon": [],
+      "access_points": [
+        [
+          45.402437,
+          11.87249
+        ],
+        [
+          45.405551,
+          11.868663
+        ],
+        [
+          45.406975,
+          11.868406
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.402437,
+        11.868406,
+        45.406975,
+        11.87249
+      ]
+    },
+    {
+      "id": "padova-varchi-2",
+      "city": "Padova",
+      "name": "Varchi ZTL Padova",
+      "polygon": [],
+      "access_points": [
+        [
+          45.400478,
+          11.878324
+        ],
+        [
+          45.402226,
+          11.879741
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.400478,
+        11.878324,
+        45.402226,
+        11.879741
+      ]
+    },
+    {
+      "id": "padova-varchi-3",
+      "city": "Padova",
+      "name": "Varchi ZTL Padova",
+      "polygon": [],
+      "access_points": [
+        [
+          45.409097,
+          11.875635
+        ],
+        [
+          45.410626,
+          11.877959
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.409097,
+        11.875635,
+        45.410626,
+        11.877959
+      ]
+    },
+    {
+      "id": "parma-varchi",
+      "city": "Parma",
+      "name": "Varchi ZTL Parma",
+      "polygon": [],
+      "access_points": [
+        [
+          44.804363,
+          10.324888
+        ],
+        [
+          44.804671,
+          10.324909
+        ],
+        [
+          44.804671,
+          10.32491
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.804363,
+        10.324888,
+        44.804671,
+        10.32491
+      ]
+    },
+    {
+      "id": "piacenza-varchi",
+      "city": "Piacenza",
+      "name": "Varchi ZTL Piacenza",
+      "polygon": [],
+      "access_points": [
+        [
+          45.047126,
+          9.697151
+        ],
+        [
+          45.051372,
+          9.698884
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.047126,
+        9.697151,
+        45.051372,
+        9.698884
+      ]
+    },
+    {
+      "id": "pienza-varchi",
+      "city": "Pienza",
+      "name": "Varchi ZTL Pienza",
+      "polygon": [],
+      "access_points": [
+        [
+          43.07619,
+          11.681139
+        ],
+        [
+          43.076198,
+          11.679325
+        ],
+        [
+          43.077055,
+          11.680358
+        ],
+        [
+          43.077127,
+          11.680324
+        ],
+        [
+          43.07716,
+          11.676639
+        ],
+        [
+          43.077497,
+          11.677332
+        ],
+        [
+          43.077508,
+          11.677615
+        ],
+        [
+          43.077652,
+          11.67683
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.07619,
+        11.676639,
+        43.077652,
+        11.681139
+      ]
+    },
+    {
+      "id": "pisa-varchi",
+      "city": "Pisa",
+      "name": "Varchi ZTL Pisa",
+      "polygon": [],
+      "access_points": [
+        [
+          43.710775,
+          10.400511
+        ],
+        [
+          43.711409,
+          10.397624
+        ],
+        [
+          43.711581,
+          10.405552
+        ],
+        [
+          43.713587,
+          10.404541
+        ],
+        [
+          43.713626,
+          10.405763
+        ],
+        [
+          43.713771,
+          10.395941
+        ],
+        [
+          43.715333,
+          10.407027
+        ],
+        [
+          43.715522,
+          10.398897
+        ],
+        [
+          43.715646,
+          10.400319
+        ],
+        [
+          43.715735,
+          10.395325
+        ],
+        [
+          43.71675,
+          10.399893
+        ],
+        [
+          43.716756,
+          10.407255
+        ],
+        [
+          43.719718,
+          10.406605
+        ],
+        [
+          43.719937,
+          10.395611
+        ],
+        [
+          43.722229,
+          10.401505
+        ],
+        [
+          43.723346,
+          10.398395
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.710775,
+        10.395325,
+        43.723346,
+        10.407255
+      ]
+    },
+    {
+      "id": "ravenna-varchi",
+      "city": "Ravenna",
+      "name": "Varchi ZTL Ravenna",
+      "polygon": [],
+      "access_points": [
+        [
+          44.415442,
+          12.199343
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.415442,
+        12.199343,
+        44.415442,
+        12.199343
+      ]
+    },
+    {
+      "id": "riva-del-garda-varchi",
+      "city": "Riva del Garda",
+      "name": "Varchi ZTL Riva del Garda",
+      "polygon": [],
+      "access_points": [
+        [
+          45.883702,
+          10.838819
+        ],
+        [
+          45.885655,
+          10.843568
+        ],
+        [
+          45.886375,
+          10.843049
+        ],
+        [
+          45.88667,
+          10.839814
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.883702,
+        10.838819,
+        45.88667,
+        10.843568
+      ]
+    },
+    {
+      "id": "rodano-varchi",
+      "city": "Rodano",
+      "name": "Varchi ZTL Rodano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.475949,
+          9.331758
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.475949,
+        9.331758,
+        45.475949,
+        9.331758
+      ]
+    },
+    {
+      "id": "rodano-varchi-2",
+      "city": "Rodano",
+      "name": "Varchi ZTL Rodano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.480752,
+          9.352033
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.480752,
+        9.352033,
+        45.480752,
+        9.352033
+      ]
+    },
+    {
+      "id": "rodano-varchi-3",
+      "city": "Rodano",
+      "name": "Varchi ZTL Rodano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.455154,
+          9.346189
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.455154,
+        9.346189,
+        45.455154,
+        9.346189
+      ]
+    },
+    {
+      "id": "rodano-varchi-4",
+      "city": "Rodano",
+      "name": "Varchi ZTL Rodano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.473969,
+          9.361864
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.473969,
+        9.361864,
+        45.473969,
+        9.361864
+      ]
+    },
+    {
+      "id": "roma-varchi",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.901659,
+          12.471866
+        ],
+        [
+          41.904541,
+          12.475369
+        ],
+        [
+          41.90487,
+          12.475695
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.901659,
+        12.471866,
+        41.90487,
+        12.475695
+      ]
+    },
+    {
+      "id": "roma-varchi-10",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.859146,
+          12.570219
+        ],
+        [
+          41.862458,
+          12.568707
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.859146,
+        12.568707,
+        41.862458,
+        12.570219
+      ]
+    },
+    {
+      "id": "roma-varchi-11",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.85212,
+          12.569212
+        ],
+        [
+          41.852739,
+          12.569614
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.85212,
+        12.569212,
+        41.852739,
+        12.569614
+      ]
+    },
+    {
+      "id": "roma-varchi-12",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.824458,
+          12.561782
+        ],
+        [
+          41.825186,
+          12.561207
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.824458,
+        12.561207,
+        41.825186,
+        12.561782
+      ]
+    },
+    {
+      "id": "roma-varchi-13",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.844771,
+          12.47802
+        ],
+        [
+          41.844902,
+          12.480024
+        ],
+        [
+          41.845014,
+          12.479934
+        ],
+        [
+          41.845718,
+          12.47797
+        ],
+        [
+          41.84606,
+          12.479289
+        ],
+        [
+          41.846118,
+          12.479252
+        ],
+        [
+          41.846147,
+          12.47923
+        ],
+        [
+          41.846222,
+          12.47918
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.844771,
+        12.47797,
+        41.846222,
+        12.480024
+      ]
+    },
+    {
+      "id": "roma-varchi-14",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.842207,
+          12.455018
+        ],
+        [
+          41.842231,
+          12.454911
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.842207,
+        12.454911,
+        41.842231,
+        12.455018
+      ]
+    },
+    {
+      "id": "roma-varchi-2",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.910383,
+          12.475245
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.910383,
+        12.475245,
+        41.910383,
+        12.475245
+      ]
+    },
+    {
+      "id": "roma-varchi-3",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.892984,
+          12.515605
+        ],
+        [
+          41.89655,
+          12.518693
+        ],
+        [
+          41.898591,
+          12.515048
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.892984,
+        12.515048,
+        41.898591,
+        12.518693
+      ]
+    },
+    {
+      "id": "roma-varchi-4",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.895505,
+          12.465536
+        ],
+        [
+          41.899711,
+          12.46615
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.895505,
+        12.465536,
+        41.899711,
+        12.46615
+      ]
+    },
+    {
+      "id": "roma-varchi-5",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.902173,
+          12.495476
+        ],
+        [
+          41.902198,
+          12.495439
+        ],
+        [
+          41.903243,
+          12.492521
+        ],
+        [
+          41.905342,
+          12.490178
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.902173,
+        12.490178,
+        41.905342,
+        12.495476
+      ]
+    },
+    {
+      "id": "roma-varchi-6",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.902847,
+          12.573676
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.902847,
+        12.573676,
+        41.902847,
+        12.573676
+      ]
+    },
+    {
+      "id": "roma-varchi-7",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.895105,
+          12.57449
+        ],
+        [
+          41.896339,
+          12.574354
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.895105,
+        12.574354,
+        41.896339,
+        12.57449
+      ]
+    },
+    {
+      "id": "roma-varchi-8",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.878276,
+          12.572305
+        ],
+        [
+          41.88091,
+          12.572774
+        ],
+        [
+          41.883271,
+          12.573014
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.878276,
+        12.572305,
+        41.883271,
+        12.573014
+      ]
+    },
+    {
+      "id": "roma-varchi-9",
+      "city": "Roma",
+      "name": "Varchi ZTL Roma",
+      "polygon": [],
+      "access_points": [
+        [
+          41.874159,
+          12.569512
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.874159,
+        12.569512,
+        41.874159,
+        12.569512
+      ]
+    },
+    {
+      "id": "roncadelle-varchi",
+      "city": "Roncadelle",
+      "name": "Varchi ZTL Roncadelle",
+      "polygon": [],
+      "access_points": [
+        [
+          45.538204,
+          10.146657
+        ],
+        [
+          45.538809,
+          10.146172
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.538204,
+        10.146172,
+        45.538809,
+        10.146657
+      ]
+    },
+    {
+      "id": "san-donato-milanese-varchi",
+      "city": "San Donato Milanese",
+      "name": "Varchi ZTL San Donato Milanese",
+      "polygon": [],
+      "access_points": [
+        [
+          45.429011,
+          9.260741
+        ],
+        [
+          45.429043,
+          9.260765
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.429011,
+        9.260741,
+        45.429043,
+        9.260765
+      ]
+    },
+    {
+      "id": "san-lazzaro-di-savena-varchi",
+      "city": "San Lazzaro di Savena",
+      "name": "Varchi ZTL San Lazzaro di Savena",
+      "polygon": [],
+      "access_points": [
+        [
+          44.423778,
+          11.430257
+        ],
+        [
+          44.423802,
+          11.430219
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.423778,
+        11.430219,
+        44.423802,
+        11.430257
+      ]
+    },
+    {
+      "id": "san-lazzaro-di-savena-varchi-2",
+      "city": "San Lazzaro di Savena",
+      "name": "Varchi ZTL San Lazzaro di Savena",
+      "polygon": [],
+      "access_points": [
+        [
+          44.459463,
+          11.437423
+        ],
+        [
+          44.459499,
+          11.437463
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.459463,
+        11.437423,
+        44.459499,
+        11.437463
+      ]
+    },
+    {
+      "id": "san-quirico-d-orcia-varchi",
+      "city": "San Quirico d'Orcia",
+      "name": "Varchi ZTL San Quirico d'Orcia",
+      "polygon": [],
+      "access_points": [
+        [
+          43.057865,
+          11.606654
+        ],
+        [
+          43.06069,
+          11.605837
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.057865,
+        11.605837,
+        43.06069,
+        11.606654
+      ]
+    },
+    {
+      "id": "sant-agata-de-goti-varchi",
+      "city": "Sant'Agata de' Goti",
+      "name": "Varchi ZTL Sant'Agata de' Goti",
+      "polygon": [],
+      "access_points": [
+        [
+          41.088737,
+          14.503885
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        41.088737,
+        14.503885,
+        41.088737,
+        14.503885
+      ]
+    },
+    {
+      "id": "siena-varchi",
+      "city": "Siena",
+      "name": "Varchi ZTL Siena",
+      "polygon": [],
+      "access_points": [
+        [
+          43.311721,
+          11.325359
+        ],
+        [
+          43.311968,
+          11.325302
+        ],
+        [
+          43.313131,
+          11.331948
+        ],
+        [
+          43.314427,
+          11.333447
+        ],
+        [
+          43.3146,
+          11.32613
+        ],
+        [
+          43.314661,
+          11.326106
+        ],
+        [
+          43.315031,
+          11.325865
+        ],
+        [
+          43.318342,
+          11.325655
+        ],
+        [
+          43.320361,
+          11.326851
+        ],
+        [
+          43.321635,
+          11.328142
+        ],
+        [
+          43.323087,
+          11.328038
+        ],
+        [
+          43.323474,
+          11.332254
+        ],
+        [
+          43.323475,
+          11.33244
+        ],
+        [
+          43.324129,
+          11.327156
+        ],
+        [
+          43.324779,
+          11.330467
+        ],
+        [
+          43.325467,
+          11.326164
+        ],
+        [
+          43.327649,
+          11.325388
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.311721,
+        11.325302,
+        43.327649,
+        11.333447
+      ]
+    },
+    {
+      "id": "siena-varchi-2",
+      "city": "Siena",
+      "name": "Varchi ZTL Siena",
+      "polygon": [],
+      "access_points": [
+        [
+          43.314934,
+          11.339646
+        ],
+        [
+          43.317467,
+          11.341826
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.314934,
+        11.339646,
+        43.317467,
+        11.341826
+      ]
+    },
+    {
+      "id": "siziano-varchi",
+      "city": "Siziano",
+      "name": "Varchi ZTL Siziano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.318776,
+          9.19759
+        ],
+        [
+          45.322011,
+          9.199682
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.318776,
+        9.19759,
+        45.322011,
+        9.199682
+      ]
+    },
+    {
+      "id": "siziano-varchi-2",
+      "city": "Siziano",
+      "name": "Varchi ZTL Siziano",
+      "polygon": [],
+      "access_points": [
+        [
+          45.311371,
+          9.206104
+        ],
+        [
+          45.312199,
+          9.205932
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.311371,
+        9.205932,
+        45.312199,
+        9.206104
+      ]
+    },
+    {
+      "id": "taranto-varchi",
+      "city": "Taranto",
+      "name": "Varchi ZTL Taranto",
+      "polygon": [],
+      "access_points": [
+        [
+          40.470886,
+          17.239098
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        40.470886,
+        17.239098,
+        40.470886,
+        17.239098
+      ]
+    },
+    {
+      "id": "termeno-sulla-strada-del-vino-varchi",
+      "city": "Termeno sulla Strada del Vino",
+      "name": "Varchi ZTL Termeno sulla Strada del Vino",
+      "polygon": [],
+      "access_points": [
+        [
+          46.364189,
+          11.2535
+        ],
+        [
+          46.364195,
+          11.253504
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        46.364189,
+        11.2535,
+        46.364195,
+        11.253504
+      ]
+    },
+    {
+      "id": "torbole-casaglia-varchi",
+      "city": "Torbole Casaglia",
+      "name": "Varchi ZTL Torbole Casaglia",
+      "polygon": [],
+      "access_points": [
+        [
+          45.516386,
+          10.136115
+        ],
+        [
+          45.516406,
+          10.136115
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.516386,
+        10.136115,
+        45.516406,
+        10.136115
+      ]
+    },
+    {
+      "id": "torri-del-benaco-varchi",
+      "city": "Torri del Benaco",
+      "name": "Varchi ZTL Torri del Benaco",
+      "polygon": [],
+      "access_points": [
+        [
+          45.607299,
+          10.68487
+        ],
+        [
+          45.607787,
+          10.686372
+        ],
+        [
+          45.609001,
+          10.686646
+        ],
+        [
+          45.61008,
+          10.686902
+        ],
+        [
+          45.610727,
+          10.686649
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.607299,
+        10.68487,
+        45.610727,
+        10.686902
+      ]
+    },
+    {
+      "id": "treviglio-varchi",
+      "city": "Treviglio",
+      "name": "Varchi ZTL Treviglio",
+      "polygon": [],
+      "access_points": [
+        [
+          45.523325,
+          9.592509
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.523325,
+        9.592509,
+        45.523325,
+        9.592509
+      ]
+    },
+    {
+      "id": "trezzano-rosa-varchi",
+      "city": "Trezzano Rosa",
+      "name": "Varchi ZTL Trezzano Rosa",
+      "polygon": [],
+      "access_points": [
+        [
+          45.585649,
+          9.485208
+        ],
+        [
+          45.586028,
+          9.485798
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.585649,
+        9.485208,
+        45.586028,
+        9.485798
+      ]
+    },
+    {
+      "id": "urbino-varchi",
+      "city": "Urbino",
+      "name": "Varchi ZTL Urbino",
+      "polygon": [],
+      "access_points": [
+        [
+          43.727942,
+          12.637697
+        ],
+        [
+          43.728105,
+          12.633888
+        ],
+        [
+          43.7294,
+          12.636074
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.727942,
+        12.633888,
+        43.7294,
+        12.637697
+      ]
+    },
+    {
+      "id": "urbino-varchi-2",
+      "city": "Urbino",
+      "name": "Varchi ZTL Urbino",
+      "polygon": [],
+      "access_points": [
+        [
+          43.721234,
+          12.637327
+        ],
+        [
+          43.721455,
+          12.637494
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        43.721234,
+        12.637327,
+        43.721455,
+        12.637494
+      ]
+    },
+    {
+      "id": "varese-varchi",
+      "city": "Varese",
+      "name": "Varchi ZTL Varese",
+      "polygon": [],
+      "access_points": [
+        [
+          45.817585,
+          8.828319
+        ],
+        [
+          45.817649,
+          8.826584
+        ],
+        [
+          45.818967,
+          8.828741
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.817585,
+        8.826584,
+        45.818967,
+        8.828741
+      ]
+    },
+    {
+      "id": "venezia-varchi",
+      "city": "Venezia",
+      "name": "Varchi ZTL Venezia",
+      "polygon": [],
+      "access_points": [
+        [
+          45.49235,
+          12.241581
+        ],
+        [
+          45.494402,
+          12.244478
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.49235,
+        12.241581,
+        45.494402,
+        12.244478
+      ]
+    },
+    {
+      "id": "verbania-varchi",
+      "city": "Verbania",
+      "name": "Varchi ZTL Verbania",
+      "polygon": [],
+      "access_points": [
+        [
+          45.935859,
+          8.575023
+        ],
+        [
+          45.936314,
+          8.576265
+        ],
+        [
+          45.937067,
+          8.571321
+        ],
+        [
+          45.937845,
+          8.572898
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.935859,
+        8.571321,
+        45.937845,
+        8.576265
+      ]
+    },
+    {
+      "id": "verona-varchi",
+      "city": "Verona",
+      "name": "Varchi ZTL Verona",
+      "polygon": [],
+      "access_points": [
+        [
+          45.439045,
+          11.003473
+        ],
+        [
+          45.439064,
+          11.000753
+        ],
+        [
+          45.439096,
+          11.002379
+        ],
+        [
+          45.439637,
+          11.000533
+        ],
+        [
+          45.439697,
+          11.000501
+        ],
+        [
+          45.442712,
+          11.000873
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.439045,
+        11.000501,
+        45.442712,
+        11.003473
+      ]
+    },
+    {
+      "id": "vigonovo-varchi",
+      "city": "Vigonovo",
+      "name": "Varchi ZTL Vigonovo",
+      "polygon": [],
+      "access_points": [
+        [
+          45.401272,
+          11.985387
+        ],
+        [
+          45.404752,
+          11.987382
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        45.401272,
+        11.985387,
+        45.404752,
+        11.987382
+      ]
+    },
+    {
+      "id": "zola-predosa-varchi",
+      "city": "Zola Predosa",
+      "name": "Varchi ZTL Zola Predosa",
+      "polygon": [],
+      "access_points": [
+        [
+          44.491988,
+          11.230727
+        ],
+        [
+          44.495471,
+          11.229022
+        ]
+      ],
+      "schedule": [],
+      "always_active": true,
+      "source": "openstreetmap:enforcement",
+      "bbox": [
+        44.491988,
+        11.229022,
+        44.495471,
+        11.230727
+      ]
+    }
+  ]
+}
