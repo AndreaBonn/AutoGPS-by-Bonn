@@ -1,0 +1,44 @@
+name: Refresh ZTL dataset
+
+# Rigenera data/ztl_italia.json da OpenStreetMap + override curati.
+# Apre una PR (mai push diretto su main): i dati ZTL hanno valenza legale e
+# richiedono revisione umana prima della pubblicazione.
+
+on:
+  schedule:
+    - cron: "0 4 1 * *"   # primo del mese, 04:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Run pipeline tests
+        working-directory: scripts
+        run: uv run pytest -q
+
+      - name: Build dataset
+        working-directory: scripts
+        run: uv run python build_ztl.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data: refresh ZTL dataset"
+          branch: bot/refresh-ztl
+          title: "Refresh ZTL dataset"
+          body: |
+            Aggiornamento automatico di `data/ztl_italia.json` da OpenStreetMap.
+
+            Rivedere i diff prima del merge: i dati ZTL incidono su possibili
+            sanzioni, la validazione automatica non sostituisce il controllo umano.
+          add-paths: data/ztl_italia.json

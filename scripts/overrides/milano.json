@@ -1,0 +1,21 @@
+{
+  "zones": [
+    {
+      "id": "milano-area-c",
+      "city": "Milano",
+      "name": "Area C (Cerchia dei Bastioni)",
+      "polygon": [
+        [45.4790, 9.1730],
+        [45.4790, 9.2070],
+        [45.4510, 9.2070],
+        [45.4510, 9.1730]
+      ],
+      "schedule": [
+        { "days": [1, 2, 3, 5], "from": "07:30", "to": "19:30" },
+        { "days": [4], "from": "07:30", "to": "18:00" }
+      ],
+      "always_active": false,
+      "source": "comune_milano"
+    }
+  ]
+}
