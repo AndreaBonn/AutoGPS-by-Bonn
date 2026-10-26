@@ -392,6 +392,25 @@ Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il
 
 ## Changelog
 
+### v3.0.0 — 26 ottobre 2026
+
+- Interfaccia rifatta: guida al primo avvio, checklist di configurazione, interruttore generale per mettere in pausa AutoGPS, ogni funzione spiegata in parole semplici
+- Avviso ZTL solo quando ti stai davvero avvicinando a una zona (entro 200 m e in direzione della zona), non più ogni volta che le passi vicino
+- Rilevamento incidenti: sensibilità Bassa/Media/Alta, prova di emergenza simulata, schermata di emergenza con conto alla rovescia grande e pulsanti chiari
+- Correzione: una ZTL notturna che finisce dopo mezzanotte viene ora conteggiata sul giorno successivo
+- Correzione: l'allarme di emergenza non viene mai perso né inviato due volte, e la prova simulata non può più nascondere un incidente reale
+
+### v2.4.0 — 21 giugno 2026
+
+- Timer parcheggio: un secondo promemoria suona 30 minuti prima della scadenza, oltre a quello dei 15 minuti
+- Gli avvisi del parcheggio suonano anche in modalità silenziosa e Non disturbare
+
+### v2.3.0 — 21 giugno 2026
+
+- Timer parcheggio: imposta una durata personalizzata con conto alla rovescia e avviso sonoro prima della scadenza
+- Selezione ZTL: campo di ricerca per filtrare rapidamente l'elenco delle zone
+- Dataset ZTL esteso a 302 zone in tutta Italia, con avvisi basati sui varchi
+
 ### v2.2.0 — 20 giugno 2026
 
 - Avvisi ZTL: schermata a tutto schermo prima di entrare in una zona a traffico limitato attiva (Italia)

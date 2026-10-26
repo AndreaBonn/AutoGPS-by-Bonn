@@ -392,6 +392,25 @@ For full technical details on the security measures implemented, see the **[Secu
 
 ## Changelog
 
+### v3.0.0 — October 26, 2026
+
+- Redesigned interface: first-run guide, setup checklist, master switch to pause AutoGPS, every feature explained in plain words
+- ZTL alert only when you are actually approaching a zone (within 200 m and heading towards it), no longer every time you drive nearby
+- Accident detection: Low/Medium/High sensitivity presets, emergency rehearsal, emergency screen with a big countdown and clear buttons
+- Fix: a night-time ZTL window ending after midnight is now counted on the next day
+- Fix: an emergency alert is never lost or sent twice, and the rehearsal can no longer swallow a real accident
+
+### v2.4.0 — June 21, 2026
+
+- Parking timer: a second reminder now sounds 30 minutes before expiry, in addition to the 15-minute one
+- Parking alerts play even in silent and Do Not Disturb mode, so an important reminder is never missed
+
+### v2.3.0 — June 21, 2026
+
+- Parking timer: set a custom duration with a live countdown and an audible alert before it expires
+- ZTL zone picker: quickly filter the zone list with a search field
+- Expanded ZTL dataset to 302 zones across Italy with gate-based alerts
+
 ### v2.2.0 — June 20, 2026
 
 - ZTL alerts: full-screen warning before entering an active limited traffic zone (Italy)
