@@ -281,7 +281,7 @@ Nella sezione **"Trigger Bluetooth"** tocca **"Aggiungi dispositivo"** e selezio
 
 ### Android Auto (opzionale)
 
-Se vuoi che l'app funzioni anche con Android Auto, nella sezione dedicata tocca **"Apri impostazioni accessibilità"** e abilita il servizio AutoGPS nell'elenco. Non è obbligatorio — se non usi Android Auto, salta questo passaggio.
+Se vuoi che l'app funzioni anche con Android Auto, attiva **"Usa Android Auto"** nella sezione dedicata. Non serve altro. Non è obbligatorio — se non usi Android Auto, salta questo passaggio.
 
 ### Ottimizzazione batteria
 
@@ -374,7 +374,6 @@ Dall'app puoi scegliere cosa succede quando tutti i trigger si disattivano:
 
 - Il controllo del GPS funziona perfettamente su Pixel e dispositivi con Android "puro" (stock). Su telefoni con interfacce molto personalizzate (Xiaomi MIUI/HyperOS, Samsung One UI) il comportamento potrebbe variare a seconda della versione del sistema.
 - Alcuni produttori (Xiaomi, Huawei, Oppo) hanno ottimizzazioni batteria aggressive che possono sospendere il servizio. Su questi dispositivi potrebbe servire una configurazione aggiuntiva — vedi [dontkillmyapp.com](https://dontkillmyapp.com) per istruzioni specifiche per il tuo modello.
-- Il servizio di accessibilità per Android Auto può essere disabilitato automaticamente dal sistema dopo gli aggiornamenti del telefono. Se smette di funzionare, verifica che sia ancora attivo in Impostazioni > Accessibilità.
 - Il rilevamento incidente usa l'accelerometro del telefono. La soglia di default (2.8G) è calibrata per distinguere un incidente da una frenata brusca, ma su strade molto dissestate potrebbe generare falsi allarmi. La soglia è configurabile dall'app.
 - L'invio SMS di emergenza richiede una SIM attiva con credito sufficiente. Su telefoni senza SIM l'SMS non verrà inviato.
 
@@ -391,6 +390,18 @@ Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il
 ---
 
 ## Changelog
+
+### v3.1.0 — 27 ottobre 2026
+
+- Android Auto viene ora rilevato con l'API ufficiale di connessione all'auto: basta attivare "Usa Android Auto", non c'è più nessun servizio di accessibilità da abilitare
+- Schermata di emergenza: nuovo pulsante "Chiama il 112"
+- SMS di emergenza: la schermata ti dice quando i telefoni dei contatti hanno confermato la consegna, non solo quando il messaggio è partito
+- Il GPS viene spento solo se è stato AutoGPS ad accenderlo
+- Parcheggio: la posizione si salva solo da un rilevamento recente e preciso, e un breve calo del Bluetooth non spegne più il GPS
+- Il rilevamento incidenti arma il sensore d'urto solo mentre l'auto è in movimento
+- ZTL: le zone con orari non verificati sono etichettate e si possono nascondere; i controlli GPS rallentano quando sei lontano da ogni zona, risparmiando batteria
+- Correzione: l'app non va più in crash se avviata senza il permesso di posizione
+- Correzione: controllo del download degli aggiornamenti e migrazione delle impostazioni più sicuri
 
 ### v3.0.0 — 26 ottobre 2026
 
