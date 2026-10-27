@@ -1,498 +1,366 @@
 <p align="center">
-  <img src="AutoGPS-icon.png" alt="AutoGPS icon" width="150">
+  <img src="AutoGPS-icon.png" alt="Icona AutoGPS" width="150">
 </p>
 
 # AutoGPS by Bonn
 
-> **[English](README.md)** | Italiano
+[English](README.md) | **Italiano**
 
-**Ultima versione: [controlla la pagina delle release](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest)**
+App Android che accende il GPS quando sali in auto e lo spegne quando scendi, ricorda dove hai parcheggiato, chiede aiuto dopo un incidente e ti avvisa prima delle ZTL italiane.
 
-Ogni volta che sali in macchina devi ricordarti di accendere il GPS. Ogni volta che scendi devi ricordarti di spegnerlo per non massacrare la batteria. AutoGPS lo fa al posto tuo.
+[![Ultima release](https://img.shields.io/github/v/release/AndreaBonn/AutoGPS-by-Bonn)](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest)
+![Android 8.0+](https://img.shields.io/badge/Android-8.0%2B-3ddc84)
+![Licenza: proprietaria](https://img.shields.io/badge/licenza-proprietaria-lightgrey)
 
-L'app rileva quando il telefono si connette al Bluetooth dell'auto (o quando parte Android Auto) e accende il GPS automaticamente. Quando ti disconnetti, lo spegne. Ricorda anche dove hai parcheggiato, così puoi ritrovare la macchina senza pensarci. E se dovesse succedere qualcosa di brutto durante il viaggio, rileva l'incidente e avvisa i tuoi contatti di emergenza con la tua posizione.
+Ogni volta che sali in auto devi ricordarti di accendere il GPS, e ogni volta che scendi devi ricordarti di spegnerlo per risparmiare batteria. AutoGPS lo fa al posto tuo.
+
+L'app reagisce quando il telefono si collega al Bluetooth dell'auto o quando parte Android Auto. Mentre guidi controlla se c'è un incidente e se ti stai avvicinando a una ZTL; quando scendi salva il parcheggio. Non servono account né server: tutto resta sul telefono.
+
+**Download: [ultima release](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest)** (APK, da installare con la guida qui sotto)
+
+## In pratica
+
+<p align="center">
+  <img src="assets/onboarding-it.png" alt="Guida al primo avvio: il GPS si accende da solo quando sali in auto" width="280">
+</p>
+
+La guida al primo avvio ti accompagna nei permessi, nella scelta del Bluetooth dell'auto e nel permesso di sistema da dare una volta sola.
+
+## Indice
+
+- [Funzionalità](#funzionalità)
+- [Requisiti](#requisiti)
+- [Guida all'installazione](#guida-allinstallazione)
+- [Aggiornamenti](#aggiornamenti)
+- [Risoluzione problemi](#risoluzione-problemi)
+- [Limitazioni note](#limitazioni-note)
+- [Privacy e sicurezza](#privacy-e-sicurezza)
+- [Changelog](#changelog)
+- [Feedback e supporto](#feedback-e-supporto)
+- [Supporta il progetto](#supporta-il-progetto)
+- [Autore e licenza](#autore-e-licenza)
 
 ---
 
-## Come funziona
+## Funzionalità
 
-AutoGPS resta in ascolto in background e reagisce a due tipi di eventi:
+L'app ha tre schede: **Home** mostra lo stato del GPS, cosa manca alla configurazione e l'ultimo parcheggio; **Funzioni** contiene gli interruttori di ogni funzione; **Impostazioni** contiene il comportamento allo spegnimento del GPS, il permesso di sistema, la lingua (italiano o inglese) e la scheda Informazioni.
 
-**Bluetooth** — Configuri uno o più dispositivi (vivavoce, autoradio, adattatore OBD). Quando almeno uno si connette, il GPS si accende. Quando tutti si disconnettono, si spegne.
+### GPS acceso in auto, spento quando scendi
 
-**Android Auto** — Se usi Android Auto, l'app lo rileva automaticamente e gestisce il GPS indipendentemente dal Bluetooth.
+AutoGPS reagisce a due trigger:
 
-I due trigger lavorano in OR: basta che uno dei due sia attivo perché il GPS resti acceso. Si spegne solo quando nessuno dei due è attivo.
+- **Bluetooth dell'auto**: scegli uno o più dispositivi (vivavoce, autoradio, adattatore OBD). Quando almeno uno si collega, il GPS si accende. Quando si scollegano tutti, si spegne.
+- **Android Auto**: quando parte Android Auto, il GPS si accende. L'app usa l'API ufficiale di connessione all'auto, quindi basta attivare "Usa Android Auto".
 
-**Ultimo parcheggio** — Ogni volta che lasci l'auto, l'app salva la posizione e te la mostra sulla mappa con l'indirizzo e da quanto tempo sei parcheggiato. Toccando la mappa si apre Google Maps; il pulsante "Naviga qui" avvia la navigazione a piedi verso la macchina. Tutto rimane sul tuo dispositivo, nessun dato viene inviato a server.
+I due trigger lavorano insieme: il GPS resta acceso finché uno dei due è attivo. Quando finiscono entrambi, il GPS si spegne dopo 20-35 secondi, il tempo che serve a salvare un parcheggio preciso, così un breve calo del Bluetooth non lo spegne. AutoGPS spegne solo il GPS che ha acceso lui: se l'avevi già acceso a mano, lo lascia com'è.
 
-**Rilevamento incidente** — Se durante il viaggio il telefono rileva un colpo forte (tramite l'accelerometro del telefono), aspetta qualche secondo e poi controlla se l'auto si è fermata. Se resta ferma per 3 minuti, mostra una schermata rossa di emergenza — visibile anche a schermo bloccato — con due pulsanti grandi: "SÌ, avvisa contatti di emergenza" e "NO, è un falso allarme". Se premi SÌ, l'app invia un SMS con la tua posizione esatta (link Google Maps) ai contatti di emergenza che hai configurato. Se non tocchi nessun pulsante entro un minuto, l'app suona un allarme a volume crescente per attirare l'attenzione. Se ancora non rispondi dopo un altro minuto, l'SMS viene inviato automaticamente — così anche se sei privo di sensi, i tuoi contatti verranno avvisati. L'allarme esce sempre dallo speaker del telefono (mai dal Bluetooth) e mette in pausa la musica in riproduzione per farsi sentire chiaramente. Il rilevamento funziona solo durante la guida (Bluetooth connesso o Android Auto attivo) e non interferisce con il funzionamento normale dell'app. Puoi regolare la sensibilità e scegliere i contatti dalla schermata principale.
+L'interruttore **AutoGPS attivo** in cima a Funzioni mette tutto in pausa: finché è spento, l'app non tocca il GPS.
 
-**Widget parcheggio** — Puoi aggiungere un widget alla schermata home del telefono che mostra sempre l'indirizzo dell'ultimo parcheggio e da quanto tempo sei parcheggiato. Toccando il widget si apre direttamente la navigazione verso l'auto, senza passare dall'app. Un pallino verde o grigio indica se il GPS è attivo. Il widget si aggiorna automaticamente ogni volta che parcheggi.
+In Impostazioni scegli cosa significa "spento":
 
-**Lingua** — L'app è disponibile in italiano e inglese. Puoi cambiare lingua in qualsiasi momento dal toggle in alto a destra nella schermata principale. La scelta resta attiva anche dopo il riavvio dell'app.
+- **Disattiva GPS completamente** (predefinito): massimo risparmio di batteria, le altre app non sanno dove sei
+- **Modalità risparmio batteria**: app come meteo e mappe ricevono una posizione approssimativa da rete e Wi-Fi, senza il chip GPS
 
-L'app sopravvive al riavvio del telefono, funziona con lo schermo spento, e ha un consumo di batteria trascurabile.
+### Ultimo parcheggio
+
+<p align="center">
+  <img src="assets/parking-card-it.png" alt="Scheda dell'ultimo parcheggio con indirizzo, nota e timer della sosta" width="390">
+</p>
+
+Quando lasci l'auto l'app salva il punto e lo mostra sulla mappa con l'indirizzo e da quanto tempo hai parcheggiato. "Vai alla macchina" avvia la navigazione a piedi. Il punto viene salvato solo da una posizione recente e precisa, e viene sostituito solo se ti sposti di più di 100 metri o dopo un viaggio di almeno 10 minuti.
+
+- **Nota**: un testo libero come "Piano -2, settore B"
+- **Timer sosta**: 15 min, 30 min, 1 ora, 2 ore o una durata personalizzata, con conto alla rovescia. I promemoria suonano 30 e 15 minuti prima della scadenza (quando la durata lo permette) e alla scadenza, anche in modalità silenziosa e Non disturbare
+- **Widget**: un widget nella schermata Home mostra l'indirizzo e il tempo trascorso dal parcheggio; toccandolo parte la navigazione verso l'auto
+
+Tutto resta sul telefono.
+
+### Rilevamento incidenti
+
+<p align="center">
+  <img src="assets/emergency-it.png" alt="Schermata di emergenza con conto alla rovescia e pulsanti Chiedi aiuto, Sto bene e Chiama il 112" width="280">
+</p>
+
+Mentre guidi, l'app usa l'accelerometro per rilevare un urto forte. Il sensore si arma solo quando l'auto è in movimento (sopra circa 15 km/h), quindi un telefono che cade in un'auto parcheggiata non conta. Dopo un urto l'app aspetta che l'auto smetta di muoversi, poi verifica con il GPS per 3 minuti che resti ferma.
+
+Se resta ferma, compare una schermata rossa di emergenza, anche a schermo bloccato:
+
+- **Chiedi aiuto** invia un SMS ai contatti di emergenza con la tua posizione come link Google Maps e la velocità misurata prima dell'urto. Se il GPS non ha una posizione (galleria, parcheggio sotterraneo), l'SMS scrive "POSIZIONE NON DISPONIBILE" invece di mandarne una sbagliata
+- **Sto bene** chiude l'allarme
+- **Chiama il 112** apre il telefono con il numero unico di emergenza
+
+Se nessuno risponde entro 60 secondi, suona un allarme a volume crescente dall'altoparlante del telefono (mai dal Bluetooth), mettendo in pausa la musica. Dopo altri 60 secondi l'SMS parte da solo, così i contatti vengono avvisati anche se non puoi rispondere. La schermata ti dice poi quanti telefoni dei contatti hanno confermato la consegna, non solo quanti messaggi sono partiti.
+
+Impostazioni nella sezione Rilevamento incidenti:
+
+- **Sensibilità**: Bassa, Media (predefinita, 2,0 G) o Alta
+- **Contatti di emergenza**: fino a 10, importati dalla rubrica o inseriti a mano
+- **Prova la schermata di emergenza**: una prova che mostra la schermata vera senza inviare SMS
+
+### Avvisi ZTL
+
+Un avviso a schermo intero ti avverte prima di entrare in una zona a traffico limitato attiva. Il dataset copre 302 zone in 135 città italiane, è incluso nell'app (funziona offline) e viene aggiornato da questo repository al massimo una volta al giorno.
+
+- L'avviso scatta solo quando sei entro 200 metri e ti stai dirigendo verso la zona, non ogni volta che ci passi vicino. Mostra la distanza e si chiude da solo dopo 15 secondi
+- Le zone con orario non verificato sono segnalate con "Orario non verificato: controlla il cartello"; puoi scegliere di essere avvisato solo per le ZTL con orario noto
+- Puoi aggiungere le zone in cui sei autorizzato, e non ti avviseranno mai
+- Quando sei lontano da tutte le zone, l'app controlla la posizione meno spesso per risparmiare batteria
+
+I dati sono indicativi: segui sempre la segnaletica.
 
 ---
 
 ## Requisiti
 
-- **Telefono Android 8.0 o superiore** (Android 9, 10, 11, 12, 13, 14, 15, 16 — tutti compatibili). Testata su Pixel 8 Pro.
-- **Un computer** (Windows, Mac o Linux) con una porta USB libera — serve solo per la configurazione iniziale, una volta sola. Dopo di che puoi dimenticartene.
+- **Android 8.0 o superiore** (fino ad Android 16). Testato su Pixel 8 Pro.
+- **Un computer** (Windows, Mac o Linux) con una porta USB e un cavo dati, necessario una volta sola per la configurazione iniziale.
 
 ---
 
 ## Guida all'installazione
 
-La guida è divisa in 9 fasi. Le fasi 2-7 si fanno una sola volta. Ci vogliono circa 15-20 minuti la prima volta.
+Android non permette alle app normali di accendere e spegnere il GPS. AutoGPS ha bisogno di un permesso di sistema che concedi una volta sola da un computer, con uno strumento gratuito di Google chiamato ADB. La guida ha 9 passi; i passi 2-7 si fanno una volta sola e la prima volta richiedono circa 15-20 minuti.
 
----
+### Passo 1: Scarica l'APK
 
-## FASE 1 — Scaricare l'APK
+L'APK è il file di installazione delle app Android. AutoGPS non è sul Play Store, quindi lo scarichi da qui.
 
-Un APK è il file di installazione delle app Android, lo stesso che usa il Play Store internamente. AutoGPS non è sul Play Store, quindi lo scarichi direttamente da qui.
+**Vai alla [pagina delle release](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest) e scarica l'ultimo `AutoGPS-by-Bonn-vX.Y.Z.apk`** dalla sezione "Assets" (circa 9 MB).
 
-**Vai alla [pagina delle release](https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/latest) e scarica l'ultimo file `AutoGPS-by-Bonn-vX.X.X.apk`** dalla sezione "Assets" (circa 8 MB).
+> **Ti preoccupa la sicurezza?** Il documento [Sicurezza](SECURITY.it.md) elenca le misure implementate nell'app: archiviazione cifrata, nessun server, nessun tracciamento, SMS verificati.
 
-> **Hai dubbi sulla sicurezza?** Leggi il documento [Sicurezza e Privacy](SECURITY.it.md) per sapere nel dettaglio come l'app protegge i tuoi dati: crittografia AES-256, zero tracciamento, zero server, SMS verificati.
+Il file viene salvato nella cartella **Download** del computer.
 
-Il file viene salvato nella cartella **Download**.
+### Passo 2: Prepara il computer
 
-Dopo il download, **torna su questa pagina** per seguire i passi successivi.
+Per concedere il permesso userai **ADB** (Android Debug Bridge), un programma che permette al computer di inviare istruzioni al telefono tramite il cavo USB.
 
----
+Non devi installare niente di complicato: ADB è un piccolo programma da scaricare ed estrarre. **Android Studio non serve.**
 
-## FASE 2 — Preparare il computer
-
-Per concedere ad AutoGPS il permesso speciale di cui ha bisogno, devi usare uno strumento chiamato **ADB** (Android Debug Bridge). In parole semplici: è un programma che permette al computer di "parlare" con il telefono Android tramite cavo USB e dare istruzioni che normalmente non si possono dare dall'interfaccia grafica.
-
-**Buona notizia:** non devi installare niente di complicato. ADB è un semplice file eseguibile che scarichi, estrai e usi.
-
-**Non serve Android Studio** — è un programma enorme da diversi gigabyte pensato per chi sviluppa app. Per i nostri scopi basta scaricare solo ADB.
-
-### Scaricare ADB
-
-Vai su questa pagina ufficiale di Google:
-**https://developer.android.com/tools/releases/platform-tools**
-
-Scorri verso il basso fino alla sezione "Downloads" e scarica la versione per il tuo sistema operativo:
+Vai alla pagina ufficiale di Google **https://developer.android.com/tools/releases/platform-tools** e scarica la versione per il tuo sistema operativo.
 
 **Windows:**
 
-1. **Clicca su "Download SDK Platform-Tools for Windows"**
-2. Accetta i termini e clicca su "Download"
-3. Verrà scaricato uno zip — aprilo e trascina la cartella `platform-tools` nella tua cartella **Download** (o dove preferisci, ma ricorda dove la metti)
+1. Clicca **"Download SDK Platform-Tools for Windows"**
+2. Accetta i termini e clicca "Download"
+3. Apri il file zip scaricato e trascina la cartella `platform-tools` nella cartella **Download**
 
 **Mac:**
 
-1. **Clicca su "Download SDK Platform-Tools for Mac"**
-2. Accetta i termini e clicca su "Download"
-3. Verrà scaricato uno zip — aprilo e trascina la cartella `platform-tools` nella tua cartella **Download**
-4. In alternativa, se hai Homebrew installato, puoi aprire il Terminale e scrivere: `brew install android-platform-tools`
+1. Clicca **"Download SDK Platform-Tools for Mac"**
+2. Accetta i termini e clicca "Download"
+3. Apri il file zip scaricato e trascina la cartella `platform-tools` nella cartella **Download**
+4. In alternativa, con Homebrew: `brew install android-platform-tools`
 
 **Linux (Ubuntu/Debian):**
 
-1. **Clicca su "Download SDK Platform-Tools for Linux"**, scarica e decomprimi, oppure
+1. Clicca **"Download SDK Platform-Tools for Linux"** ed estrailo, oppure apri il terminale e scrivi:
 
-2. Apri il terminale e scrivi:
-   
    ```
    sudo apt install adb
    ```
 
----
+### Passo 3: Attiva le Opzioni sviluppatore sul telefono
 
-## FASE 3 — Attivare le Opzioni sviluppatore sul telefono
+1. **Apri l'app Impostazioni** del telefono
+2. **Apri "Informazioni sul telefono"** (può chiamarsi "Info telefono" o "Informazioni dispositivo")
+3. **Cerca "Numero build"**. Su alcuni telefoni è dentro "Informazioni software" o "Informazioni sulla versione"
+4. **Tocca "Numero build" 7 volte di fila.** Dopo qualche tocco un messaggio conta i passi mancanti; al settimo tocco compare "Ora sei uno sviluppatore!". Se il telefono ha un PIN, potrebbe chiedertelo
+5. **Torna indietro** alla schermata principale delle Impostazioni
+6. **Cerca la nuova voce "Opzioni sviluppatore"**: nella lista principale, oppure in **Sistema** > **Avanzate** > **Opzioni sviluppatore**, secondo il produttore
 
-Il telefono nasconde alcune funzioni avanzate per evitare che gli utenti le tocchino per errore. Per usare ADB devi prima "sbloccare" queste funzioni con un piccolo trucco.
+### Passo 4: Attiva il debug USB
 
-**Passo per passo:**
+1. **Apri "Opzioni sviluppatore"**
+2. **Cerca "Debug USB"** (su alcuni telefoni "Debug Android")
+3. **Attiva l'interruttore**
+4. Compare un avviso: **tocca "OK"**
 
-1. **Apri l'app Impostazioni** sul telefono (la rotella dentata)
+### Passo 5: Collega il telefono al computer
 
-2. **Scorri in fondo e cerca "Info telefono"** — potrebbe chiamarsi anche "Informazioni sul telefono", "Informazioni sul dispositivo" o simile. Il nome varia a seconda del produttore.
+1. **Collega il telefono con un cavo USB.** Se puoi usa il cavo originale: alcuni cavi economici caricano soltanto e non trasferiscono dati
+2. Se il telefono chiede la modalità USB, **scegli "Trasferimento file"** (o "MTP"), non "Solo ricarica"
+3. Il telefono chiede **"Consentire il debug USB?"** con una "impronta digitale della chiave RSA". **Tocca "Consenti"**; puoi anche spuntare "Consenti sempre da questo computer"
 
-3. **Entra in "Info telefono"** e cerca la voce **"Numero build"**. Su alcuni telefoni è nascosta dentro "Informazioni software" o "Informazioni sulla versione". Guardati attorno — c'è.
+Se la richiesta non compare: scollega e ricollega il cavo, oppure disattiva e riattiva il debug USB, e controlla che sia selezionato "Trasferimento file".
 
-4. **Tocca "Numero build" 7 volte di fila, velocemente.** Non è uno scherzo — è davvero così che funziona.
-   
-   - Dopo il terzo o quarto tocco comparirà un messaggio tipo: *"Sei a 3 passi dall'essere uno sviluppatore"*
-   - Continua a toccare
-   - Al settimo tocco comparirà: *"Ora sei uno sviluppatore!"* (o un messaggio simile)
-   - Se il telefono ha un PIN, potrebbe chiederti di inserirlo
+### Passo 6: Apri il terminale sul computer
 
-5. **Premi il tasto Indietro** fino a tornare alla schermata principale delle Impostazioni.
+Il terminale è una finestra in cui si scrivono comandi di testo. Userai solo 3 comandi, copiati da questa guida.
 
-6. **Ora troverai una nuova voce: "Opzioni sviluppatore"** — potrebbe trovarsi direttamente nell'elenco principale, oppure dentro **Sistema** > **Avanzate** > **Opzioni sviluppatore**. Dipende dal produttore.
+**Windows:** premi **tasto Windows + R**, scrivi **`cmd`** e premi Invio. Si apre una finestra nera: è il Prompt dei comandi.
 
----
+**Mac:** premi **Cmd + Spazio**, scrivi **"Terminale"** e premi Invio.
 
-## FASE 4 — Attivare il Debug USB
+**Linux:** cerca **"Terminale"** nel menu delle applicazioni, oppure premi **Ctrl + Alt + T**.
 
-Il Debug USB è la funzione che permette ad ADB di comunicare con il telefono.
+### Passo 7: Installa l'APK e concedi il permesso
 
-1. **Apri "Opzioni sviluppatore"** (che hai appena sbloccato nella Fase 3)
+**Entra nella cartella `platform-tools`** (se l'hai messa in Download):
 
-2. **Scorri verso il basso** fino a trovare la voce **"Debug USB"** — su alcuni telefoni si chiama "Debug Android"
-
-3. **Attiva l'interruttore** spostandolo verso destra (diventa colorato)
-
-4. Comparirà una finestra di avviso che dice che questa funzione è pensata per lo sviluppo. **Tocca "OK"** per confermare.
-
----
-
-## FASE 5 — Collegare il telefono al computer
-
-1. **Collega il telefono al computer con un cavo USB.** Se possibile usa il cavo originale del telefono — alcuni cavi economici sono "solo ricarica" e non trasmettono dati.
-
-2. **Sul telefono potrebbe comparire una notifica** tipo "Seleziona modalità USB" o "Opzioni USB". Se compare, **seleziona "Trasferimento file"** (o "MTP"). NON scegliere "Solo ricarica" — con quella opzione il computer non riesce a comunicare con il telefono.
-
-3. **Comparirà una finestra sul telefono** con scritto qualcosa tipo: **"Consenti debug USB?"** e un codice chiamato "impronta RSA". Questo è normale — il sistema vuole confermare che sei tu ad aver autorizzato il computer.
-   
-   - **Tocca "Consenti"**
-   - Puoi anche spuntare la casella "Consenti sempre da questo computer" così non te lo chiede di nuovo
-
-**Se la finestra non compare:**
-
-- Stacca il cavo USB e riattaccalo
-- Oppure torna in Opzioni sviluppatore, disattiva Debug USB, riattivalo, poi riattacca il cavo
-- Assicurati di aver scelto "Trasferimento file" e non "Solo ricarica"
-
----
-
-## FASE 6 — Aprire il terminale sul computer
-
-Il terminale (detto anche "prompt dei comandi" su Windows) è una finestra dove scrivi comandi testuali. Sembra complicato ma userai solo 3 comandi copiati da questa guida.
-
-**Windows:**
-
-1. Premi il **tasto Windows + R** sulla tastiera (tasto con il logo di Windows, tenuto premuto, poi R)
-2. Nella piccola finestra che compare, scrivi **`cmd`** e premi Invio
-3. Si apre una finestra nera — è il Prompt dei comandi
-4. In alternativa: cerca **"cmd"** o **"Prompt dei comandi"** nella barra di ricerca di Windows
-
-**Mac:**
-
-1. Premi **Cmd + Spazio** per aprire Spotlight
-2. Scrivi **"Terminale"** e premi Invio
-3. In alternativa: vai in Applicazioni > Utility > Terminale
-
-**Linux:**
-
-1. Cerca **"Terminale"** nel menu delle applicazioni
-2. Oppure premi **Ctrl + Alt + T** (funziona su molte distribuzioni)
-
----
-
-## FASE 7 — Installare l'APK e concedere il permesso
-
-Ora che hai il terminale aperto e il telefono collegato, puoi fare tutto in pochi comandi.
-
-### Navigare nella cartella platform-tools
-
-Prima devi dire al terminale di "entrare" nella cartella `platform-tools` che hai scaricato nella Fase 2.
-
-**Windows** (se hai messo platform-tools nella cartella Download):
+Windows:
 
 ```
 cd %USERPROFILE%\Downloads\platform-tools
 ```
 
-**Mac/Linux** (se hai messo platform-tools nella cartella Download):
+Mac/Linux:
 
 ```
 cd ~/Downloads/platform-tools
 ```
 
-Se hai messo la cartella altrove, adatta il percorso di conseguenza.
-
-### Verificare che il telefono sia riconosciuto
-
-**Copia e incolla questo comando, poi premi Invio:**
+**Controlla che il telefono sia riconosciuto:**
 
 ```
 adb devices
 ```
 
-Dovresti vedere un output simile a questo:
+Dovresti vedere:
 
 ```
 List of devices attached
 XXXXXXXX    device
 ```
 
-La parola `device` (o una serie di numeri/lettere) indica che il telefono è riconosciuto. **Se vedi `unauthorized`**, torna al telefono: dovrebbe esserci una notifica "Consenti debug USB?" in attesa — tocca "Consenti".
+Se vedi `unauthorized`, guarda il telefono e tocca "Consenti" sulla richiesta di debug USB. Se non compare nessun dispositivo, controlla il cavo e la modalità "Trasferimento file".
 
-Se non vedi nessun dispositivo, controlla che il cavo sia ben inserito e che tu abbia selezionato "Trasferimento file" nella Fase 5.
+**Installa l'APK** (usa il nome esatto del file che hai scaricato):
 
-### Installare l'APK
-
-Usa il nome esatto del file che hai scaricato (il numero di versione può essere diverso dall'esempio sotto).
-
-**Windows** — se l'APK è nella cartella Download:
+Windows:
 
 ```
-adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v2.2.0.apk"
+adb install "%USERPROFILE%\Downloads\AutoGPS-by-Bonn-v3.1.0.apk"
 ```
 
-**Mac/Linux** — se l'APK è nella cartella Download:
+Mac/Linux:
 
 ```
-adb install ~/Downloads/AutoGPS-by-Bonn-v2.2.0.apk
+adb install ~/Downloads/AutoGPS-by-Bonn-v3.1.0.apk
 ```
 
-Se l'APK si trova in un'altra cartella, sostituisci il percorso con quello corretto. Al termine dovresti vedere `Success`.
+Alla fine compare `Success`.
 
-**Alternativa senza ADB per l'installazione:** puoi anche trasferire l'APK sul telefono (via cavo, WhatsApp, email, Google Drive...) e installarlo aprendo il file dal gestore file del telefono. Android ti chiederà di abilitare l'installazione da "origini sconosciute" — conferma. Anche in questo caso dovrai comunque eseguire il comando del permesso qui sotto.
+Puoi anche copiare l'APK sul telefono (cavo, email, Google Drive...) e aprirlo dal file manager; Android ti chiederà di consentire l'installazione da origini sconosciute. Il comando del permesso qui sotto serve comunque.
 
-### Concedere il permesso speciale
-
-Questo è il passaggio fondamentale. Senza di esso l'app non può controllare il GPS.
-
-**Copia e incolla esattamente questo comando, poi premi Invio:**
+**Concedi il permesso di sistema.** Senza, l'app non può controllare il GPS:
 
 ```
 adb shell pm grant com.autogps.app android.permission.WRITE_SECURE_SETTINGS
 ```
 
-Se il comando va a buon fine **non compare nessun messaggio** — il cursore torna semplicemente a capo. Silenzio = successo. Se invece compare un messaggio di errore, leggi la sezione "Risoluzione problemi" in fondo a questa guida.
+Se il comando riesce **non compare nessun messaggio**: il cursore passa semplicemente alla riga successiva. Se compare un errore, vedi [Risoluzione problemi](#risoluzione-problemi).
+
+L'app mostra questo comando anche nella guida al primo avvio, con un pulsante **Condividi** per mandartelo via email o chat.
+
+### Passo 8: Configura l'app
+
+Apri AutoGPS. La guida al primo avvio ha quattro pagine:
+
+1. **Benvenuto**: cosa fa l'app
+2. **Permessi**: concedi Dispositivi nelle vicinanze, Posizione, **Posizione sempre** (scegli "Consenti sempre", altrimenti l'app non funziona a schermo spento) e Notifiche
+3. **La tua auto**: scegli il Bluetooth dell'auto tra i dispositivi già associati al telefono
+4. **Permesso di sistema**: il comando del passo 7. La pagina si aggiorna da sola quando il permesso è concesso
+
+Dopo la guida, la scheda **Per finire la configurazione** in Home elenca cosa manca ancora, ognuno con il suo pulsante:
+
+- **Lascia AutoGPS attivo**: esclude l'app dall'ottimizzazione della batteria, così Android non la ferma
+- **Allarme a schermo bloccato**: serve per la schermata di emergenza dopo un incidente
+
+**Facoltativo:**
+
+- **Android Auto**: in Funzioni attiva "Usa Android Auto". Se l'auto ha il Bluetooth non serve: il Bluetooth è più affidabile e consuma meno
+- **Contatti di emergenza**: in Funzioni > Rilevamento incidenti tocca "Contatti di emergenza" e aggiungine almeno uno, dalla rubrica o a mano. L'app chiede il permesso di inviare SMS. Poi usa "Prova la schermata di emergenza" per vedere come funziona senza inviare niente
+- **Avvisi ZTL**: in Funzioni attiva "Avvisami prima delle ZTL" e aggiungi le zone in cui sei autorizzato
+
+### Passo 9: Verifica che funzioni
+
+1. **Controlla che il GPS sia spento**
+2. **Collega il Bluetooth dell'auto**
+3. **Controlla che il GPS si accenda** entro pochi secondi
+4. **Scollega il Bluetooth**
+5. **Controlla che il GPS si spenga** dopo 20-35 secondi: il ritardo è voluto, per non spegnere durante un breve scollegamento e per salvare il parcheggio
 
 ---
 
-## FASE 8 — Configurare l'app
+## Aggiornamenti
 
-Apri AutoGPS sul telefono. La prima volta ti verrà chiesto di concedere alcuni permessi.
-
-### Permessi runtime
-
-Quando l'app te li chiede, **concedili tutti:**
-
-- **Bluetooth** — necessario per rilevare quando ti connetti all'auto
-- **Posizione** — richiesta dal sistema Android per qualsiasi app che usa il Bluetooth
-- **Posizione in background** — quando ti viene chiesto, seleziona **"Consenti sempre"** e non "Solo durante l'uso". Senza questa opzione l'app non funziona con lo schermo spento.
-- **Notifiche** — necessaria per la notifica che conferma che il servizio è attivo in background
-- **SMS** — necessario se vuoi che l'app possa inviare messaggi di emergenza in caso di incidente
-- **Overlay (visualizzazione sopra altre app)** — se l'app mostra un banner arancione con scritto "Permesso overlay mancante", toccalo per aprire le impostazioni e concedere il permesso. Serve per mostrare la schermata di emergenza anche quando il telefono è bloccato.
-
-### Aggiungere i dispositivi Bluetooth
-
-Nella sezione **"Trigger Bluetooth"** tocca **"Aggiungi dispositivo"** e seleziona dalla lista il Bluetooth della tua auto (vivavoce, autoradio, o qualsiasi dispositivo Bluetooth a bordo). Puoi aggiungerne quanti ne vuoi.
-
-### Android Auto (opzionale)
-
-Se vuoi che l'app funzioni anche con Android Auto, attiva **"Usa Android Auto"** nella sezione dedicata. Non serve altro. Non è obbligatorio — se non usi Android Auto, salta questo passaggio.
-
-### Ottimizzazione batteria
-
-Se nella schermata principale vedi un **banner arancione**, toccalo e segui le istruzioni per escludere AutoGPS dall'ottimizzazione batteria. Questa ottimizzazione è una funzione di Android che "sospende" le app in background per risparmiare energia — ma per AutoGPS è un problema perché deve sempre restare in ascolto.
-
-### Contatti di emergenza (opzionale)
-
-Se vuoi usare la funzione di rilevamento incidente, nella sezione "Rilevamento Incidente" della schermata principale tocca "Contatti di emergenza". Da qui puoi:
-
-- **Importare un contatto dalla rubrica** del telefono
-- **Inserire un contatto manualmente** con nome e numero di telefono
-
-Aggiungi almeno un contatto — in caso di incidente, l'app invierà un SMS a tutti i contatti in lista con un link alla tua posizione su Google Maps. Puoi aggiungere, modificare o eliminare i contatti in qualsiasi momento.
-
-Con lo **slider "Soglia rilevamento impatto"** puoi regolare quanto l'app deve essere sensibile: un valore basso rileva anche urti lievi (ma può dare falsi allarmi), un valore alto rileva solo urti molto forti. Il valore predefinito (2.8G) è un buon compromesso per la maggior parte delle situazioni.
-
----
-
-## FASE 9 — Verifica che tutto funzioni
-
-Questo test richiede 5 minuti ed è il modo migliore per confermare che la configurazione è riuscita.
-
-1. **Assicurati che il GPS sia spento** (puoi verificarlo aprendo Google Maps — se non trova la posizione, è spento)
-2. **Connetti il Bluetooth dell'auto** dal telefono (come faresti normalmente)
-3. **Controlla che il GPS si sia acceso da solo** — dovrebbe succedere entro pochi secondi
-4. **Disconnetti il Bluetooth**
-5. **Controlla che il GPS si spenga** — potrebbero volerci fino a 5 minuti, è normale
-
-Se GPS si accende ma non si spegne, attendi qualche minuto — il servizio ha un ritardo intenzionale per evitare accensioni/spegnimenti rapidi.
-
----
-
-## Risoluzione problemi
-
-**"Il telefono non viene riconosciuto dal computer" (adb devices non mostra niente)**
-
-- Controlla che il cavo USB sia ben inserito da entrambe le parti
-- Prova una porta USB diversa del computer
-- Assicurati di aver scelto "Trasferimento file" sul telefono (non "Solo ricarica")
-- Su Windows: potrebbe servire installare i driver USB del produttore del telefono. Cerca su Google "driver USB [nome del tuo telefono]"
-
-**"adb devices mostra 'unauthorized'"**
-
-- Guarda il telefono: dovrebbe essere comparsa una notifica "Consenti debug USB?" — toccala e scegli "Consenti"
-- Se la notifica non appare: stacca il cavo, disattiva e riattiva Debug USB nelle Opzioni sviluppatore, poi riattacca il cavo
-
-**"Il comando adb non viene trovato" (errore tipo "adb is not recognized")**
-
-- Sei sicuro di essere entrato nella cartella `platform-tools` con il comando `cd`? Prova a rifarlo.
-- Su Windows: assicurati di aver estratto il file zip e di essere dentro la cartella `platform-tools`, non fuori
-- Puoi anche provare a trascinare la finestra del terminale dentro la cartella `platform-tools` in Explorer — su alcune versioni di Windows questo apre il terminale già posizionato nella cartella giusta
-
-**"L'app non accende il GPS dopo la configurazione"**
-
-- Verifica che il permesso speciale sia stato concesso correttamente: riapri il terminale, rientra nella cartella platform-tools, e riesegui il comando `adb shell pm grant com.autogps.app android.permission.WRITE_SECURE_SETTINGS`
-- Controlla che il GPS sul telefono sia completamente spento prima del test (non in modalità "risparmio")
-- Se hai un telefono Xiaomi, Samsung, Huawei o Oppo, leggi la sezione "Limitazioni note" qui sotto
-
-**"L'app smette di funzionare dopo qualche giorno"**
-
-- Alcuni produttori (soprattutto Xiaomi, Huawei, Oppo) hanno sistemi aggressivi di risparmio batteria che "uccidono" le app in background. Vai su [dontkillmyapp.com](https://dontkillmyapp.com), cerca il tuo telefono e segui le istruzioni specifiche per il tuo modello.
-- Assicurati di aver tolto AutoGPS dall'ottimizzazione batteria (Fase 8, ultimo punto)
-
----
-
-## Aggiornamento
-
-Quando esce una nuova versione, scarica il nuovo APK e installalo con:
+Quando esce una nuova versione, l'app mostra un avviso di aggiornamento (controllato al massimo una volta al giorno). Scarica il nuovo APK e installalo con:
 
 ```
 adb install -r AutoGPS-by-Bonn-vX.Y.Z.apk
 ```
 
-Il flag `-r` significa "reinstalla mantenendo i dati". Le impostazioni vengono conservate e **non serve riconcedere il permesso ADB** — rimane valido anche dopo l'aggiornamento.
-
-In alternativa, puoi installarlo direttamente dal telefono (senza il comando `adb install`) — anche in questo caso le impostazioni e il permesso vengono mantenuti.
+`-r` reinstalla mantenendo i dati. Le impostazioni restano e **non devi concedere di nuovo il permesso di sistema**. Puoi anche installare l'APK direttamente dal telefono, con lo stesso risultato.
 
 ---
 
-## Comportamento spegnimento GPS
+## Risoluzione problemi
 
-Dall'app puoi scegliere cosa succede quando tutti i trigger si disattivano:
+**Il computer non vede il telefono (`adb devices` non mostra niente)**
 
-- **Disattiva GPS completamente** — il GPS si spegne del tutto (impostazione predefinita)
-- **Modalità risparmio batteria** — il GPS resta attivo ma usa solo rete e Wi-Fi, senza il chip GPS (consuma meno ma ti localizza in modo meno preciso)
+- Controlla il cavo da entrambi i lati, o prova un'altra porta USB
+- Controlla di aver scelto "Trasferimento file" sul telefono, non "Solo ricarica"
+- Su Windows potrebbe servire il driver USB del telefono: cerca "driver USB [modello del tuo telefono]"
+
+**`adb devices` mostra `unauthorized`**
+
+- Guarda il telefono e tocca "Consenti" sulla richiesta "Consentire il debug USB?"
+- Se non compare: scollega il cavo, disattiva e riattiva il debug USB, ricollega il cavo
+
+**"adb non è riconosciuto" o "command not found"**
+
+- Controlla di essere entrato nella cartella `platform-tools` con `cd`
+- Su Windows, controlla di aver estratto lo zip e di essere dentro `platform-tools`, non nella cartella sopra
+
+**Il GPS non si accende dopo la configurazione**
+
+- Esegui di nuovo il comando del permesso: `adb shell pm grant com.autogps.app android.permission.WRITE_SECURE_SETTINGS`
+- Guarda la scheda **Per finire la configurazione** in Home: elenca cosa manca ancora
+- Controlla che l'interruttore **AutoGPS attivo** in Funzioni sia acceso
+- Su telefoni Xiaomi, Samsung, Huawei o Oppo, leggi [Limitazioni note](#limitazioni-note)
+
+**L'app smette di funzionare dopo qualche giorno**
+
+- Alcuni produttori (Xiaomi, Huawei, Oppo) fermano le app in background in modo aggressivo. Segui le istruzioni per il tuo modello su [dontkillmyapp.com](https://dontkillmyapp.com)
+- Controlla che "Lascia AutoGPS attivo" risulti fatto nella scheda di configurazione
 
 ---
 
 ## Limitazioni note
 
-- Il controllo del GPS funziona perfettamente su Pixel e dispositivi con Android "puro" (stock). Su telefoni con interfacce molto personalizzate (Xiaomi MIUI/HyperOS, Samsung One UI) il comportamento potrebbe variare a seconda della versione del sistema.
-- Alcuni produttori (Xiaomi, Huawei, Oppo) hanno ottimizzazioni batteria aggressive che possono sospendere il servizio. Su questi dispositivi potrebbe servire una configurazione aggiuntiva — vedi [dontkillmyapp.com](https://dontkillmyapp.com) per istruzioni specifiche per il tuo modello.
-- Il rilevamento incidente usa l'accelerometro del telefono. La soglia di default (2.8G) è calibrata per distinguere un incidente da una frenata brusca, ma su strade molto dissestate potrebbe generare falsi allarmi. La soglia è configurabile dall'app.
-- L'invio SMS di emergenza richiede una SIM attiva con credito sufficiente. Su telefoni senza SIM l'SMS non verrà inviato.
+- Il controllo del GPS funziona su Pixel e su telefoni con Android stock. Sulle interfacce molto personalizzate (Xiaomi MIUI/HyperOS, Samsung One UI) il comportamento può variare con la versione del sistema.
+- Alcuni produttori (Xiaomi, Huawei, Oppo) sospendono i servizi in background; vedi [dontkillmyapp.com](https://dontkillmyapp.com).
+- Il rilevamento incidenti usa l'accelerometro del telefono. Su strade molto sconnesse può dare falsi allarmi: in quel caso abbassa la sensibilità.
+- Gli SMS di emergenza richiedono una SIM attiva con credito. La conferma di consegna dipende dall'operatore, che deve inviare i rapporti di consegna.
+- I dati ZTL vengono da OpenStreetMap e sono indicativi: vale sempre la segnaletica.
 
 ---
 
-## Privacy e Sicurezza
+## Privacy e sicurezza
 
-L'app non comunica con nessun server, non raccoglie dati, non contiene analytics o tracker di nessun tipo. La posizione dell'ultimo parcheggio viene salvata solo sul tuo dispositivo, cifrata con crittografia AES-256. Tutto rimane sul tuo telefono.
+L'app non ha account, analytics né tracker. Parcheggi, contatti di emergenza e dispositivi dell'auto sono salvati cifrati sul telefono. Le uniche connessioni di rete scaricano file pubblici: il controllo aggiornamenti, l'elenco delle ZTL e le tile di OpenStreetMap per la mappa del parcheggio e il widget. Gli SMS di emergenza partono direttamente dal tuo telefono verso i contatti che hai scelto.
 
-In caso di incidente confermato dall'utente, l'app invia un SMS con la posizione ai soli contatti di emergenza configurati manualmente dall'utente. Nessun dato viene condiviso automaticamente e nessun server è coinvolto — l'SMS parte direttamente dal telefono.
-
-Per tutti i dettagli tecnici sulle misure di sicurezza implementate, consulta il documento **[Sicurezza e Privacy](SECURITY.it.md)**.
+L'elenco completo delle misure, e come segnalare una vulnerabilità, è in [SECURITY.it.md](SECURITY.it.md).
 
 ---
 
 ## Changelog
 
-### v3.1.0 — 27 ottobre 2026
-
-- Android Auto viene ora rilevato con l'API ufficiale di connessione all'auto: basta attivare "Usa Android Auto", non c'è più nessun servizio di accessibilità da abilitare
-- Schermata di emergenza: nuovo pulsante "Chiama il 112"
-- SMS di emergenza: la schermata ti dice quando i telefoni dei contatti hanno confermato la consegna, non solo quando il messaggio è partito
-- Il GPS viene spento solo se è stato AutoGPS ad accenderlo
-- Parcheggio: la posizione si salva solo da un rilevamento recente e preciso, e un breve calo del Bluetooth non spegne più il GPS
-- Il rilevamento incidenti arma il sensore d'urto solo mentre l'auto è in movimento
-- ZTL: le zone con orari non verificati sono etichettate e si possono nascondere; i controlli GPS rallentano quando sei lontano da ogni zona, risparmiando batteria
-- Correzione: l'app non va più in crash se avviata senza il permesso di posizione
-- Correzione: controllo del download degli aggiornamenti e migrazione delle impostazioni più sicuri
-
-### v3.0.0 — 26 ottobre 2026
-
-- Interfaccia rifatta: guida al primo avvio, checklist di configurazione, interruttore generale per mettere in pausa AutoGPS, ogni funzione spiegata in parole semplici
-- Avviso ZTL solo quando ti stai davvero avvicinando a una zona (entro 200 m e in direzione della zona), non più ogni volta che le passi vicino
-- Rilevamento incidenti: sensibilità Bassa/Media/Alta, prova di emergenza simulata, schermata di emergenza con conto alla rovescia grande e pulsanti chiari
-- Correzione: una ZTL notturna che finisce dopo mezzanotte viene ora conteggiata sul giorno successivo
-- Correzione: l'allarme di emergenza non viene mai perso né inviato due volte, e la prova simulata non può più nascondere un incidente reale
-
-### v2.4.0 — 21 giugno 2026
-
-- Timer parcheggio: un secondo promemoria suona 30 minuti prima della scadenza, oltre a quello dei 15 minuti
-- Gli avvisi del parcheggio suonano anche in modalità silenziosa e Non disturbare
-
-### v2.3.0 — 21 giugno 2026
-
-- Timer parcheggio: imposta una durata personalizzata con conto alla rovescia e avviso sonoro prima della scadenza
-- Selezione ZTL: campo di ricerca per filtrare rapidamente l'elenco delle zone
-- Dataset ZTL esteso a 302 zone in tutta Italia, con avvisi basati sui varchi
-
-### v2.2.0 — 20 giugno 2026
-
-- Avvisi ZTL: schermata a tutto schermo prima di entrare in una zona a traffico limitato attiva (Italia)
-- Dataset ZTL italiano incluso, aggiornato automaticamente; funziona offline
-- Escludi le ZTL per cui sei autorizzato così non ti avvisano
-
-### v2.1.2 — 25 marzo 2026
-
-- SMS di emergenza inviati automaticamente dopo 60 secondi di allarme senza risposta (protegge l'utente incosciente)
-- Allarme sonoro forzato sullo speaker del telefono, mai dal Bluetooth
-- La musica si mette in pausa automaticamente durante l'allarme di emergenza
-- Tutte le costanti di timing del rilevamento incidente centralizzate in un unico file di configurazione
-
-### v2.1.1 — 24 marzo 2026
-
-- Supporto lingua inglese con toggle in-app (IT/EN)
-- La preferenza lingua resta attiva anche dopo il riavvio dell'app
-
-### v2.1.0 — 23 marzo 2026
-
-- Widget parcheggio per home screen: indirizzo, tempo relativo, tap per navigare direttamente all'auto
-- Indicatore stato GPS nel widget (pallino verde/grigio)
-- Supporto dark mode per il widget
-- Rilevamento turbolenza post-impatto: l'app riconosce se l'auto sta rotolando dopo un colpo e aspetta che si fermi prima di valutare se è un incidente
-- Soglia GPS dinamica basata sulla velocità: a 30 km/h bastano 18 metri per considerare l'auto ferma, a 130 km/h servono 333 metri
-- Consiglio in-app per preferire il trigger Bluetooth rispetto ad Android Auto
-
-### v2.0.0 — 22 marzo 2026
-
-- Rilevamento incidente automatico durante la guida (accelerometro + verifica GPS fermo)
-- Schermata di emergenza rossa fullscreen visibile anche a schermo bloccato
-- Allarme sonoro a volume crescente se non si risponde entro 60 secondi
-- Invio SMS di emergenza con posizione Google Maps ai contatti configurati
-- Gestione contatti di emergenza (importazione da rubrica o inserimento manuale)
-- Soglia sensibilità impatto configurabile (1.5G — 5.0G)
-- Banner guida per permesso overlay
-
-### v1.1.0 — 21 marzo 2026
-
-- Feature "Ultimo parcheggio": quando il GPS si spegne l'app salva la posizione attuale
-- Mappa nella schermata principale con pin sull'ultimo parcheggio
-- Indirizzo testuale e indicazione "parcheggiato N minuti fa"
-- Tocco sulla mappa per aprire Google Maps; pulsante "Naviga qui" per la navigazione a piedi verso la macchina
-
-### v1.0.0 — 18 marzo 2026
-
-- Prima release
-- Trigger Bluetooth multi-dispositivo
-- Trigger Android Auto
-- Sopravvivenza al riavvio
-- Compatibilità Android 8.0 — 16
+La cronologia completa delle versioni è in [CHANGELOG.it.md](CHANGELOG.it.md).
 
 ---
 
-## Feedback e Supporto
+## Feedback e supporto
 
-Hai trovato un bug? Hai una richiesta di funzionalità? Vuoi condividere la tua esperienza?
-
-Vedi **[FEEDBACK.it.md](FEEDBACK.it.md)** per sapere come contattarmi.
+Hai trovato un bug o hai una richiesta? Vedi [FEEDBACK.it.md](FEEDBACK.it.md) per sapere come contattarmi.
 
 ---
 
-## Ti è utile?
+## Supporta il progetto
 
-Se AutoGPS ti semplifica la vita, lascia una ⭐ al repository — è il modo più semplice per supportare il progetto.
-
----
-
-## Sostieni il progetto
-
-AutoGPS è gratuita. Se ti è utile e vuoi contribuire, puoi lasciare un'offerta tramite PayPal. L'importo lo scegli tu ed è del tutto facoltativo.
+AutoGPS è gratuita. Se ti è utile, lascia una stella al [repository](https://github.com/AndreaBonn/AutoGPS-by-Bonn): aiuta altri a trovarlo. Se vuoi ricambiare, puoi lasciare una mancia via PayPal; l'importo lo decidi tu ed è facoltativo.
 
 <p align="center">
   <a href="https://paypal.me/AndreaBonacci19"><img src="https://img.shields.io/badge/Dona-PayPal-00457C?logo=paypal&logoColor=white&style=for-the-badge" alt="Dona con PayPal"></a>
@@ -502,10 +370,6 @@ AutoGPS è gratuita. Se ti è utile e vuoi contribuire, puoi lasciare un'offerta
 
 ## Autore e licenza
 
-Sviluppato da [Andrea Bonacci](https://github.com/AndreaBonn).
+Sviluppata da [Andrea Bonacci](https://github.com/AndreaBonn). Il codice sorgente è privato; l'app è gratuita alle condizioni indicate in [LICENSE](LICENSE).
 
-Il codice sorgente è privato. L'uso dell'applicazione è libero e gratuito.
-
-### Fonti dei dati
-
-I confini delle zone a traffico limitato (ZTL) provengono da OpenStreetMap, © OpenStreetMap contributors, distribuiti sotto [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Vedi [openstreetmap.org/copyright](https://www.openstreetmap.org/copyright).
+**Fonti dei dati:** i confini delle ZTL provengono da OpenStreetMap, © OpenStreetMap contributors, distribuiti con licenza [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Vedi [openstreetmap.org/copyright](https://www.openstreetmap.org/copyright).
