@@ -1,7 +1,7 @@
 {
-  "version_code": 10,
-  "version_name": "3.0.0",
-  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v3.0.0/AutoGPS-by-Bonn-v3.0.0.apk",
-  "sha256": "f4219c3321b18e7a0100cd2c9f6a52d541a2f10b7b04bdd4e41c620d12e447b2",
-  "changelog": "- Redesigned interface: first-run guide, setup checklist, master switch to pause AutoGPS, every feature explained in plain words\n- ZTL alert only when you are actually approaching a zone (within 200 m and heading towards it), no longer every time you drive nearby\n- Accident detection: Low/Medium/High sensitivity presets, emergency rehearsal, emergency screen with a big countdown and clear buttons\n- Fix: a night-time ZTL window ending after midnight is now counted on the next day\n- Fix: an emergency alert is never lost or sent twice, and the rehearsal can no longer swallow a real accident"
+  "version_code": 11,
+  "version_name": "3.1.0",
+  "apk_url": "https://github.com/AndreaBonn/AutoGPS-by-Bonn/releases/download/v3.1.0/AutoGPS-by-Bonn-v3.1.0.apk",
+  "sha256": "2cb8acfe5f422b60676313220c7d78730ba1d91f7a7ebb6e33251c4065eb07e9",
+  "changelog": "- Android Auto is now detected through the official car connection API: just turn on \"Use Android Auto\", there is no accessibility service to enable anymore\n- Emergency screen: new \"Call 112\" button\n- Emergency SMS: the screen now tells you when your contacts' phones have confirmed delivery, not only when the message left\n- GPS is turned off only if AutoGPS was the one that turned it on\n- Parking: the spot is saved only from a fresh, accurate position, and a brief Bluetooth drop no longer switches GPS off\n- Accident detection arms the impact sensor only while the car is moving\n- ZTL: zones with unverified hours are labelled and can be hidden; GPS checks slow down when you are far from any zone, saving battery\n- Fix: the app no longer crashes when started without the location permission\n- Fix: safer update download check and settings migration"
 }

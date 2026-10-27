@@ -281,7 +281,7 @@ In the **"Bluetooth Trigger"** section, tap **"Add device"** and select your car
 
 ### Android Auto (optional)
 
-If you want the app to work with Android Auto too, in the dedicated section tap **"Open accessibility settings"** and enable the AutoGPS service in the list. It's not mandatory — if you don't use Android Auto, skip this step.
+If you want the app to work with Android Auto too, turn on **"Use Android Auto"** in the dedicated section. No other setting is needed. It's not mandatory — if you don't use Android Auto, skip this step.
 
 ### Battery optimization
 
@@ -374,7 +374,6 @@ From the app you can choose what happens when all triggers deactivate:
 
 - GPS control works perfectly on Pixel and devices with stock Android. On phones with heavily customized interfaces (Xiaomi MIUI/HyperOS, Samsung One UI) behavior may vary depending on the system version.
 - Some manufacturers (Xiaomi, Huawei, Oppo) have aggressive battery optimizations that can suspend the service. On these devices additional configuration may be needed — see [dontkillmyapp.com](https://dontkillmyapp.com) for specific instructions for your model.
-- The accessibility service for Android Auto can be automatically disabled by the system after phone updates. If it stops working, verify it's still active in Settings > Accessibility.
 - Accident detection uses the phone's accelerometer. The default threshold (2.8G) is calibrated to distinguish an accident from hard braking, but on very rough roads it may generate false alarms. The threshold is configurable from the app.
 - Emergency SMS sending requires an active SIM with sufficient credit. On phones without a SIM, the SMS will not be sent.
 
@@ -391,6 +390,18 @@ For full technical details on the security measures implemented, see the **[Secu
 ---
 
 ## Changelog
+
+### v3.1.0 — October 27, 2026
+
+- Android Auto is now detected through the official car connection API: just turn on "Use Android Auto", there is no accessibility service to enable anymore
+- Emergency screen: new "Call 112" button
+- Emergency SMS: the screen now tells you when your contacts' phones have confirmed delivery, not only when the message left
+- GPS is turned off only if AutoGPS was the one that turned it on
+- Parking: the spot is saved only from a fresh, accurate position, and a brief Bluetooth drop no longer switches GPS off
+- Accident detection arms the impact sensor only while the car is moving
+- ZTL: zones with unverified hours are labelled and can be hidden; GPS checks slow down when you are far from any zone, saving battery
+- Fix: the app no longer crashes when started without the location permission
+- Fix: safer update download check and settings migration
 
 ### v3.0.0 — October 26, 2026
 
